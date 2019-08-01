@@ -267,3 +267,4 @@ C:\Users\최유연\Desktop\Unity\Aquarium\obj\Debug\Assembly-CSharp.csproj.CoreC
 C:\Users\최유연\Desktop\Unity\Aquarium\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\최유연\Desktop\Unity\Aquarium\obj\Debug\Assembly-CSharp.dll
 C:\Users\최유연\Desktop\Unity\Aquarium\obj\Debug\Assembly-CSharp.pdb
+C:\Users\최유연\Desktop\Unity\Aquarium\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
