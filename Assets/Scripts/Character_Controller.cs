@@ -7,6 +7,8 @@ public class Character_Controller : MonoBehaviour
     
     private Animator anim;
 
+    public 
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -16,9 +18,14 @@ public class Character_Controller : MonoBehaviour
     void Update()
     {
         Move();
+
+        if (Input.GetButton("Fire1"))
+        {
+            Fire();
+        }
     }
 
-    void Move ()
+    private void Move ()
     {
 
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A)) // ↖
@@ -47,7 +54,7 @@ public class Character_Controller : MonoBehaviour
         {
 
             anim.SetFloat("Vertical", 1f, 0.1f, Time.deltaTime);
-            anim.SetFloat("Horizontal", 0.5f, 0.1f, Time.deltaTime);
+            anim.SetFloat("Horizontal", 0.6f, 0.1f, Time.deltaTime);
         }
 
         else if (Input.GetKey(KeyCode.S)) // ↓
@@ -74,5 +81,10 @@ public class Character_Controller : MonoBehaviour
             anim.SetFloat("Vertical", 0f, 0.1f, Time.deltaTime);
         }
 
+    }
+
+    private void Fire()
+    {
+        anim.CrossFadeInFixedTime("Fire", 0.01f); // fire animation
     }
 }
