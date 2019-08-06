@@ -385,54 +385,36 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: -203655887218126122, guid: 54e7eb5f0db4074459bee4bded7eeb9f,
       type: 3}
-    m_Threshold: 0.11111112
-    m_Position: {x: 0, y: 0.5}
-    m_TimeScale: 1
+    m_Threshold: 0.16666667
+    m_Position: {x: 0, y: 1}
+    m_TimeScale: 1.5
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 2e20b0914f697e646950b6ac944f7ffd,
-      type: 3}
-    m_Threshold: 0.22222224
-    m_Position: {x: 0, y: 1}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Blend
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: e5eaaf6c6f7862b439e5c49ec2ed61e1,
+    m_Motion: {fileID: -203655887218126122, guid: 54e7eb5f0db4074459bee4bded7eeb9f,
       type: 3}
     m_Threshold: 0.33333334
     m_Position: {x: 0, y: -1}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Blend
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: f1fcbfe584d9b61479004be9fc9aefb1,
-      type: 3}
-    m_Threshold: 0.44444448
-    m_Position: {x: 0, y: -0.5}
-    m_TimeScale: 1
+    m_TimeScale: -1.5
     m_CycleOffset: 0
     m_DirectBlendParameter: Horizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 5502c5a04b05a684dad43c856da9e46b,
+    m_Motion: {fileID: -203655887218126122, guid: 54e7eb5f0db4074459bee4bded7eeb9f,
       type: 3}
-    m_Threshold: 0.5555556
+    m_Threshold: 0.5
     m_Position: {x: -1, y: 0}
-    m_TimeScale: 1
+    m_TimeScale: 1.5
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: 726446391e6fcba479ea47268bdedb7f,
+    m_Motion: {fileID: -203655887218126122, guid: 54e7eb5f0db4074459bee4bded7eeb9f,
       type: 3}
     m_Threshold: 0.6666667
     m_Position: {x: 1, y: 0}
-    m_TimeScale: 1
+    m_TimeScale: -1.5
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
     m_Mirror: 0
