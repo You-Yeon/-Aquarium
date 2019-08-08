@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6028002982283208695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.1243, y: 1.4832, z: 0.87}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -91,7 +91,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6548711561994570788
 Rigidbody:
@@ -121,4 +121,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a59a8f558dcd5db48bf86c95557af3d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  pre_water_mark: {fileID: 3494922771059803423, guid: 1e697fad772524b4a894098ff783c1e5,
+    type: 3}
+  mat_water_mark:
+  - {fileID: 2100000, guid: fd52e9eb68a68a846a3a6f42b4ee1a56, type: 2}
+  - {fileID: 2100000, guid: 781b0fe2d29eaeb4a91e8b3ea426320d, type: 2}
+  - {fileID: 2100000, guid: e5577b8476aca30409725212dcb44d5e, type: 2}
+  - {fileID: 2100000, guid: a6f375d8e5ff25345bc8e9ab0e938cf3, type: 2}
+  - {fileID: 2100000, guid: 1a22136716e6e2942926f9a2b945db9d, type: 2}
+  - {fileID: 2100000, guid: 64ebe858dd1dd684891c330bea9e2b40, type: 2}

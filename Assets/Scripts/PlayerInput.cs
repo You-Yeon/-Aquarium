@@ -15,6 +15,7 @@ public class PlayerInput : MonoBehaviour
     public bool fire { get; private set; } // 감지된 발사 입력값
     public float mouseX { get; private set; } // 감지된 마우스 입력값
     public float mouseY { get; private set; } // 감지된 마우스 입력값
+    public Vector3 mouse;
 
     // 매프레임 사용자 입력을 감지
     private void Update()
@@ -30,5 +31,7 @@ public class PlayerInput : MonoBehaviour
         mouseX = Input.GetAxis(mouseAxisNameX);
         // mouseY에 관한 입력 감지
         mouseY = Input.GetAxis(mouseAxisNameY);
+
+        mouse = Input.mousePosition;
     }
 }

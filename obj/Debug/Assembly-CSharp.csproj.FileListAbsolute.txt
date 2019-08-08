@@ -267,4 +267,11 @@ C:\Users\최유연\Desktop\Unity\Aquarium\obj\Debug\Assembly-CSharp.csproj.CoreC
 C:\Users\최유연\Desktop\Unity\Aquarium\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\최유연\Desktop\Unity\Aquarium\obj\Debug\Assembly-CSharp.dll
 C:\Users\최유연\Desktop\Unity\Aquarium\obj\Debug\Assembly-CSharp.pdb
-C:\Users\최유연\Desktop\Unity\Aquarium\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\최유연\Desktop\Unity\Aquarium\Temp\bin\Debug\Cinemachine.dll
+C:\Users\최유연\Desktop\Unity\Aquarium\Temp\bin\Debug\com.unity.cinemachine.editor.dll
+C:\Users\최유연\Desktop\Unity\Aquarium\Temp\bin\Debug\Unity.Postprocessing.Editor.dll
+C:\Users\최유연\Desktop\Unity\Aquarium\Temp\bin\Debug\Unity.Postprocessing.Runtime.dll
+C:\Users\최유연\Desktop\Unity\Aquarium\Temp\bin\Debug\Cinemachine.pdb
+C:\Users\최유연\Desktop\Unity\Aquarium\Temp\bin\Debug\Unity.Postprocessing.Editor.pdb
+C:\Users\최유연\Desktop\Unity\Aquarium\Temp\bin\Debug\Unity.Postprocessing.Runtime.pdb
+C:\Users\최유연\Desktop\Unity\Aquarium\Temp\bin\Debug\com.unity.cinemachine.editor.pdb
