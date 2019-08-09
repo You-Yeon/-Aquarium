@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour {
     public float fireRate; // 발사 딜레이
     public float fireTimer; // 타이머
 
+    public float accuracy; // 산탄 거리
+
     public CinemachineVirtualCamera vcam; // 추적 카메라
 
     public GameObject bulletPrefab; // 총알 Prefab
@@ -18,8 +20,12 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody playerRigidbody; // 플레이어 캐릭터의 리지드바디
     private Animator playerAnimator; // 플레이어 캐릭터의 애니메이터
 
-    public Transform RayPoint;
-    public float range;
+    public Transform RayPoint; // 레이캐스트 시작 지점
+    public float range; // 레이캐스트 범위
+
+    public AudioSource audioSource_walk; // 걷는 소리
+    public AudioSource audioSource_fire; // 발사 소리
+
 
     private void Start() {
         // 사용할 컴포넌트들의 참조를 가져오기
@@ -33,7 +39,9 @@ public class PlayerController : MonoBehaviour {
         fireRate = 0.3f; // 발사 딜레이
         fireTimer = 0f; // 타이머
 
-        vcam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.y = 1.9f;
+        accuracy = 0f; // 초기 값은 0
+
+        vcam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.y = 1.9f; // 초기 화면 y값
     }
 
     // FixedUpdate는 물리 갱신 주기에 맞춰 실행됨
@@ -59,7 +67,8 @@ public class PlayerController : MonoBehaviour {
     }
 
     // 입력값에 따라 캐릭터를 앞뒤로 움직임
-    private void Move() {
+    private void Move()
+    {
 
         // 이동 방향 벡터 계산
         Vector3 moveDir = (playerInput.move * transform.forward) + (playerInput.rotate * transform.right);
@@ -69,6 +78,20 @@ public class PlayerController : MonoBehaviour {
 
         // 리지드바디를 이용해 게임 오브젝트 위치 변경
         playerRigidbody.MovePosition(playerRigidbody.position + moveDistance);
+
+        if (!audioSource_walk.isPlaying)
+        {
+            if (playerInput.move != 0 || playerInput.rotate != 0 )
+            {
+                audioSource_walk.Play();
+            }
+        }
+
+        if (playerInput.move == 0 && playerInput.rotate == 0)
+        {
+            audioSource_walk.Stop();
+        }
+
     }
 
     private void Fire()
@@ -78,13 +101,22 @@ public class PlayerController : MonoBehaviour {
             return;
         }
 
-        if (Input.GetButton("Fire1")) // 발사 버튼.
+        if (playerInput.fire) // 발사 버튼.
         {
+            if (playerInput.move == 0 && playerInput.rotate == 0) // 산탄 효과 비활성
+            {
+                accuracy = 0f;
+            }
+            else // 산탄 효과 활성
+            {
+                accuracy = 0.02f;
+            }
+
 
             playerAnimator.CrossFadeInFixedTime("Fire", 0.01f); // 발사 애니메이션
 
             RaycastHit hit;
-            Physics.Raycast(RayPoint.position, RayPoint.transform.forward, out hit, range); // 레이케스트 발사
+            Physics.Raycast(RayPoint.position, RayPoint.transform.forward + Random.onUnitSphere * accuracy, out hit, range); // 레이케스트 발사
 
             GameObject bullet = Instantiate(bulletPrefab, shootPoint.transform.position, shootPoint.transform.rotation); // 총알 생성
             Bullet bullet_script = bullet.GetComponent<Bullet>(); // Bullet 스크립트 접근
@@ -92,6 +124,8 @@ public class PlayerController : MonoBehaviour {
             bullet.transform.LookAt(hit.point);
 
             fireTimer = 0.0f; // 시간 리셋
+
+            audioSource_fire.Play(); // 발사 소리
         }
     }
 
