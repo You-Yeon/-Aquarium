@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 453372}
-  - component: {fileID: 1058014075}
-  - component: {fileID: 1058014076}
-  - component: {fileID: 1058014077}
+  - component: {fileID: 625721435}
+  - component: {fileID: 625721436}
+  - component: {fileID: 625721437}
   m_Layer: 0
   m_Name: UpperLeg_L
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   m_Father: {fileID: 413862}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1058014075
+--- !u!54 &625721435
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -50,14 +50,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &1058014076
+--- !u!144 &625721436
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100622}
-  m_ConnectedBody: {fileID: 1934890222}
+  m_ConnectedBody: {fileID: 927937947}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
@@ -95,7 +95,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!136 &1058014077
+--- !u!136 &625721437
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -242,9 +242,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 480258}
-  - component: {fileID: 1207278199}
-  - component: {fileID: 1207278198}
-  - component: {fileID: 1207278200}
+  - component: {fileID: 1883631168}
+  - component: {fileID: 1883631167}
+  - component: {fileID: 1883631169}
   m_Layer: 0
   m_Name: LowerLeg_L
   m_TagString: Untagged
@@ -267,7 +267,7 @@ Transform:
   m_Father: {fileID: 453372}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1207278199
+--- !u!54 &1883631168
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -283,14 +283,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &1207278198
+--- !u!144 &1883631167
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107380}
-  m_ConnectedBody: {fileID: 1058014075}
+  m_ConnectedBody: {fileID: 625721435}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
@@ -328,7 +328,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!136 &1207278200
+--- !u!136 &1883631169
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -987,9 +987,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 467350}
-  - component: {fileID: 1742009839}
-  - component: {fileID: 1742009840}
-  - component: {fileID: 1742009841}
+  - component: {fileID: 1948325797}
+  - component: {fileID: 1948325798}
+  - component: {fileID: 1948325799}
   m_Layer: 0
   m_Name: Shoulder_R
   m_TagString: Untagged
@@ -1012,7 +1012,7 @@ Transform:
   m_Father: {fileID: 445976}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1742009839
+--- !u!54 &1948325797
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1028,14 +1028,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &1742009840
+--- !u!144 &1948325798
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126188}
-  m_ConnectedBody: {fileID: 733686127}
+  m_ConnectedBody: {fileID: 1697466193}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
@@ -1073,7 +1073,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!136 &1742009841
+--- !u!136 &1948325799
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1537,9 +1537,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 431048}
-  - component: {fileID: 250436523}
-  - component: {fileID: 250436522}
-  - component: {fileID: 250436524}
+  - component: {fileID: 972232885}
+  - component: {fileID: 972232884}
+  - component: {fileID: 972232886}
   m_Layer: 0
   m_Name: Elbow_L
   m_TagString: Untagged
@@ -1562,7 +1562,7 @@ Transform:
   m_Father: {fileID: 419134}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &250436523
+--- !u!54 &972232885
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1578,14 +1578,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &250436522
+--- !u!144 &972232884
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144238}
-  m_ConnectedBody: {fileID: 34445088}
+  m_ConnectedBody: {fileID: 258070023}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
@@ -1623,7 +1623,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!136 &250436524
+--- !u!136 &972232886
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2506,9 +2506,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 435984}
-  - component: {fileID: 733686127}
-  - component: {fileID: 733686128}
-  - component: {fileID: 733686129}
+  - component: {fileID: 1697466193}
+  - component: {fileID: 1697466194}
+  - component: {fileID: 1697466195}
   m_Layer: 0
   m_Name: Spine_01
   m_TagString: Untagged
@@ -2531,7 +2531,7 @@ Transform:
   m_Father: {fileID: 413862}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &733686127
+--- !u!54 &1697466193
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2547,14 +2547,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &733686128
+--- !u!144 &1697466194
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164420}
-  m_ConnectedBody: {fileID: 1934890222}
+  m_ConnectedBody: {fileID: 927937947}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
@@ -2592,7 +2592,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!65 &733686129
+--- !u!65 &1697466195
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3037,6 +3037,8 @@ GameObject:
   - component: {fileID: 9588390}
   - component: {fileID: 371818701}
   - component: {fileID: 371818705}
+  - component: {fileID: 1877108978}
+  - component: {fileID: 1877108979}
   m_Layer: 0
   m_Name: Character_Biker_01
   m_TagString: Untagged
@@ -3090,7 +3092,7 @@ Rigidbody:
   m_Drag: 10
   m_AngularDrag: 20
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
@@ -3136,6 +3138,8 @@ MonoBehaviour:
   shootPoint: {fileID: 1403554839}
   RayPoint: {fileID: 0}
   range: 200
+  audioSource_walk: {fileID: 1877108979}
+  audioSource_fire: {fileID: 1877108978}
 --- !u!114 &371818705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3154,6 +3158,198 @@ MonoBehaviour:
   mouseAxisNameX: Mouse X
   mouseAxisNameY: Mouse Y
   mouse: {x: 0, y: 0, z: 0}
+--- !u!82 &1877108978
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172216}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 78787452d7f1e664597415bf9ba35786, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &1877108979
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172216}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d5f551e056358884081ce0f45b4c9cb9, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 0.7
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &173072
 GameObject:
   m_ObjectHideFlags: 0
@@ -3163,9 +3359,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 455676}
-  - component: {fileID: 1801582630}
-  - component: {fileID: 1801582631}
-  - component: {fileID: 1801582632}
+  - component: {fileID: 1026859458}
+  - component: {fileID: 1026859459}
+  - component: {fileID: 1026859460}
   m_Layer: 0
   m_Name: UpperLeg_R
   m_TagString: Untagged
@@ -3188,7 +3384,7 @@ Transform:
   m_Father: {fileID: 413862}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1801582630
+--- !u!54 &1026859458
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3204,14 +3400,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &1801582631
+--- !u!144 &1026859459
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173072}
-  m_ConnectedBody: {fileID: 1934890222}
+  m_ConnectedBody: {fileID: 927937947}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
@@ -3249,7 +3445,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!136 &1801582632
+--- !u!136 &1026859460
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3909,9 +4105,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 472004}
-  - component: {fileID: 1768856561}
-  - component: {fileID: 1768856560}
-  - component: {fileID: 1768856562}
+  - component: {fileID: 16148839}
+  - component: {fileID: 16148838}
+  - component: {fileID: 16148840}
   m_Layer: 0
   m_Name: LowerLeg_R
   m_TagString: Untagged
@@ -3934,7 +4130,7 @@ Transform:
   m_Father: {fileID: 455676}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1768856561
+--- !u!54 &16148839
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3950,14 +4146,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &1768856560
+--- !u!144 &16148838
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187466}
-  m_ConnectedBody: {fileID: 1801582630}
+  m_ConnectedBody: {fileID: 1026859458}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
@@ -3995,7 +4191,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!136 &1768856562
+--- !u!136 &16148840
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4048,9 +4244,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 419134}
-  - component: {fileID: 34445088}
-  - component: {fileID: 34445089}
-  - component: {fileID: 34445090}
+  - component: {fileID: 258070023}
+  - component: {fileID: 258070024}
+  - component: {fileID: 258070025}
   m_Layer: 0
   m_Name: Shoulder_L
   m_TagString: Untagged
@@ -4073,7 +4269,7 @@ Transform:
   m_Father: {fileID: 470526}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &34445088
+--- !u!54 &258070023
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4089,14 +4285,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &34445089
+--- !u!144 &258070024
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 189396}
-  m_ConnectedBody: {fileID: 733686127}
+  m_ConnectedBody: {fileID: 1697466193}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
@@ -4134,7 +4330,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!136 &34445090
+--- !u!136 &258070025
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4286,9 +4482,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 415014}
-  - component: {fileID: 845303099}
-  - component: {fileID: 845303098}
-  - component: {fileID: 845303100}
+  - component: {fileID: 984776492}
+  - component: {fileID: 984776491}
+  - component: {fileID: 984776493}
   m_Layer: 0
   m_Name: Elbow_R
   m_TagString: Untagged
@@ -4311,7 +4507,7 @@ Transform:
   m_Father: {fileID: 467350}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &845303099
+--- !u!54 &984776492
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4327,14 +4523,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &845303098
+--- !u!144 &984776491
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192854}
-  m_ConnectedBody: {fileID: 1742009839}
+  m_ConnectedBody: {fileID: 1948325797}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
@@ -4372,7 +4568,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!136 &845303100
+--- !u!136 &984776493
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4382,10 +4578,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.12655213
-  m_Height: 0.63276064
+  m_Radius: 0.14237992
+  m_Height: 0.7118996
   m_Direction: 0
-  m_Center: {x: 0.31638032, y: 0, z: 0}
+  m_Center: {x: 0.3559498, y: 0, z: 0}
 --- !u!1 &194440
 GameObject:
   m_ObjectHideFlags: 0
@@ -4524,9 +4720,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 499874}
-  - component: {fileID: 316953364}
-  - component: {fileID: 316953363}
-  - component: {fileID: 316953365}
+  - component: {fileID: 1264588765}
+  - component: {fileID: 1264588764}
+  - component: {fileID: 1264588766}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -4550,7 +4746,7 @@ Transform:
   m_Father: {fileID: 409624}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &316953364
+--- !u!54 &1264588765
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4566,14 +4762,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!144 &316953363
+--- !u!144 &1264588764
 CharacterJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194788}
-  m_ConnectedBody: {fileID: 733686127}
+  m_ConnectedBody: {fileID: 1697466193}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
@@ -4611,7 +4807,7 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!135 &316953365
+--- !u!135 &1264588766
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4622,8 +4818,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.12936871
-  m_Center: {x: -4.7390906e-16, y: 0.09549457, z: 0.033874158}
+  m_Radius: 0.15
+  m_Center: {x: 0, y: 0.09549455, z: 0}
 --- !u!1 &195738
 GameObject:
   m_ObjectHideFlags: 0
@@ -4854,8 +5050,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 413862}
-  - component: {fileID: 1934890222}
-  - component: {fileID: 1934890223}
+  - component: {fileID: 927937947}
+  - component: {fileID: 927937948}
   m_Layer: 0
   m_Name: Hips
   m_TagString: Untagged
@@ -4880,7 +5076,7 @@ Transform:
   m_Father: {fileID: 437764}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1934890222
+--- !u!54 &927937947
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4896,7 +5092,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &1934890223
+--- !u!65 &927937948
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4907,8 +5103,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.16457003, y: 0.27836928, z: 0.3819782}
-  m_Center: {x: 0.0012521743, y: -1.845837e-11, z: 0}
+  m_Size: {x: 0.15, y: 0.27836928, z: 0.3819782}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1403554839
 GameObject:
   m_ObjectHideFlags: 0

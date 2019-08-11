@@ -6,8 +6,6 @@ public class Bullet : MonoBehaviour
 {
     private float speed; // 탄알 이동 속력
     private Rigidbody bulletRigidbody; // 이동에 사용 할 리지드바디 컴포넌트
-
-    public RaycastHit ray_water_mark; // 물 흔적 레이케스트
     public GameObject pre_water_mark; // 물 흔적 prefabs
 
     public Material[] mat_water_mark = new Material[6]; // 물 흔적 material
@@ -27,12 +25,12 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, 3f);
     }
 
-    private void OnTriggerEnter(Collider other)
+
+    private void OnCollisionEnter(Collision collision)
     {
-        GameObject ob_water_mark1 = Instantiate(pre_water_mark, ray_water_mark.point , Quaternion.FromToRotation(Vector3.up, ray_water_mark.normal)); // 물 흔적 생성
+        GameObject ob_water_mark1 = Instantiate(pre_water_mark, collision.contacts[0].point, Quaternion.FromToRotation(Vector3.up, collision.contacts[0].normal)); // 물 흔적 생성
         ob_water_mark1.GetComponentInChildren<MeshRenderer>().material = mat_water_mark[Random.Range(0, mat_water_mark.Length)]; // 물 흔적 material 랜덤 생성
         Destroy(ob_water_mark1, 0.5f); // 0.5초뒤에 사라짐
         Destroy(gameObject); // 물론 총알도
     }
-
 }

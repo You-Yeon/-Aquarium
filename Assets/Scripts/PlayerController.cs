@@ -116,16 +116,16 @@ public class PlayerController : MonoBehaviour {
             playerAnimator.CrossFadeInFixedTime("Fire", 0.01f); // 발사 애니메이션
 
             RaycastHit hit;
+            Debug.DrawRay(RayPoint.position, RayPoint.transform.forward * range+ Random.onUnitSphere * accuracy , Color.blue, 0.3f); // 레이케스트 발사
             Physics.Raycast(RayPoint.position, RayPoint.transform.forward + Random.onUnitSphere * accuracy, out hit, range); // 레이케스트 발사
 
             GameObject bullet = Instantiate(bulletPrefab, shootPoint.transform.position, shootPoint.transform.rotation); // 총알 생성
-            Bullet bullet_script = bullet.GetComponent<Bullet>(); // Bullet 스크립트 접근
-            bullet_script.ray_water_mark = hit; // 레이저 좌표 전송
             bullet.transform.LookAt(hit.point);
 
             fireTimer = 0.0f; // 시간 리셋
 
             audioSource_fire.Play(); // 발사 소리
+            Debug.Log("ray : " + hit.point);
         }
     }
 
