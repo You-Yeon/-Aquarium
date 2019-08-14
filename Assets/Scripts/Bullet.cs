@@ -13,7 +13,8 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        speed = 10f; // 속도 10
+        speed = 20f; // 속도 20
+
 
         // 게임 오브젝트에서 Rigidbody 컴포넌트를 찾아서 bulletRigidbody에 할당
         bulletRigidbody = GetComponent<Rigidbody>();
