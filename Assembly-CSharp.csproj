@@ -70,7 +70,6 @@
     <Compile Include="Assets\Scripts\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\SceneChange.cs" />
     <Compile Include="Assets\Scripts\UI_Controller.cs" />
-    <None Include="Assets\SimpleSky\ReadMe.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/최유연/Desktop/Unity/Aquarium/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

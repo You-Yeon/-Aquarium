@@ -61,7 +61,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0411578, y: -0.026920758, z: 0.098967105}
+  m_ConnectedAnchor: {x: 0.04115774, y: -0.02692075, z: 0.098967105}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -294,7 +294,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.39930925, y: -0.00000037252903, z: 0.000000044703484}
+  m_ConnectedAnchor: {x: 0.39930922, y: -0.00000037252903, z: 0.000000029802322}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -2558,7 +2558,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.10393268, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.10393274, y: 0.000000007450581, z: 0}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -3037,8 +3037,8 @@ GameObject:
   - component: {fileID: 9588390}
   - component: {fileID: 371818701}
   - component: {fileID: 371818705}
-  - component: {fileID: 1877108978}
   - component: {fileID: 1877108979}
+  - component: {fileID: 1877108978}
   m_Layer: 0
   m_Name: Character_Biker_01
   m_TagString: Untagged
@@ -3153,7 +3153,7 @@ MonoBehaviour:
   mouseAxisNameX: Mouse X
   mouseAxisNameY: Mouse Y
   mouse: {x: 0, y: 0, z: 0}
---- !u!82 &1877108978
+--- !u!82 &1877108979
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3163,16 +3163,16 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 78787452d7f1e664597415bf9ba35786, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d5f551e056358884081ce0f45b4c9cb9, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0.7
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -3249,7 +3249,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &1877108979
+--- !u!82 &1877108978
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3259,16 +3259,16 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d5f551e056358884081ce0f45b4c9cb9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 78787452d7f1e664597415bf9ba35786, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 0.7
+  DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -4291,7 +4291,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.4092079, y: 0.053295307, z: -0.19098923}
+  m_ConnectedAnchor: {x: -0.40920803, y: 0.053295337, z: -0.19098923}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: -1, z: 0}
   m_TwistLimitSpring:
@@ -4529,7 +4529,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.33947468, y: 0.0014475491, z: 0.001436267}
+  m_ConnectedAnchor: {x: 0.33947468, y: 0.0014476534, z: 0.0014362503}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -4768,7 +4768,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.5898724, y: 0.018647924, z: -1.3761269e-15}
+  m_ConnectedAnchor: {x: -0.58987254, y: 0.01864788, z: -1.3761272e-15}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: -1, z: 0}
   m_TwistLimitSpring:
