@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using Cinemachine;
+using UnityEngine.UI;
 
 // 플레이어 캐릭터를 사용자 입력에 따라 움직이는 스크립트
 public class PlayerController : MonoBehaviour {
-    public float moveSpeed; // 앞뒤 움직임의 속도
-    public float mouseSpeed; // 마우스 속도
 
-    public float fireRate; // 발사 딜레이
-    public float fireTimer; // 타이머
+    private float moveSpeed; // 앞뒤 움직임의 속도
+    private float mouseSpeed; // 마우스 속도
 
-    public float accuracy; // 산탄 거리
+    private float fireRate; // 발사 딜레이
+    private float fireTimer; // 타이머
+
+    private float accuracy; // 산탄 거리
 
     public CinemachineVirtualCamera vcam; // 추적 카메라
 
@@ -19,6 +21,10 @@ public class PlayerController : MonoBehaviour {
     private PlayerInput playerInput; // 플레이어 입력을 알려주는 컴포넌트
     private Rigidbody playerRigidbody; // 플레이어 캐릭터의 리지드바디
     private Animator playerAnimator; // 플레이어 캐릭터의 애니메이터
+
+    private int bulletsPerMag; // 탄창 속 총알 수
+    private int bulletsTotal; // 총 총알 수
+    private int currentBullets; // 현재 탄창의 총알 수
 
     public Transform RayPoint; // 레이캐스트 시작 지점
     public float range; // 레이캐스트 범위
@@ -33,6 +39,10 @@ public class PlayerController : MonoBehaviour {
         playerRigidbody = GetComponent<Rigidbody>();
         playerAnimator = GetComponent<Animator>();
 
+        bulletsPerMag = 25; // 한 탄창의 수 
+        bulletsTotal = 125; // 전체 - 한 탄창
+        currentBullets = bulletsPerMag; // 현재 총알 수
+
         moveSpeed = 5f; // 앞뒤 움직임의 속도
         mouseSpeed = 2.0f; // 마우스 속도
 
@@ -42,6 +52,8 @@ public class PlayerController : MonoBehaviour {
         accuracy = 0f; // 초기 값은 0
 
         vcam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.y = 1.9f; // 초기 화면 y값
+
+        UI_Controller.ui_instance.bulletsText.text = currentBullets + " / " + bulletsTotal; // UI 총알 개수 반영
     }
 
     // FixedUpdate는 물리 갱신 주기에 맞춰 실행됨
@@ -79,17 +91,17 @@ public class PlayerController : MonoBehaviour {
         // 리지드바디를 이용해 게임 오브젝트 위치 변경
         playerRigidbody.MovePosition(playerRigidbody.position + moveDistance);
 
-        if (!audioSource_walk.isPlaying)
+        if (!audioSource_walk.isPlaying) // 걷는 사운드가 나오지 않으면
         {
-            if (playerInput.move != 0 || playerInput.rotate != 0 )
+            if (playerInput.move != 0 || playerInput.rotate != 0 ) // 걷고 있다면
             {
-                audioSource_walk.Play();
+                audioSource_walk.Play(); // 사운드 플레이
             }
         }
 
-        if (playerInput.move == 0 && playerInput.rotate == 0)
+        if (playerInput.move == 0 && playerInput.rotate == 0) // 움직이지않으면
         {
-            audioSource_walk.Stop();
+            audioSource_walk.Stop(); // 사운드 스탑
         }
 
     }
@@ -97,6 +109,11 @@ public class PlayerController : MonoBehaviour {
     private void Fire()
     {
         if (fireTimer < fireRate) //마지막 발사 시간 간격이 fireRate보다 작으면 return
+        {
+            return;
+        }
+
+        if (currentBullets == 0) // 총알이 없으면 return
         {
             return;
         }
@@ -125,6 +142,10 @@ public class PlayerController : MonoBehaviour {
             fireTimer = 0.0f; // 시간 리셋
 
             audioSource_fire.Play(); // 발사 소리
+
+            currentBullets--; // 총알 초기화
+            UI_Controller.ui_instance.bulletsText.text = currentBullets + " / " + bulletsTotal; // UI 총알 개수 반영
+
             Debug.Log("ray : " + hit.point);
         }
     }

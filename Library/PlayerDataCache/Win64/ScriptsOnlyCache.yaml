@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - GameManager
     - PlayerController
     - PlayerInput
+    - SceneChange
     - UI_Controller
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
@@ -23,10 +24,123 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Outline
+    - UnityEngine.UI.Shadow
+    - UnityEngine.UI.Text
   sceneClasses:
+    Assets/Scenes/Intro.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 92
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9530}
+    - Class: 114
+      Script: {instanceID: 9532}
+    - Class: 114
+      Script: {instanceID: 9538}
+    - Class: 114
+      Script: {instanceID: 9544}
+    - Class: 114
+      Script: {instanceID: 9552}
+    - Class: 114
+      Script: {instanceID: 9564}
+    - Class: 114
+      Script: {instanceID: 9584}
+    - Class: 114
+      Script: {instanceID: 9588}
+    - Class: 114
+      Script: {instanceID: 9590}
+    - Class: 114
+      Script: {instanceID: 10004}
+    - Class: 114
+      Script: {instanceID: 10212}
+    - Class: 114
+      Script: {instanceID: 10510}
+    - Class: 114
+      Script: {instanceID: 10520}
+    - Class: 114
+      Script: {instanceID: 10956}
+    - Class: 114
+      Script: {instanceID: 10988}
+    - Class: 114
+      Script: {instanceID: 500730}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 124
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
+      Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 144
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
     Assets/Scenes/Main.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -73,36 +187,40 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9530}
+      Script: {instanceID: 9532}
     - Class: 114
-      Script: {instanceID: 9536}
+      Script: {instanceID: 9538}
     - Class: 114
-      Script: {instanceID: 9542}
+      Script: {instanceID: 9544}
     - Class: 114
-      Script: {instanceID: 9550}
+      Script: {instanceID: 9552}
     - Class: 114
-      Script: {instanceID: 9586}
+      Script: {instanceID: 9588}
     - Class: 114
-      Script: {instanceID: 9800}
+      Script: {instanceID: 9590}
     - Class: 114
-      Script: {instanceID: 10002}
+      Script: {instanceID: 9802}
     - Class: 114
-      Script: {instanceID: 10126}
+      Script: {instanceID: 10004}
     - Class: 114
-      Script: {instanceID: 10210}
+      Script: {instanceID: 10128}
     - Class: 114
-      Script: {instanceID: 10340}
+      Script: {instanceID: 10212}
     - Class: 114
-      Script: {instanceID: 10508}
+      Script: {instanceID: 10342}
     - Class: 114
-      Script: {instanceID: 10518}
+      Script: {instanceID: 10510}
     - Class: 114
-      Script: {instanceID: 10952}
+      Script: {instanceID: 10520}
     - Class: 114
-      Script: {instanceID: 10982}
+      Script: {instanceID: 10956}
     - Class: 114
-      Script: {instanceID: 10984}
+      Script: {instanceID: 10986}
+    - Class: 114
+      Script: {instanceID: 10988}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 135
       Script: {instanceID: 0}
@@ -1043,6 +1161,12 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: bottle
+  - hash:
+      serializedVersion: 2
       Hash: d791aa6007fa3640be1164ea75bb087d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1073,7 +1197,7 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
-      Hash: 8f0c3e9c6c0386528fb0e6b275705409
+      Hash: e4cd1de828edd9d92a2fd8661f0f77c8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -1091,7 +1215,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
-      Hash: d1d2899a0f6326c739f6c3868562c1a6
+      Hash: 39911d8d2c0bde8b471a5a92264ac412
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UI_Controller
@@ -1131,7 +1255,14 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SceneChange
   platform: 19
   scenePathNames:
+  - Assets/Scenes/Intro.unity
   - Assets/Scenes/Main.unity
   playerPath: "C:/Users/\uCD5C\uC720\uC5F0/Desktop/Aquarium_build/Aquarium.exe"

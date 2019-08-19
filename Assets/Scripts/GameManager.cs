@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance; // 싱글턴을 할당할 전역 변수
+    public static GameManager gm_instance; // 싱글턴을 할당할 전역 변수
 
     private void Awake() // 싱글턴 구성
     {
-        if (instance == null)
+        if (gm_instance == null)
         {
-            instance = this; // null이라면 자기자신을 할당
+            gm_instance = this; // null이라면 자기자신을 할당
         }
         else
         {

@@ -3127,11 +3127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86fec59e04fd22a49b22887dae895d16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  mouseSpeed: 1
-  fireRate: 0
-  fireTimer: 0
-  accuracy: 0
   vcam: {fileID: 0}
   bulletPrefab: {fileID: 6028002982283208695, guid: ada2224b85e294849b6f97c56604fee5,
     type: 3}
