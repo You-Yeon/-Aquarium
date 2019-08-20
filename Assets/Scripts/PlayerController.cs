@@ -32,12 +32,16 @@ public class PlayerController : MonoBehaviour {
     public AudioSource audioSource_walk; // 걷는 소리
     public AudioSource audioSource_fire; // 발사 소리
 
+    private Animator anim; // 애니메이터 
+    private bool isReloading = false; // 장전 애니메이션 진행 여부
+    public AudioClip reloadSound; // 장전 사운드
 
     private void Start() {
         // 사용할 컴포넌트들의 참조를 가져오기
         playerInput = GetComponent<PlayerInput>();
         playerRigidbody = GetComponent<Rigidbody>();
         playerAnimator = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
 
         bulletsPerMag = 25; // 한 탄창의 수 
         bulletsTotal = 125; // 전체 - 한 탄창
@@ -53,26 +57,38 @@ public class PlayerController : MonoBehaviour {
 
         vcam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.y = 1.9f; // 초기 화면 y값
 
-        UI_Controller.ui_instance.bulletsText.text = currentBullets + " / " + bulletsTotal; // UI 총알 개수 반영
+        UI_Controller.ui_instance.bulletsText.text = currentBullets + " / " + bulletsTotal; // UI 총알 개수 반영11
     }
 
     // FixedUpdate는 물리 갱신 주기에 맞춰 실행됨
     private void FixedUpdate() {
 
+        AnimatorStateInfo info = anim.GetCurrentAnimatorStateInfo(1); // 상의 애니메이션부분인 1번 레이어를 가져온다.
+        isReloading = info.IsName("Reload"); // 장전 중인지 아닌지 판별
+
         // 움직임 실행
         Move();
 
-        // 발사
-        Fire();
-
         // 마우스 회전
         Mouse();
+
+        if (playerInput.fire) // 발사 버튼을 눌렀을 때.
+        {
+            // 발사
+            Fire();
+        }
+
+        if (playerInput.reload) // 장전 버튼을 눌렀을 때
+        {
+            // 장전
+            DoReload();
+        }
 
         // 입력 값에 따라 애니메이터의 Move 파라미터 값 변경
         playerAnimator.SetFloat("Vertical", playerInput.move);
         playerAnimator.SetFloat("Horizontal", playerInput.rotate); 
 
-        if (fireTimer < fireRate)
+        if (fireTimer < fireRate) // 발사 시간 간격 갱신
         {
             fireTimer += Time.deltaTime;
         }
@@ -118,39 +134,59 @@ public class PlayerController : MonoBehaviour {
             return;
         }
 
-        if (playerInput.fire) // 발사 버튼.
+
+        if (playerInput.move == 0 && playerInput.rotate == 0) // 산탄 효과 비활성
         {
-            if (playerInput.move == 0 && playerInput.rotate == 0) // 산탄 효과 비활성
-            {
-                accuracy = 0f;
-            }
-            else // 산탄 효과 활성
-            {
-                accuracy = 0.02f;
-            }
+            accuracy = 0f;
+        }
+        else // 산탄 효과 활성
+        {
+            accuracy = 0.02f;
+        }
 
 
-            playerAnimator.CrossFadeInFixedTime("Fire", 0.01f); // 발사 애니메이션
+        playerAnimator.CrossFadeInFixedTime("Fire", 0.01f); // 발사 애니메이션
 
-            RaycastHit hit;
-            Debug.DrawRay(RayPoint.position, RayPoint.transform.forward * range+ Random.onUnitSphere * accuracy , Color.blue, 0.3f); // 레이케스트 발사
-            Physics.Raycast(RayPoint.position, RayPoint.transform.forward + Random.onUnitSphere * accuracy, out hit, range); // 레이케스트 발사
+        RaycastHit hit;
+        Debug.DrawRay(RayPoint.position, RayPoint.transform.forward * range + Random.onUnitSphere * accuracy, Color.blue, 0.3f); // 레이케스트 발사
+        Physics.Raycast(RayPoint.position, RayPoint.transform.forward + Random.onUnitSphere * accuracy, out hit, range); // 레이케스트 발사
 
-            GameObject bullet = Instantiate(bulletPrefab, shootPoint.transform.position, shootPoint.transform.rotation); // 총알 생성
-            bullet.transform.LookAt(hit.point);
+        GameObject bullet = Instantiate(bulletPrefab, shootPoint.transform.position, shootPoint.transform.rotation); // 총알 생성
+        bullet.transform.LookAt(hit.point);
 
-            fireTimer = 0.0f; // 시간 리셋
+        fireTimer = 0.0f; // 시간 리셋
 
-            audioSource_fire.Play(); // 발사 소리
+        audioSource_fire.Play(); // 발사 소리
 
-            currentBullets--; // 총알 초기화
-            UI_Controller.ui_instance.bulletsText.text = currentBullets + " / " + bulletsTotal; // UI 총알 개수 반영
+        currentBullets--; // 총알 초기화
+        UI_Controller.ui_instance.bulletsText.text = currentBullets + " / " + bulletsTotal; // UI 총알 개수 반영
 
-            Debug.Log("ray : " + hit.point);
+        Debug.Log("ray : " + hit.point);
+    }
+
+    private void DoReload() // 장전 시작
+    {
+        if (!isReloading && currentBullets < bulletsPerMag && bulletsTotal > 0)
+        {
+            anim.CrossFadeInFixedTime("Reload", 0.01f); // 장전 애니메이션
+            audioSource_fire.PlayOneShot(reloadSound); // 장전 사운드
         }
     }
 
-    private void Mouse()
+    public void Reload() // 탄약 최종 반영
+    {
+        int bulletsToReload = bulletsPerMag - currentBullets; // 장전될 탄약의 수
+        if (bulletsToReload > bulletsTotal) // 전체 탄약보다 클 경우
+        {
+            bulletsToReload = bulletsTotal; // 전체 값과 동일하게
+        }
+        currentBullets += bulletsToReload; // 현재에 더하고
+        bulletsTotal -= bulletsToReload; // 전체는 지우고
+        UI_Controller.ui_instance.bulletsText.text = currentBullets + " / " + bulletsTotal; // UI에 반영
+
+    }
+
+private void Mouse()
     {
         playerRigidbody.rotation = playerRigidbody.rotation * Quaternion.Euler(Vector3.up * mouseSpeed * playerInput.mouseX); // X
 

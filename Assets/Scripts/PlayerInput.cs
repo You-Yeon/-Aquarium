@@ -13,9 +13,9 @@ public class PlayerInput : MonoBehaviour
     public float move { get; private set; } // 감지된 움직임 입력값
     public float rotate { get; private set; } // 감지된 회전 입력값
     public bool fire { get; private set; } // 감지된 발사 입력값
+    public bool reload { get; private set; } // 감지된 장전 입력값
     public float mouseX { get; private set; } // 감지된 마우스 입력값
     public float mouseY { get; private set; } // 감지된 마우스 입력값
-    public Vector3 mouse;
 
     // 매프레임 사용자 입력을 감지
     private void Update()
@@ -27,11 +27,11 @@ public class PlayerInput : MonoBehaviour
         rotate = Input.GetAxis(rotateAxisName);
         // fire에 관한 입력 감지
         fire = Input.GetButton(fireButtonName);
+        // reload에 관한 입력 감지
+        reload = Input.GetKeyDown(KeyCode.R);
         // mouseX에 관한 입력 감지
         mouseX = Input.GetAxis(mouseAxisNameX);
         // mouseY에 관한 입력 감지
         mouseY = Input.GetAxis(mouseAxisNameY);
-
-        mouse = Input.mousePosition;
     }
 }
