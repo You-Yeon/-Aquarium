@@ -29,6 +29,14 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.gameObject.tag);
+
+        if (collision.gameObject.tag == "Wall") // 접근 제한 범위일 경우에
+        {
+            Destroy(gameObject); // 총알 삭제
+            return; 
+        }
+
         GameObject ob_water_mark1 = Instantiate(pre_water_mark, collision.contacts[0].point, Quaternion.FromToRotation(Vector3.up, collision.contacts[0].normal)); // 물 흔적 생성
         ob_water_mark1.GetComponentInChildren<MeshRenderer>().material = mat_water_mark[Random.Range(0, mat_water_mark.Length)]; // 물 흔적 material 랜덤 생성
         Destroy(ob_water_mark1, 0.5f); // 0.5초뒤에 사라짐

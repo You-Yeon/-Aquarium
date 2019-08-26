@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
+  - component: {fileID: 4873461733890725767}
+  - component: {fileID: 4502234112121865608}
   m_Layer: 0
   m_Name: road_crossing_mesh
   m_TagString: Untagged
@@ -77,3 +79,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4873461733890725767
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.99999, y: 0.020532787, z: 7.110902}
+  m_Center: {x: -2.499995, y: -0.1845294, z: -6.444549}
+--- !u!65 &4502234112121865608
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.99999, y: 0.020532787, z: 7.110902}
+  m_Center: {x: -2.499995, y: -0.1845294, z: -6.444549}

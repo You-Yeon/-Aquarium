@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
+  - component: {fileID: 7250223799573628546}
+  - component: {fileID: 28024340658818431}
+  - component: {fileID: 9073033966003464072}
+  - component: {fileID: 4921223922581156100}
   m_Layer: 0
   m_Name: road_cornerLines_mesh
   m_TagString: Untagged
@@ -77,3 +81,55 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7250223799573628546
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8717995, y: 0.19479579, z: 20}
+  m_Center: {x: -18.564081, y: -0.09739789, z: -10}
+--- !u!65 &28024340658818431
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 17.098707, y: 0.19479579, z: 2.8761063}
+  m_Center: {x: -8.54935, y: -0.09739789, z: -18.561947}
+--- !u!65 &9073033966003464072
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8522172, y: 0.19479579, z: 2.8714247}
+  m_Center: {x: -1.4261048, y: -0.09739789, z: -1.4357123}
+--- !u!65 &4921223922581156100
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.99998, y: 0.020532787, z: 20}
+  m_Center: {x: -9.999989, y: -0.1845294, z: -10}

@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
+  - component: {fileID: 8470523097126437054}
+  - component: {fileID: 2164199088276524563}
+  - component: {fileID: 3622740180419993754}
+  - component: {fileID: 1812586279683494964}
   m_Layer: 0
   m_Name: road_t_mesh
   m_TagString: Untagged
@@ -77,3 +81,55 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &8470523097126437054
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.999954, y: 0.19479585, z: 2.8404088}
+  m_Center: {x: 0.000022888184, y: -0.09739792, z: -1.4202044}
+--- !u!65 &2164199088276524563
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8610663, y: 0.19479585, z: 2.856697}
+  m_Center: {x: -8.569421, y: -0.09739792, z: -18.571651}
+--- !u!65 &3622740180419993754
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8583317, y: 0.19479585, z: 2.8860493}
+  m_Center: {x: 8.570834, y: -0.09739792, z: -18.556976}
+--- !u!65 &1812586279683494964
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.999954, y: 0.19479585, z: 20}
+  m_Center: {x: 0.000022888184, y: -0.09739792, z: -10}

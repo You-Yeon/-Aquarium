@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
+  - component: {fileID: 7469489971989408594}
+  - component: {fileID: 806314494559712132}
   m_Layer: 0
   m_Name: road_straight_mesh
   m_TagString: Untagged
@@ -77,3 +79,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7469489971989408594
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.99999, y: 0.19479579, z: 2.8848302}
+  m_Center: {x: -2.499995, y: -0.09739789, z: -1.4424151}
+--- !u!65 &806314494559712132
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.99999, y: 0.020532787, z: 7.110902}
+  m_Center: {x: -2.499995, y: -0.1845294, z: -6.444549}
