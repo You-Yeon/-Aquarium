@@ -134,7 +134,6 @@ public class PlayerController : MonoBehaviour {
             return;
         }
 
-
         if (playerInput.move == 0 && playerInput.rotate == 0) // 산탄 효과 비활성
         {
             accuracy = 0f;

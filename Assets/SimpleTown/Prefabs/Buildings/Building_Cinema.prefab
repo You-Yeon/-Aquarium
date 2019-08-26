@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
+  - component: {fileID: 306795282741060910}
+  - component: {fileID: 1805629634542194921}
+  - component: {fileID: 3166722293716002659}
+  - component: {fileID: 7547699435506494814}
   m_Layer: 0
   m_Name: Building_Cinema
   m_TagString: Untagged
@@ -77,3 +81,55 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &306795282741060910
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 31.341118, y: 15.541443, z: 22.0608}
+  m_Center: {x: 0.0000038146973, y: 7.7707214, z: 2.3458223}
+--- !u!65 &1805629634542194921
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 31.341118, y: 1.2416973, z: 24.327068}
+  m_Center: {x: 0.0000038146973, y: 4.9225817, z: 1.2126884}
+--- !u!65 &3166722293716002659
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.4530983, y: 5.2036896, z: 2.6387196}
+  m_Center: {x: -0.04730034, y: 2.6018448, z: -9.1937475}
+--- !u!65 &7547699435506494814
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.631222, y: 1.857645, z: 8.379032}
+  m_Center: {x: -0.41358757, y: 4.405753, z: -9.186707}

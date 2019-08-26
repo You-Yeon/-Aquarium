@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
+  - component: {fileID: 7346075029533174633}
+  - component: {fileID: 7634261392654080966}
+  - component: {fileID: 5987328840710662565}
   m_Layer: 0
   m_Name: Prop_Roadsign_03
   m_TagString: Untagged
@@ -77,3 +80,42 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7346075029533174633
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.110533, y: 2.3354416, z: 0.14904779}
+  m_Center: {x: -4.3344965, y: 8.221001, z: -0.13501564}
+--- !u!65 &7634261392654080966
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0692482, y: 9.391394, z: 1.1097565}
+  m_Center: {x: -0.008134842, y: 4.6930246, z: -0.0052375793}
+--- !u!65 &5987328840710662565
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.315025, y: 1.0635376, z: 0.27587888}
+  m_Center: {x: -3.8342304, y: 8.336388, z: -0.02905871}
