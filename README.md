@@ -26,4 +26,6 @@ Aquarium
   + 애니메이션 ( 이동, 발사, 장전 )
   + 인 게임 UI
   
-  
+  *( 이미지를 클릭하면 유튜브로 넘어갑니다. )*
+      [![Aquarium_capture](https://user-images.githubusercontent.com/44610250/69265392-85abef80-0c0c-11ea-872c-47bd4f472d05.png)
+](https://www.youtube.com/watch?v=HaYR8O0xRYg&feature=youtu.be)
