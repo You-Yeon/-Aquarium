@@ -11,6 +11,7 @@ ScriptsOnlyBuild:
     - SceneChange
     - UI_Button
     - UI_Controller
+    - UnityEngine.UI.Extensions.UIParticleSystem
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
     - Cinemachine.CinemachineComposer
@@ -121,6 +122,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 10966}
     - Class: 114
       Script: {instanceID: 10998}
+    - Class: 114
+      Script: {instanceID: 20724}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -1043,7 +1046,7 @@ ScriptsOnlyBuild:
     className: CinemachineMixingCamera
   - hash:
       serializedVersion: 2
-      Hash: fd5d448b1d5f79b4e754708bed4462f9
+      Hash: 1a4125dc30fe33038eb8193b419d8432
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UI_Button
@@ -1299,6 +1302,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 2b9519fa1c50da39a243588090f749ba
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UnityEngine.UI.Extensions
+    className: UIParticleSystem
   platform: 19
   scenePathNames:
   - Assets/Scenes/Intro.unity
