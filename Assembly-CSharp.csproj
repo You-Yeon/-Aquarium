@@ -55,10 +55,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\PIDL\S2C2S_common.cs" />
+     <Compile Include="Assets\PIDL\S2C2S_proxy.cs" />
+     <Compile Include="Assets\PIDL\S2C2S_stub.cs" />
      <Compile Include="Assets\Scripts\bottle.cs" />
      <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\CloudSpawner.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\InitNetManager.cs" />
      <Compile Include="Assets\Scripts\MoveLock.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerInput.cs" />
@@ -68,15 +72,33 @@
      <Compile Include="Assets\Scripts\UI_Character.cs" />
      <Compile Include="Assets\Scripts\UI_Controller.cs" />
      <Compile Include="Assets\unity-ui-extensions\Scripts\Effects\UIParticleSystem.cs" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\unity-ui-extensions\Shaders\UI Particle AddSmooth.shader" />
      <None Include="Assets\unity-ui-extensions\Shaders\UI Particle Premultiply Blend.shader" />
      <None Include="Assets\unity-ui-extensions\Shaders\UISoftAdditive.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
      <None Include="Assets\unity-ui-extensions\Shaders\UI Particle Add.shader" />
      <None Include="Assets\unity-ui-extensions\Shaders\UI Particle Multiply.shader" />
      <None Include="Assets\unity-ui-extensions\Shaders\UI Particle Alpha Blend.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\unity-ui-extensions\Shaders\UI Particle VertexLit Blended.shader" />
      <None Include="Assets\unity-ui-extensions\Shaders\UI Particle AddMultiply.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\unity-ui-extensions\Shaders\UI Particle Blend.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\unity-ui-extensions\Shaders\UI Particle MultiplyDouble.shader" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/최유연/Desktop/Unity/Aquarium/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
@@ -290,6 +312,9 @@
  </Reference>
  <Reference Include="nunit.framework">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="ProudDotNetClientUnity">
+ <HintPath>C:/Users/최유연/Desktop/Unity/Aquarium/Assets/Plugins/ProudDotNetClientUnity.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
  <HintPath>C:/Users/최유연/Desktop/Unity/Aquarium/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
@@ -645,6 +670,12 @@
  <Reference Include="System.Xml.Serialization">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{50A31DA1-643B-325F-4B11-4336F1B0B89B}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

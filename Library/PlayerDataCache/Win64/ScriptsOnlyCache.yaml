@@ -4,12 +4,14 @@ ScriptsOnlyBuild:
     - Bullet
     - CloudSpawner
     - GameManager
+    - InitNetManager
     - MoveLock
     - PlayerController
     - PlayerInput
     - Reload_State
     - SceneChange
     - UI_Button
+    - UI_Character
     - UI_Controller
     - UnityEngine.UI.Extensions.UIParticleSystem
     Cinemachine.dll:
@@ -18,6 +20,11 @@ ScriptsOnlyBuild:
     - Cinemachine.CinemachinePipeline
     - Cinemachine.CinemachineTransposer
     - Cinemachine.CinemachineVirtualCamera
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -33,6 +40,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.InputField
     - UnityEngine.UI.Outline
     - UnityEngine.UI.Shadow
     - UnityEngine.UI.Text
@@ -55,6 +63,8 @@ ScriptsOnlyBuild:
     - Class: 43
       Script: {instanceID: 0}
     - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
@@ -84,46 +94,62 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
+    - Class: 109
+      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9530}
+      Script: {instanceID: 9620}
     - Class: 114
-      Script: {instanceID: 9532}
+      Script: {instanceID: 9622}
     - Class: 114
-      Script: {instanceID: 9538}
+      Script: {instanceID: 9628}
     - Class: 114
-      Script: {instanceID: 9544}
+      Script: {instanceID: 9634}
     - Class: 114
-      Script: {instanceID: 9552}
+      Script: {instanceID: 9642}
     - Class: 114
-      Script: {instanceID: 9564}
+      Script: {instanceID: 9644}
     - Class: 114
-      Script: {instanceID: 9584}
+      Script: {instanceID: 9654}
     - Class: 114
-      Script: {instanceID: 9588}
+      Script: {instanceID: 9674}
     - Class: 114
-      Script: {instanceID: 9590}
+      Script: {instanceID: 9678}
     - Class: 114
-      Script: {instanceID: 9810}
+      Script: {instanceID: 9680}
     - Class: 114
-      Script: {instanceID: 10006}
+      Script: {instanceID: 9902}
     - Class: 114
-      Script: {instanceID: 10214}
+      Script: {instanceID: 10082}
     - Class: 114
-      Script: {instanceID: 10276}
+      Script: {instanceID: 10106}
     - Class: 114
-      Script: {instanceID: 10430}
+      Script: {instanceID: 10326}
     - Class: 114
-      Script: {instanceID: 10516}
+      Script: {instanceID: 10386}
     - Class: 114
-      Script: {instanceID: 10526}
+      Script: {instanceID: 10398}
     - Class: 114
-      Script: {instanceID: 10768}
+      Script: {instanceID: 10510}
     - Class: 114
-      Script: {instanceID: 10966}
+      Script: {instanceID: 10558}
     - Class: 114
-      Script: {instanceID: 10998}
+      Script: {instanceID: 10566}
     - Class: 114
-      Script: {instanceID: 20724}
+      Script: {instanceID: 10578}
+    - Class: 114
+      Script: {instanceID: 10646}
+    - Class: 114
+      Script: {instanceID: 10656}
+    - Class: 114
+      Script: {instanceID: 10906}
+    - Class: 114
+      Script: {instanceID: 11014}
+    - Class: 114
+      Script: {instanceID: 11110}
+    - Class: 114
+      Script: {instanceID: 11146}
+    - Class: 114
+      Script: {instanceID: 239178}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -200,43 +226,43 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9532}
+      Script: {instanceID: 9622}
     - Class: 114
-      Script: {instanceID: 9538}
+      Script: {instanceID: 9628}
     - Class: 114
-      Script: {instanceID: 9544}
+      Script: {instanceID: 9634}
     - Class: 114
-      Script: {instanceID: 9552}
+      Script: {instanceID: 9642}
     - Class: 114
-      Script: {instanceID: 9588}
+      Script: {instanceID: 9678}
     - Class: 114
-      Script: {instanceID: 9590}
+      Script: {instanceID: 9680}
     - Class: 114
-      Script: {instanceID: 9802}
+      Script: {instanceID: 9894}
     - Class: 114
-      Script: {instanceID: 9810}
+      Script: {instanceID: 9902}
     - Class: 114
-      Script: {instanceID: 10006}
+      Script: {instanceID: 10106}
     - Class: 114
-      Script: {instanceID: 10130}
+      Script: {instanceID: 10238}
     - Class: 114
-      Script: {instanceID: 10214}
+      Script: {instanceID: 10326}
     - Class: 114
-      Script: {instanceID: 10346}
+      Script: {instanceID: 10472}
     - Class: 114
-      Script: {instanceID: 10516}
+      Script: {instanceID: 10646}
     - Class: 114
-      Script: {instanceID: 10526}
+      Script: {instanceID: 10656}
     - Class: 114
-      Script: {instanceID: 10612}
+      Script: {instanceID: 10750}
     - Class: 114
-      Script: {instanceID: 10768}
+      Script: {instanceID: 10906}
     - Class: 114
-      Script: {instanceID: 10966}
+      Script: {instanceID: 11110}
     - Class: 114
-      Script: {instanceID: 10996}
+      Script: {instanceID: 11144}
     - Class: 114
-      Script: {instanceID: 10998}
+      Script: {instanceID: 11146}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -992,7 +1018,13 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: fbd4ac67a741c101be0388bf88b513df
+      Hash: 2b9519fa1c50da39a243588090f749ba
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UnityEngine.UI.Extensions
+    className: UIParticleSystem
+  - hash:
+      serializedVersion: 2
+      Hash: 86d1a952d5d8094df65a525223daaa9c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SceneChange
@@ -1014,6 +1046,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineImpulseListener
+  - hash:
+      serializedVersion: 2
+      Hash: 1869e6164e7566cca592774dbe1fb485
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UI_Character
   - hash:
       serializedVersion: 2
       Hash: e6d75f1a9bc0c6f7085df0baa077e688
@@ -1046,7 +1084,7 @@ ScriptsOnlyBuild:
     className: CinemachineMixingCamera
   - hash:
       serializedVersion: 2
-      Hash: 1a4125dc30fe33038eb8193b419d8432
+      Hash: 771aa48caef71fd5dee6d34271d1f97f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UI_Button
@@ -1304,10 +1342,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 2b9519fa1c50da39a243588090f749ba
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
-    namespaceName: UnityEngine.UI.Extensions
-    className: UIParticleSystem
+    namespaceName: 
+    className: InitNetManager
   platform: 19
   scenePathNames:
   - Assets/Scenes/Intro.unity
