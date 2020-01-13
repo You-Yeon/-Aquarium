@@ -10,6 +10,7 @@ ScriptsOnlyBuild:
     - PlayerInput
     - Reload_State
     - SceneChange
+    - SetScreen
     - UI_Button
     - UI_Character
     - UI_Controller
@@ -97,59 +98,61 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9620}
-    - Class: 114
-      Script: {instanceID: 9622}
-    - Class: 114
-      Script: {instanceID: 9628}
-    - Class: 114
-      Script: {instanceID: 9634}
-    - Class: 114
       Script: {instanceID: 9642}
     - Class: 114
       Script: {instanceID: 9644}
     - Class: 114
-      Script: {instanceID: 9654}
+      Script: {instanceID: 9650}
     - Class: 114
-      Script: {instanceID: 9674}
+      Script: {instanceID: 9656}
     - Class: 114
-      Script: {instanceID: 9678}
+      Script: {instanceID: 9664}
     - Class: 114
-      Script: {instanceID: 9680}
+      Script: {instanceID: 9666}
     - Class: 114
-      Script: {instanceID: 9902}
+      Script: {instanceID: 9676}
     - Class: 114
-      Script: {instanceID: 10082}
+      Script: {instanceID: 9696}
     - Class: 114
-      Script: {instanceID: 10106}
+      Script: {instanceID: 9700}
     - Class: 114
-      Script: {instanceID: 10326}
+      Script: {instanceID: 9702}
     - Class: 114
-      Script: {instanceID: 10386}
+      Script: {instanceID: 9924}
     - Class: 114
-      Script: {instanceID: 10398}
+      Script: {instanceID: 10104}
     - Class: 114
-      Script: {instanceID: 10510}
+      Script: {instanceID: 10128}
     - Class: 114
-      Script: {instanceID: 10558}
+      Script: {instanceID: 10350}
     - Class: 114
-      Script: {instanceID: 10566}
+      Script: {instanceID: 10410}
     - Class: 114
-      Script: {instanceID: 10578}
+      Script: {instanceID: 10422}
     - Class: 114
-      Script: {instanceID: 10646}
+      Script: {instanceID: 10534}
     - Class: 114
-      Script: {instanceID: 10656}
+      Script: {instanceID: 10582}
     - Class: 114
-      Script: {instanceID: 10906}
+      Script: {instanceID: 10590}
     - Class: 114
-      Script: {instanceID: 11014}
+      Script: {instanceID: 10602}
     - Class: 114
-      Script: {instanceID: 11110}
+      Script: {instanceID: 10670}
     - Class: 114
-      Script: {instanceID: 11146}
+      Script: {instanceID: 10680}
     - Class: 114
-      Script: {instanceID: 239178}
+      Script: {instanceID: 10930}
+    - Class: 114
+      Script: {instanceID: 10946}
+    - Class: 114
+      Script: {instanceID: 11040}
+    - Class: 114
+      Script: {instanceID: 11136}
+    - Class: 114
+      Script: {instanceID: 11172}
+    - Class: 114
+      Script: {instanceID: 78928}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -226,43 +229,43 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9622}
+      Script: {instanceID: 9644}
     - Class: 114
-      Script: {instanceID: 9628}
+      Script: {instanceID: 9650}
     - Class: 114
-      Script: {instanceID: 9634}
+      Script: {instanceID: 9656}
     - Class: 114
-      Script: {instanceID: 9642}
+      Script: {instanceID: 9664}
     - Class: 114
-      Script: {instanceID: 9678}
+      Script: {instanceID: 9700}
     - Class: 114
-      Script: {instanceID: 9680}
+      Script: {instanceID: 9702}
     - Class: 114
-      Script: {instanceID: 9894}
+      Script: {instanceID: 9916}
     - Class: 114
-      Script: {instanceID: 9902}
+      Script: {instanceID: 9924}
     - Class: 114
-      Script: {instanceID: 10106}
+      Script: {instanceID: 10128}
     - Class: 114
-      Script: {instanceID: 10238}
+      Script: {instanceID: 10262}
     - Class: 114
-      Script: {instanceID: 10326}
+      Script: {instanceID: 10350}
     - Class: 114
-      Script: {instanceID: 10472}
+      Script: {instanceID: 10496}
     - Class: 114
-      Script: {instanceID: 10646}
+      Script: {instanceID: 10670}
     - Class: 114
-      Script: {instanceID: 10656}
+      Script: {instanceID: 10680}
     - Class: 114
-      Script: {instanceID: 10750}
+      Script: {instanceID: 10774}
     - Class: 114
-      Script: {instanceID: 10906}
+      Script: {instanceID: 10930}
     - Class: 114
-      Script: {instanceID: 11110}
+      Script: {instanceID: 11136}
     - Class: 114
-      Script: {instanceID: 11144}
+      Script: {instanceID: 11170}
     - Class: 114
-      Script: {instanceID: 11146}
+      Script: {instanceID: 11172}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1024,7 +1027,7 @@ ScriptsOnlyBuild:
     className: UIParticleSystem
   - hash:
       serializedVersion: 2
-      Hash: 86d1a952d5d8094df65a525223daaa9c
+      Hash: 8d2393532b5fbc9afb0791999784ab6d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SceneChange
@@ -1240,6 +1243,12 @@ ScriptsOnlyBuild:
     className: CloudSpawner
   - hash:
       serializedVersion: 2
+      Hash: 7bdca7a090aa8b1ed8a243a58c7febbd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: InitNetManager
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1345,7 +1354,7 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: InitNetManager
+    className: SetScreen
   platform: 19
   scenePathNames:
   - Assets/Scenes/Intro.unity

@@ -46,7 +46,12 @@ public class UI_Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
         // 아이디 비밀번호 전달 및 로그인 함수 호출
         GameObject.Find("NetManager").GetComponent<InitNetManager>().GetLogin(IDText.text, PWText.text); // 네트워크 매니저
+    }
 
+    public void OnCharacterDown(int character_num) // 캐릭터를 선택할 때
+    {
+        // 캐릭터 번호 전달 및 방 호출
+        GameObject.Find("NetManager").GetComponent<InitNetManager>().GetRoom(character_num); // 네트워크 매니저
     }
 }
 

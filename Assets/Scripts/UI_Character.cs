@@ -15,13 +15,13 @@ public class UI_Character : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         pointerSound.Play(); // 소리 실행
 
-        transform.localScale += new Vector3(0.2f, 0.2f, 0f);
+        transform.localScale += new Vector3(0.1f, 0.1f, 0f);
         theParticle.SetActive(true); // 파티클 실행
     }
 
     public void OnPointerExit(PointerEventData eventData) // 포인터가 나갈 때
     {
-        transform.localScale -= new Vector3(0.2f, 0.2f, 0f);
+        transform.localScale -= new Vector3(0.1f, 0.1f, 0f);
         theParticle.SetActive(false); // 파티클 끄기
     }
 
