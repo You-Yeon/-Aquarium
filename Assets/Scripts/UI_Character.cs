@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class UI_Character : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class UI_Character : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler
 {
     public GameObject theParticle; // 파티클 시스템
 
@@ -25,8 +25,11 @@ public class UI_Character : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         theParticle.SetActive(false); // 파티클 끄기
     }
 
-    public void OnMouseDown() // 마우스로 누를 때
+    public void OnPointerUp(PointerEventData eventData)  // 마우스로 누를 때
     {
         clickSound.Play(); // 소리 실행
+
+        transform.localScale -= new Vector3(0.1f, 0.1f, 0f);
+        theParticle.SetActive(false); // 파티클 끄기
     }
 }

@@ -42,6 +42,14 @@ public class SceneChange : MonoBehaviour
 
     public void GameRoomToIntro()
     {
+        // 플레이어의 UI들
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("User_UI");
+        for (int i = 0; i < objects.Length; i++)
+        {
+            Debug.Log("삭제");
+            Destroy(objects[i]);
+        }
+
         Intro_canvas.SetActive(true); // 인트로 캔버스 on
         GameRoom_canvas.SetActive(false);  // 게임 방 캔버스 off
     }

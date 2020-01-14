@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class UI_Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class UI_Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler
 {
 
-    public Text theText; // 텍스트
-    public GameObject theParticle; // 파티클 시스템
+    public Text theText; // 게임 시작 텍스트
+    public GameObject theParticle; // 게임 시작 파티클 시스템
 
     public AudioSource pointerSound; // 포인터 사운드
     public AudioSource clickSound; // 클릭 사운드
@@ -32,12 +32,17 @@ public class UI_Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         theParticle.SetActive(false); // 파티클 끄기
     }
 
-    public void OnMouseDown() // 마우스로 누를 때
+    public void OnPointerUp(PointerEventData eventData)  // 마우스로 누를 때
     {
         clickSound.Play(); // 소리 실행
 
         theText.color = Color.white; // 텍스트 색상 변경
         theParticle.SetActive(false); // 파티클 끄기
+    }
+
+    public void OnExitDown() // 캐릭터 선택 방 나갈 때
+    {
+        clickSound.Play(); // 소리 실행
     }
 
     public void OnLoginDown() // 로그인 버튼을 누를 때 
@@ -52,6 +57,14 @@ public class UI_Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         // 캐릭터 번호 전달 및 방 호출
         GameObject.Find("NetManager").GetComponent<InitNetManager>().GetRoom(character_num); // 네트워크 매니저
+    }
+
+    public void OnLeaveDown() // 게임 방을 떠날 때
+    {
+        clickSound.Play(); // 소리 실행
+
+        // 게임 방을 떠날 때
+        GameObject.Find("NetManager").GetComponent<InitNetManager>().LeaveRoom(); // 네트워크 매니저
     }
 }
 

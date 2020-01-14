@@ -117,6 +117,30 @@ Nettention.Proud.Marshaler.Write(__msg, character_num);
 	return RmiSend(remotes,rmiContext,__msg,
 		RmiName_JoinGameRoom, Common.JoinGameRoom);
 }
+public bool LeaveGameRoom(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+		__msg.SimplePacketMode = core.IsSimplePacketMode();
+		Nettention.Proud.RmiID __msgid= Common.LeaveGameRoom;
+		__msg.Write(__msgid);
+		
+	Nettention.Proud.HostID[] __list = new Nettention.Proud.HostID[1];
+	__list[0] = remote;
+		
+	return RmiSend(__list,rmiContext,__msg,
+		RmiName_LeaveGameRoom, Common.LeaveGameRoom);
+}
+
+public bool LeaveGameRoom(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+__msg.SimplePacketMode = core.IsSimplePacketMode();
+Nettention.Proud.RmiID __msgid= Common.LeaveGameRoom;
+__msg.Write(__msgid);
+		
+	return RmiSend(remotes,rmiContext,__msg,
+		RmiName_LeaveGameRoom, Common.LeaveGameRoom);
+}
 public bool Room_Appear(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int hostID, System.String id, int character_num, System.String team_color, int team_num)
 {
 	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
@@ -184,6 +208,7 @@ public const string RmiName_RequestLogin="RequestLogin";
 public const string RmiName_NotifyLoginSuccess="NotifyLoginSuccess";
 public const string RmiName_NotifyLoginFailed="NotifyLoginFailed";
 public const string RmiName_JoinGameRoom="JoinGameRoom";
+public const string RmiName_LeaveGameRoom="LeaveGameRoom";
 public const string RmiName_Room_Appear="Room_Appear";
 public const string RmiName_Room_Disappear="Room_Disappear";
        
@@ -195,6 +220,7 @@ public const string RmiName_RequestLogin="";
 public const string RmiName_NotifyLoginSuccess="";
 public const string RmiName_NotifyLoginFailed="";
 public const string RmiName_JoinGameRoom="";
+public const string RmiName_LeaveGameRoom="";
 public const string RmiName_Room_Appear="";
 public const string RmiName_Room_Disappear="";
        

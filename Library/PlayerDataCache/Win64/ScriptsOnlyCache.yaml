@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Bullet
     - CloudSpawner
+    - Connecting
     - GameManager
     - InitNetManager
     - MoveLock
@@ -118,41 +119,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9702}
     - Class: 114
-      Script: {instanceID: 9924}
+      Script: {instanceID: 9902}
     - Class: 114
-      Script: {instanceID: 10104}
+      Script: {instanceID: 9926}
     - Class: 114
-      Script: {instanceID: 10128}
+      Script: {instanceID: 10106}
     - Class: 114
-      Script: {instanceID: 10350}
+      Script: {instanceID: 10130}
     - Class: 114
-      Script: {instanceID: 10410}
+      Script: {instanceID: 10352}
     - Class: 114
-      Script: {instanceID: 10422}
+      Script: {instanceID: 10412}
     - Class: 114
-      Script: {instanceID: 10534}
+      Script: {instanceID: 10424}
     - Class: 114
-      Script: {instanceID: 10582}
+      Script: {instanceID: 10536}
     - Class: 114
-      Script: {instanceID: 10590}
+      Script: {instanceID: 10584}
     - Class: 114
-      Script: {instanceID: 10602}
+      Script: {instanceID: 10592}
     - Class: 114
-      Script: {instanceID: 10670}
+      Script: {instanceID: 10604}
     - Class: 114
-      Script: {instanceID: 10680}
+      Script: {instanceID: 10672}
     - Class: 114
-      Script: {instanceID: 10930}
+      Script: {instanceID: 10682}
     - Class: 114
-      Script: {instanceID: 10946}
+      Script: {instanceID: 10812}
     - Class: 114
-      Script: {instanceID: 11040}
+      Script: {instanceID: 10934}
     - Class: 114
-      Script: {instanceID: 11136}
+      Script: {instanceID: 10950}
     - Class: 114
-      Script: {instanceID: 11172}
+      Script: {instanceID: 11044}
     - Class: 114
-      Script: {instanceID: 78928}
+      Script: {instanceID: 11140}
+    - Class: 114
+      Script: {instanceID: 11176}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -241,31 +244,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9702}
     - Class: 114
-      Script: {instanceID: 9916}
+      Script: {instanceID: 9918}
     - Class: 114
-      Script: {instanceID: 9924}
+      Script: {instanceID: 9926}
     - Class: 114
-      Script: {instanceID: 10128}
+      Script: {instanceID: 10130}
     - Class: 114
-      Script: {instanceID: 10262}
+      Script: {instanceID: 10264}
     - Class: 114
-      Script: {instanceID: 10350}
+      Script: {instanceID: 10352}
     - Class: 114
-      Script: {instanceID: 10496}
+      Script: {instanceID: 10498}
     - Class: 114
-      Script: {instanceID: 10670}
+      Script: {instanceID: 10672}
     - Class: 114
-      Script: {instanceID: 10680}
+      Script: {instanceID: 10682}
     - Class: 114
-      Script: {instanceID: 10774}
+      Script: {instanceID: 10776}
     - Class: 114
-      Script: {instanceID: 10930}
+      Script: {instanceID: 10934}
     - Class: 114
-      Script: {instanceID: 11136}
+      Script: {instanceID: 11140}
     - Class: 114
-      Script: {instanceID: 11170}
+      Script: {instanceID: 11174}
     - Class: 114
-      Script: {instanceID: 11172}
+      Script: {instanceID: 11176}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -817,6 +820,12 @@ ScriptsOnlyBuild:
     className: CinemachineCameraOffset
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SetScreen
+  - hash:
+      serializedVersion: 2
       Hash: e82c0521cdfe8cb6a168ef7208a98d4a
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
@@ -1219,6 +1228,12 @@ ScriptsOnlyBuild:
     className: DataPrivacyButton
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Connecting
+  - hash:
+      serializedVersion: 2
       Hash: f336e086360abe49a3323e5f1583c35a
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1243,7 +1258,7 @@ ScriptsOnlyBuild:
     className: CloudSpawner
   - hash:
       serializedVersion: 2
-      Hash: 7bdca7a090aa8b1ed8a243a58c7febbd
+      Hash: 9b6f2764f6870f3d45850367c95bdd96
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InitNetManager
@@ -1349,12 +1364,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SetScreen
   platform: 19
   scenePathNames:
   - Assets/Scenes/Intro.unity

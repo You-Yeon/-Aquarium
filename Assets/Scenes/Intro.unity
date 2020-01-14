@@ -1971,6 +1971,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 926287702}
+        m_MethodName: C_MainToLoading
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &17914636
@@ -2025,6 +2036,9 @@ MonoBehaviour:
   theParticle: {fileID: 280444501}
   pointerSound: {fileID: 519183863}
   clickSound: {fileID: 926287705}
+  again_enter: 0
+  click_num: 
+  parti_num: 
 --- !u!4 &20274404 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 5d50cf3ef635cb942a43009b33905c3d,
@@ -14866,6 +14880,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 926287702}
+        m_MethodName: C_MainToLoading
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &190736571
@@ -14920,6 +14945,9 @@ MonoBehaviour:
   theParticle: {fileID: 1042013948}
   pointerSound: {fileID: 519183863}
   clickSound: {fileID: 926287705}
+  again_enter: 0
+  click_num: 
+  parti_num: 
 --- !u!1001 &191635539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14986,7 +15014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac81721dde2e92b44999d74457e8fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameRoom_canvas: {fileID: 2035885690}
+  GameRoom_canvas: {fileID: 2035885689}
   m_Ruby_PlayerPrefab: {fileID: 1204099824831454915, guid: 6a0af613b07c08043904837addae22a6,
     type: 3}
   m_Sapphire_PlayerPrefab: {fileID: 6818635411848205481, guid: 71381132ed68a2046ab8780f29cba5a4,
@@ -15029,6 +15057,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 92baf1d6f4b2c924aa327717133293b1, type: 3}
   - {fileID: 21300000, guid: 98d9cf0990fce6f43872a5fcd52f60d3, type: 3}
   - {fileID: 21300000, guid: b564ab7f8621ce840a7926036a3def6a, type: 3}
+  m_team_num: 0
 --- !u!4 &195173681
 Transform:
   m_ObjectHideFlags: 0
@@ -15588,6 +15617,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 926287702}
+        m_MethodName: C_MainToLoading
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &216635161
@@ -15642,6 +15682,9 @@ MonoBehaviour:
   theParticle: {fileID: 1666752147}
   pointerSound: {fileID: 519183863}
   clickSound: {fileID: 926287705}
+  again_enter: 0
+  click_num: 
+  parti_num: 
 --- !u!4 &216780320 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400008, guid: 059fdf75fe518a443ac7cdf212dee7dc,
@@ -21850,7 +21893,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: bf50b5e9c18bfdf46b3bb0727167d66e, type: 3}
-    m_FontSize: 80
+    m_FontSize: 55
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -32879,6 +32922,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 926287702}
+        m_MethodName: C_MainToLoading
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &391167517
@@ -32933,6 +32987,9 @@ MonoBehaviour:
   theParticle: {fileID: 329601991}
   pointerSound: {fileID: 519183863}
   clickSound: {fileID: 926287705}
+  again_enter: 0
+  click_num: 
+  parti_num: 
 --- !u!4 &391361506 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1d82ee77af9ee5c46bdba56204e622e9,
@@ -34971,17 +35028,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 926287704}
-        m_MethodName: OnMouseDown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &522356884
@@ -35036,7 +35082,7 @@ MonoBehaviour:
   theText: {fileID: 1767142114}
   theParticle: {fileID: 1059974822}
   pointerSound: {fileID: 519183863}
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 926287705}
   IDText: {fileID: 0}
   PWText: {fileID: 0}
 --- !u!4 &522587889 stripped
@@ -41134,6 +41180,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 926287702}
+        m_MethodName: C_MainToLoading
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &591727199
@@ -41188,6 +41245,9 @@ MonoBehaviour:
   theParticle: {fileID: 1091923765}
   pointerSound: {fileID: 519183863}
   clickSound: {fileID: 926287705}
+  again_enter: 0
+  click_num: 
+  parti_num: 
 --- !u!1001 &593677375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50588,8 +50648,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 926287706}
-        m_MethodName: OnMouseDown
+      - m_Target: {fileID: 926287704}
+        m_MethodName: OnLeaveDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -50623,7 +50683,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: daea0ba42ae306a4fb5275e5e451f3ab, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -51046,8 +51106,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 926287706}
-        m_MethodName: OnMouseDown
+      - m_Target: {fileID: 926287704}
+        m_MethodName: OnExitDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -57454,6 +57514,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 926287702}
+        m_MethodName: C_MainToLoading
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &919809183
@@ -57508,6 +57579,9 @@ MonoBehaviour:
   theParticle: {fileID: 1227997708}
   pointerSound: {fileID: 519183863}
   clickSound: {fileID: 926287705}
+  again_enter: 0
+  click_num: 
+  parti_num: 
 --- !u!1001 &923187741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57736,6 +57810,9 @@ MonoBehaviour:
   theParticle: {fileID: 0}
   pointerSound: {fileID: 0}
   clickSound: {fileID: 926287705}
+  again_enter: 0
+  click_num: 
+  parti_num: 
 --- !u!4 &929670455 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d80c7433031fdee44bf3910c4b046ce7,
@@ -58035,7 +58112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 850, y: -450}
+  m_AnchoredPosition: {x: 540, y: -300}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &944774047
@@ -79892,17 +79969,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 926287706}
-        m_MethodName: OnMouseDown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 926287704}
         m_MethodName: OnCharacterDown
         m_Mode: 3
@@ -79910,6 +79976,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 926287702}
+        m_MethodName: C_MainToLoading
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -79968,6 +80045,9 @@ MonoBehaviour:
   theParticle: {fileID: 535651532}
   pointerSound: {fileID: 519183863}
   clickSound: {fileID: 926287705}
+  again_enter: 0
+  click_num: chr1
+  parti_num: Particle System_ch1
 --- !u!1001 &1108462883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85281,6 +85361,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 926287702}
+        m_MethodName: C_MainToLoading
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1138273109
@@ -85335,6 +85426,9 @@ MonoBehaviour:
   theParticle: {fileID: 166610338}
   pointerSound: {fileID: 519183863}
   clickSound: {fileID: 926287705}
+  again_enter: 0
+  click_num: 
+  parti_num: 
 --- !u!1001 &1138282788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -86121,6 +86215,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 926287702}
+        m_MethodName: C_MainToLoading
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1190386737
@@ -86175,6 +86280,9 @@ MonoBehaviour:
   theParticle: {fileID: 871211727}
   pointerSound: {fileID: 519183863}
   clickSound: {fileID: 926287705}
+  again_enter: 0
+  click_num: 
+  parti_num: 
 --- !u!1001 &1191939851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91609,6 +91717,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 926287702}
+        m_MethodName: C_MainToLoading
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1250675068
@@ -91663,6 +91782,9 @@ MonoBehaviour:
   theParticle: {fileID: 1902082525}
   pointerSound: {fileID: 519183863}
   clickSound: {fileID: 926287705}
+  again_enter: 0
+  click_num: 
+  parti_num: 
 --- !u!4 &1252165227 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: fb443fd5e8b5b15409dd3ac5477300df,
@@ -93110,6 +93232,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 926287702}
+        m_MethodName: C_MainToLoading
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1363851111
@@ -93164,6 +93297,9 @@ MonoBehaviour:
   theParticle: {fileID: 1544107733}
   pointerSound: {fileID: 519183863}
   clickSound: {fileID: 926287705}
+  again_enter: 0
+  click_num: 
+  parti_num: 
 --- !u!1001 &1364223502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93714,6 +93850,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 926287702}
+        m_MethodName: C_MainToLoading
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1383756513
@@ -93768,6 +93915,9 @@ MonoBehaviour:
   theParticle: {fileID: 2059304749}
   pointerSound: {fileID: 519183863}
   clickSound: {fileID: 926287705}
+  again_enter: 0
+  click_num: 
+  parti_num: 
 --- !u!1001 &1387108785
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94388,6 +94538,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 926287702}
+        m_MethodName: C_MainToLoading
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1413158454
@@ -94442,6 +94603,9 @@ MonoBehaviour:
   theParticle: {fileID: 1077034228}
   pointerSound: {fileID: 519183863}
   clickSound: {fileID: 926287705}
+  again_enter: 0
+  click_num: 
+  parti_num: 
 --- !u!4 &1415403562 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d153a8045fa3a8143b860fc787040f99,
@@ -95284,6 +95448,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 926287702}
+        m_MethodName: C_MainToLoading
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1459736113
@@ -95338,6 +95513,9 @@ MonoBehaviour:
   theParticle: {fileID: 1666317009}
   pointerSound: {fileID: 519183863}
   clickSound: {fileID: 926287705}
+  again_enter: 0
+  click_num: 
+  parti_num: 
 --- !u!1001 &1460224133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101128,6 +101306,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 926287702}
+        m_MethodName: C_MainToLoading
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1511537587
@@ -101182,6 +101371,9 @@ MonoBehaviour:
   theParticle: {fileID: 1511401656}
   pointerSound: {fileID: 519183863}
   clickSound: {fileID: 926287705}
+  again_enter: 0
+  click_num: 
+  parti_num: 
 --- !u!4 &1513171809 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8b8dbe4e5d200294a987091552c38c9d,
@@ -108363,14 +108555,14 @@ RectTransform:
   m_GameObject: {fileID: 1614803129}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 0.3, z: 1}
+  m_LocalScale: {x: 2, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 944774046}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1614803131
@@ -124694,6 +124886,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 926287702}
+        m_MethodName: C_MainToLoading
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1747639828
@@ -124748,6 +124951,9 @@ MonoBehaviour:
   theParticle: {fileID: 102553918}
   pointerSound: {fileID: 519183863}
   clickSound: {fileID: 926287705}
+  again_enter: 0
+  click_num: 
+  parti_num: 
 --- !u!4 &1748377767 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 17a4ffb1eae17e94298de2c66e171a1b,
@@ -133079,6 +133285,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 926287702}
+        m_MethodName: C_MainToLoading
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1971797402
@@ -133133,6 +133350,9 @@ MonoBehaviour:
   theParticle: {fileID: 1117553085}
   pointerSound: {fileID: 519183863}
   clickSound: {fileID: 926287705}
+  again_enter: 0
+  click_num: 
+  parti_num: 
 --- !u!1 &1972061373
 GameObject:
   m_ObjectHideFlags: 0
@@ -140754,6 +140974,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 926287702}
+        m_MethodName: C_MainToLoading
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2113866166
@@ -140808,6 +141039,9 @@ MonoBehaviour:
   theParticle: {fileID: 679054798}
   pointerSound: {fileID: 519183863}
   clickSound: {fileID: 926287705}
+  again_enter: 0
+  click_num: 
+  parti_num: 
 --- !u!4 &2115898690 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1aa39b2f6e558614eb83d858a6ec61ca,

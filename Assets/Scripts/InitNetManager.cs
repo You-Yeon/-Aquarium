@@ -17,7 +17,7 @@ public class InitNetManager : MonoBehaviour
     NetClient m_Client;
 
     // 게임 방 유저 UI
-    public Transform GameRoom_canvas;
+    public GameObject GameRoom_canvas;
     
     public GameObject m_Ruby_PlayerPrefab;
     public GameObject m_Sapphire_PlayerPrefab;
@@ -29,6 +29,9 @@ public class InitNetManager : MonoBehaviour
     // 아이디와 비밀번호
     string m_userID;
     string m_password;
+
+    // 팀 번호
+    public int m_team_num;
 
     // 클라이언트 연결 상태
     enum MyState
@@ -123,6 +126,8 @@ public class InitNetManager : MonoBehaviour
     // 로그인 시도
     public void GetLogin(string _id, string _password)
     {
+        Debug.Log("GetLogin");
+
         // 로그인 캔버스에서 로딩 캔버스로 전환
         GameObject.Find("UIManager").GetComponent<SceneChange>().I_LoginToLoading();
 
@@ -150,9 +155,6 @@ public class InitNetManager : MonoBehaviour
 
     public void GetRoom(int _character_num)
     {
-        // 메인 캔버스에서 로딩 캔버스로 전환
-        GameObject.Find("UIManager").GetComponent<SceneChange>().C_MainToLoading();
-
         // 캐릭터 번호 업데이트
         m_Character = (MyCharacter)_character_num;
 
@@ -160,6 +162,15 @@ public class InitNetManager : MonoBehaviour
         // 입력받은 캐릭터 정보를 보내서 방을 요청 함.
         m_proxy.JoinGameRoom(HostID.HostID_Server,
             RmiContext.SecureReliableSend, (int)m_Character);
+    }
+
+    public void LeaveRoom()
+    {
+        // 서버에 암호화된 메시지를 보냄
+        // P2P 방 퇴장함.
+        m_proxy.LeaveGameRoom(HostID.HostID_Server,
+            RmiContext.SecureReliableSend);
+
     }
 
     // 연결 해체를 위한 플래그
@@ -170,6 +181,8 @@ public class InitNetManager : MonoBehaviour
         // "로그인 성공" 원격 함수 호출을 받으면, MyState.Connected로 전환하여 로그인 GUI를 감추자.
         m_stub.NotifyLoginSuccess = (HostID remote, RmiContext rmiContext) =>
         {
+            Debug.Log("로그인 성공");
+
             // 로딩 캔버스에서 인트로 메인 캔버스로
             GameObject.Find("UIManager").GetComponent<SceneChange>().I_LoadingToMain();
 
@@ -180,6 +193,8 @@ public class InitNetManager : MonoBehaviour
         // "로그인 실패"를 받으면, 실패 사유를 출력하고 연결 해제를 하자.
         m_stub.NotifyLoginFailed = (HostID remote, RmiContext rmiContext, System.String reason) =>
         {
+            Debug.Log("로그인 실패");
+
             // 로딩 캔버스에서 로그인 캔버스로
             GameObject.Find("UIManager").GetComponent<SceneChange>().I_LoadingToLogin();
 
@@ -198,6 +213,7 @@ public class InitNetManager : MonoBehaviour
             Debug.Log(" team_color : " + team_color);
             Debug.Log(" team_num : " + team_num);
 
+
             // 본인이 입장하는 경우
             if (hostID == (int)m_Client.GetLocalHostID())
             {
@@ -206,6 +222,9 @@ public class InitNetManager : MonoBehaviour
 
                 // 캐릭터 선택 자식들은 처음 상태로 리셋한다.
                 GameObject.Find("UIManager").GetComponent<SceneChange>().C_LoadingToMain();
+
+                // 팀 번호 저장
+                m_team_num = team_num;
             }
 
             // 사파이어 팀인 경우 
@@ -269,8 +288,19 @@ public class InitNetManager : MonoBehaviour
         };
 
         // 게임 방 플레이어 퇴장
-        m_stub.Room_Disappear = (HostID remote, RmiContext rmiContext, int hostID) =>
+        m_stub.Room_Disappear = (HostID remote, RmiContext rmiContext, int _team_num) =>
         {
+            // 본인의 경우가 아닐 때만, 본인은 클라단에서 이미 지움
+            if (_team_num != m_team_num)
+            {
+                // 해당 플레이어의 UI 삭제
+                var ui = GameObject.Find("Team_num/" + _team_num.ToString());
+                if (ui != null)
+                {
+                    Debug.Log("삭제");
+                    Destroy(ui);
+                }
+            }
             return true;
         };
     }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Sky
+  - User_UI
   layers:
   - Default
   - TransparentFX
