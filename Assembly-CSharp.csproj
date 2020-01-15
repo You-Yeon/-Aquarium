@@ -62,6 +62,8 @@
      <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\CloudSpawner.cs" />
      <Compile Include="Assets\Scripts\Connecting.cs" />
+     <Compile Include="Assets\Scripts\DontDie.cs" />
+     <Compile Include="Assets\Scripts\GameCount.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\InitNetManager.cs" />
      <Compile Include="Assets\Scripts\MoveLock.cs" />

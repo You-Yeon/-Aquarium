@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - Bullet
     - CloudSpawner
     - Connecting
+    - GameCount
     - GameManager
     - InitNetManager
     - MoveLock
@@ -16,6 +17,7 @@ ScriptsOnlyBuild:
     - UI_Character
     - UI_Controller
     - UnityEngine.UI.Extensions.UIParticleSystem
+    - bottle
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
     - Cinemachine.CinemachineComposer
@@ -30,8 +32,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -151,11 +155,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10950}
     - Class: 114
+      Script: {instanceID: 11040}
+    - Class: 114
       Script: {instanceID: 11044}
     - Class: 114
       Script: {instanceID: 11140}
     - Class: 114
       Script: {instanceID: 11176}
+    - Class: 114
+      Script: {instanceID: 171180}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -1036,7 +1044,7 @@ ScriptsOnlyBuild:
     className: UIParticleSystem
   - hash:
       serializedVersion: 2
-      Hash: 8d2393532b5fbc9afb0791999784ab6d
+      Hash: 5c0fa1d6fea4fb4291f5f7286783c152
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SceneChange
@@ -1258,7 +1266,7 @@ ScriptsOnlyBuild:
     className: CloudSpawner
   - hash:
       serializedVersion: 2
-      Hash: 9b6f2764f6870f3d45850367c95bdd96
+      Hash: 262c129e9e9f0a49811c7b8915f5bd3b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InitNetManager
@@ -1364,6 +1372,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 92f502bc63c0c349596fd4b7f8bd5cd1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameCount
   platform: 19
   scenePathNames:
   - Assets/Scenes/Intro.unity

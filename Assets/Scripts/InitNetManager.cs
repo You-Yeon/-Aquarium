@@ -33,6 +33,9 @@ public class InitNetManager : MonoBehaviour
     // 팀 번호
     public int m_team_num;
 
+    // 게임 시작하기 전 카운트 다운
+    public bool Get_Ready = false;
+
     // 클라이언트 연결 상태
     enum MyState
     {
@@ -300,7 +303,29 @@ public class InitNetManager : MonoBehaviour
                     Debug.Log("삭제");
                     Destroy(ui);
                 }
+
+                // 만약 카운트 중이였다면 종료 
+                if (Get_Ready)
+                {
+                    // 카운트 종료
+                    Get_Ready = false;
+
+                    // 카운트 캔버스 종료
+                    GameObject.Find("UIManager").GetComponent<SceneChange>().OffCountcanvas();
+                }
             }
+            return true;
+        };
+
+        // 게임 카운트 시작
+        m_stub.GameCount = (HostID remote, RmiContext rmiContext) =>
+        {
+            // 카운트 시작
+            Get_Ready = true;
+
+            // 카운트 캔버스 시작
+            GameObject.Find("UIManager").GetComponent<SceneChange>().OnCountcanvas();
+
             return true;
         };
     }

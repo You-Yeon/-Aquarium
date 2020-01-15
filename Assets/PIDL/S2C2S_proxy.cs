@@ -175,13 +175,13 @@ Nettention.Proud.Marshaler.Write(__msg, team_num);
 	return RmiSend(remotes,rmiContext,__msg,
 		RmiName_Room_Appear, Common.Room_Appear);
 }
-public bool Room_Disappear(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int hostID)
+public bool Room_Disappear(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int team_num)
 {
 	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
 		__msg.SimplePacketMode = core.IsSimplePacketMode();
 		Nettention.Proud.RmiID __msgid= Common.Room_Disappear;
 		__msg.Write(__msgid);
-		Nettention.Proud.Marshaler.Write(__msg, hostID);
+		Nettention.Proud.Marshaler.Write(__msg, team_num);
 		
 	Nettention.Proud.HostID[] __list = new Nettention.Proud.HostID[1];
 	__list[0] = remote;
@@ -190,16 +190,40 @@ public bool Room_Disappear(Nettention.Proud.HostID remote,Nettention.Proud.RmiCo
 		RmiName_Room_Disappear, Common.Room_Disappear);
 }
 
-public bool Room_Disappear(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext, int hostID)
+public bool Room_Disappear(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext, int team_num)
 {
 	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
 __msg.SimplePacketMode = core.IsSimplePacketMode();
 Nettention.Proud.RmiID __msgid= Common.Room_Disappear;
 __msg.Write(__msgid);
-Nettention.Proud.Marshaler.Write(__msg, hostID);
+Nettention.Proud.Marshaler.Write(__msg, team_num);
 		
 	return RmiSend(remotes,rmiContext,__msg,
 		RmiName_Room_Disappear, Common.Room_Disappear);
+}
+public bool GameCount(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+		__msg.SimplePacketMode = core.IsSimplePacketMode();
+		Nettention.Proud.RmiID __msgid= Common.GameCount;
+		__msg.Write(__msgid);
+		
+	Nettention.Proud.HostID[] __list = new Nettention.Proud.HostID[1];
+	__list[0] = remote;
+		
+	return RmiSend(__list,rmiContext,__msg,
+		RmiName_GameCount, Common.GameCount);
+}
+
+public bool GameCount(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+__msg.SimplePacketMode = core.IsSimplePacketMode();
+Nettention.Proud.RmiID __msgid= Common.GameCount;
+__msg.Write(__msgid);
+		
+	return RmiSend(remotes,rmiContext,__msg,
+		RmiName_GameCount, Common.GameCount);
 }
 #if USE_RMI_NAME_STRING
 // RMI name declaration.
@@ -211,6 +235,7 @@ public const string RmiName_JoinGameRoom="JoinGameRoom";
 public const string RmiName_LeaveGameRoom="LeaveGameRoom";
 public const string RmiName_Room_Appear="Room_Appear";
 public const string RmiName_Room_Disappear="Room_Disappear";
+public const string RmiName_GameCount="GameCount";
        
 public const string RmiName_First = RmiName_RequestLogin;
 #else
@@ -223,6 +248,7 @@ public const string RmiName_JoinGameRoom="";
 public const string RmiName_LeaveGameRoom="";
 public const string RmiName_Room_Appear="";
 public const string RmiName_Room_Disappear="";
+public const string RmiName_GameCount="";
        
 public const string RmiName_First = "";
 #endif

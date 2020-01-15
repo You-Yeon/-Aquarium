@@ -18,6 +18,9 @@ public class SceneChange : MonoBehaviour
     public GameObject C_Loading_canvas;
     public GameObject C_Main_canvas;
 
+    // * 게임 방 자식 캔버스
+    public GameObject G_Count_canvas; // 카운트 캔버스
+
     public void ChangeGameScene()
     {
         SceneManager.LoadScene("Main"); // 게임씬으로 이동
@@ -98,5 +101,17 @@ public class SceneChange : MonoBehaviour
     {
         C_Loading_canvas.SetActive(false); // 로딩 캔버스 off
         C_Main_canvas.SetActive(true); // 메인 캔버스 on
+    }
+
+    // * 게임 방 자식 캔버스
+
+    public void OnCountcanvas()
+    {
+        G_Count_canvas.SetActive(true); // 카운트 캔버스 on
+    }
+
+    public void OffCountcanvas()
+    {
+        G_Count_canvas.SetActive(false); // 카운트 캔버스 off
     }
 }
