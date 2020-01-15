@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3353308}
   - component: {fileID: 2375486}
   - component: {fileID: 9570372}
+  - component: {fileID: 6878712639551787287}
   m_Layer: 0
   m_Name: road_crossing_center_mesh
   m_TagString: Untagged
@@ -97,3 +98,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &6878712639551787287
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.99999, y: 0.02053279, z: 6.9999995}
+  m_Center: {x: -2.499995, y: -0.1845294, z: -3.4999998}

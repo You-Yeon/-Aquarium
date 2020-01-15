@@ -20,7 +20,7 @@ namespace S2C2S
 			public const Nettention.Proud.RmiID LeaveGameRoom = (Nettention.Proud.RmiID)1000+5;
 			public const Nettention.Proud.RmiID Room_Appear = (Nettention.Proud.RmiID)1000+6;
 			public const Nettention.Proud.RmiID Room_Disappear = (Nettention.Proud.RmiID)1000+7;
-			public const Nettention.Proud.RmiID GameCount = (Nettention.Proud.RmiID)1000+8;
+			public const Nettention.Proud.RmiID GameStartInfo = (Nettention.Proud.RmiID)1000+8;
 		// List that has RMI ID.
 		public static Nettention.Proud.RmiID[] RmiIDList = new Nettention.Proud.RmiID[] {
 			RequestLogin,
@@ -30,7 +30,7 @@ namespace S2C2S
 			LeaveGameRoom,
 			Room_Appear,
 			Room_Disappear,
-			GameCount,
+			GameStartInfo,
 		};
 	}
 }
