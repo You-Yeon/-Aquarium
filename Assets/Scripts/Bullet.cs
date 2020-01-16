@@ -13,8 +13,7 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        speed = 20f; // 속도 20
-
+        speed = 50f; // 속도 
 
         // 게임 오브젝트에서 Rigidbody 컴포넌트를 찾아서 bulletRigidbody에 할당
         bulletRigidbody = GetComponent<Rigidbody>();
@@ -30,6 +29,11 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.tag);
+
+        if (collision.gameObject.tag == "MyPlayer") // 본인에게는 맞지 않도록
+        {
+            return;
+        }
 
         if (collision.gameObject.tag == "Wall") // 접근 제한 범위일 경우에
         {

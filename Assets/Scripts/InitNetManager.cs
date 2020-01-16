@@ -16,6 +16,19 @@ public class InitNetManager : MonoBehaviour
     // 클라이언트 객체
     NetClient m_Client;
 
+    // 플레이어의 캐릭터 정보
+    public int[] r_chr_num = new int[4];
+
+    // 플레이어의 리스폰 위치
+    public float[] r_posX = new float[4];
+    public float[] r_posY = new float[4];
+    public float[] r_posZ = new float[4];
+
+    // 플레이어의 리스폰 방향
+    public float[] r_rotX = new float[4];
+    public float[] r_rotY = new float[4];
+    public float[] r_rotZ = new float[4];
+
     // 게임 방 유저 UI
     public GameObject GameRoom_canvas;
     
@@ -32,13 +45,6 @@ public class InitNetManager : MonoBehaviour
 
     // 팀 번호
     public int m_team_num;
-
-    // 캐릭터 key
-    public int m_chr_num;
-
-    // 리스폰 장소의 위치와 방향
-    public float res_posX, res_posY, res_posZ;
-    public float res_rotX, res_rotY, res_rotZ;
 
     // 게임 시작하기 전 카운트 다운
     public bool Get_Ready = false;
@@ -167,7 +173,6 @@ public class InitNetManager : MonoBehaviour
     {
         // 캐릭터 번호 업데이트
         m_Character = (MyCharacter)_character_num;
-        m_chr_num = _character_num;
 
         // 서버에 암호화된 메시지를 보냄
         // 입력받은 캐릭터 정보를 보내서 방을 요청 함.
@@ -326,25 +331,32 @@ public class InitNetManager : MonoBehaviour
         };
 
         // 게임 카운트 시작
-        m_stub.GameStartInfo = (HostID remote, RmiContext rmiContext, float _px, float _py, float _pz, float _rx, float _ry, float _rz) =>
+        m_stub.GameStart = (HostID remote, RmiContext rmiContext) =>
         {
             // 카운트 시작
             Get_Ready = true;
 
-            // -- 리스폰 좌표 세팅 -- 
-            
-            // * 위치
-            res_posX = _px;
-            res_posY = _py;
-            res_posZ = _pz;
-
-            // * 방향
-            res_rotX = _rx;
-            res_rotY = _ry;
-            res_rotZ = _rz;
-
             // 카운트 캔버스 시작
             GameObject.Find("UIManager").GetComponent<SceneChange>().OnCountcanvas();
+
+            return true;
+        };
+
+        // 플레이어 리스폰 설정
+        m_stub.PlayerInfo = (HostID remote, RmiContext rmiContext, int _player_num, int _chr_num, float _px, float _py, float _pz, float _rx, float _ry, float _rz) =>
+        {
+            Debug.Log("리스폰 설정");
+
+            // 플레이어의 정보 세팅
+            r_chr_num[_player_num-1] = _chr_num;
+
+            r_posX[_player_num - 1] = _px;
+            r_posY[_player_num - 1] = _py;
+            r_posZ[_player_num - 1] = _pz;
+
+            r_rotX[_player_num - 1] = _rx;
+            r_rotY[_player_num - 1] = _ry;
+            r_rotZ[_player_num - 1] = _rz;
 
             return true;
         };

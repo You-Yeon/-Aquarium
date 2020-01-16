@@ -8,7 +8,6 @@ ScriptsOnlyBuild:
     - GameCount
     - GameManager
     - InitNetManager
-    - MoveLock
     - PlayerController
     - PlayerInput
     - Reload_State
@@ -33,10 +32,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -164,9 +161,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11142}
     - Class: 114
-      Script: {instanceID: 11178}
+      Script: {instanceID: 11180}
     - Class: 114
-      Script: {instanceID: 11228}
+      Script: {instanceID: 11230}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -178,8 +175,6 @@ ScriptsOnlyBuild:
     - Class: 136
       Script: {instanceID: 0}
     - Class: 137
-      Script: {instanceID: 0}
-    - Class: 144
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -271,15 +266,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10684}
     - Class: 114
-      Script: {instanceID: 10778}
-    - Class: 114
       Script: {instanceID: 10936}
     - Class: 114
       Script: {instanceID: 11142}
     - Class: 114
-      Script: {instanceID: 11176}
-    - Class: 114
       Script: {instanceID: 11178}
+    - Class: 114
+      Script: {instanceID: 11180}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -289,8 +282,6 @@ ScriptsOnlyBuild:
     - Class: 136
       Script: {instanceID: 0}
     - Class: 137
-      Script: {instanceID: 0}
-    - Class: 144
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -845,7 +836,7 @@ ScriptsOnlyBuild:
     className: Vignette
   - hash:
       serializedVersion: 2
-      Hash: 233b4cbc66bc3b649aa8d7cd21d60109
+      Hash: b16f25445fcfba2497c0dee8358bdf58
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1277,7 +1268,7 @@ ScriptsOnlyBuild:
     className: CloudSpawner
   - hash:
       serializedVersion: 2
-      Hash: 389b0c1e8c868970de795ba6e480b95c
+      Hash: 9b981855ca0704d9b25a7fc7c4b4f87b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InitNetManager

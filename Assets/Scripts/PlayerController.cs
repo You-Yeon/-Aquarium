@@ -55,6 +55,13 @@ public class PlayerController : MonoBehaviour {
 
         accuracy = 0f; // 초기 값은 0
 
+        vcam = GameObject.Find("Follow Cam").GetComponent<CinemachineVirtualCamera>();
+        RayPoint = GameObject.Find("RayPoint").GetComponent<Transform>();
+
+        GameObject.Find("Follow Cam").GetComponent<CinemachineVirtualCamera>().Follow = GetComponent<Transform>();
+        GameObject.Find("Follow Cam").GetComponent<CinemachineVirtualCamera>().LookAt = GetComponent<Transform>();
+
+
         vcam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.y = 1.9f; // 초기 화면 y값
 
         UI_Controller.ui_instance.bulletsText.text = currentBullets + " / " + bulletsTotal; // UI 총알 개수 반영11
@@ -202,7 +209,7 @@ private void Mouse()
             vcam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.y = 1f;
         }
 
-        Debug.Log(" cam : " + vcam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.y);
-        Debug.Log("mouse y : " + playerInput.mouseY);
+        //Debug.Log(" cam : " + vcam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.y);
+        //Debug.Log("mouse y : " + playerInput.mouseY);
     }
 }

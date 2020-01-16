@@ -201,12 +201,38 @@ Nettention.Proud.Marshaler.Write(__msg, team_num);
 	return RmiSend(remotes,rmiContext,__msg,
 		RmiName_Room_Disappear, Common.Room_Disappear);
 }
-public bool GameStartInfo(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, float px, float py, float pz, float rx, float ry, float rz)
+public bool GameStart(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext)
 {
 	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
 		__msg.SimplePacketMode = core.IsSimplePacketMode();
-		Nettention.Proud.RmiID __msgid= Common.GameStartInfo;
+		Nettention.Proud.RmiID __msgid= Common.GameStart;
 		__msg.Write(__msgid);
+		
+	Nettention.Proud.HostID[] __list = new Nettention.Proud.HostID[1];
+	__list[0] = remote;
+		
+	return RmiSend(__list,rmiContext,__msg,
+		RmiName_GameStart, Common.GameStart);
+}
+
+public bool GameStart(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+__msg.SimplePacketMode = core.IsSimplePacketMode();
+Nettention.Proud.RmiID __msgid= Common.GameStart;
+__msg.Write(__msgid);
+		
+	return RmiSend(remotes,rmiContext,__msg,
+		RmiName_GameStart, Common.GameStart);
+}
+public bool PlayerInfo(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int team_num, int character_num, float px, float py, float pz, float rx, float ry, float rz)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+		__msg.SimplePacketMode = core.IsSimplePacketMode();
+		Nettention.Proud.RmiID __msgid= Common.PlayerInfo;
+		__msg.Write(__msgid);
+		Nettention.Proud.Marshaler.Write(__msg, team_num);
+		Nettention.Proud.Marshaler.Write(__msg, character_num);
 		Nettention.Proud.Marshaler.Write(__msg, px);
 		Nettention.Proud.Marshaler.Write(__msg, py);
 		Nettention.Proud.Marshaler.Write(__msg, pz);
@@ -218,15 +244,17 @@ public bool GameStartInfo(Nettention.Proud.HostID remote,Nettention.Proud.RmiCon
 	__list[0] = remote;
 		
 	return RmiSend(__list,rmiContext,__msg,
-		RmiName_GameStartInfo, Common.GameStartInfo);
+		RmiName_PlayerInfo, Common.PlayerInfo);
 }
 
-public bool GameStartInfo(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext, float px, float py, float pz, float rx, float ry, float rz)
+public bool PlayerInfo(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext, int team_num, int character_num, float px, float py, float pz, float rx, float ry, float rz)
 {
 	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
 __msg.SimplePacketMode = core.IsSimplePacketMode();
-Nettention.Proud.RmiID __msgid= Common.GameStartInfo;
+Nettention.Proud.RmiID __msgid= Common.PlayerInfo;
 __msg.Write(__msgid);
+Nettention.Proud.Marshaler.Write(__msg, team_num);
+Nettention.Proud.Marshaler.Write(__msg, character_num);
 Nettention.Proud.Marshaler.Write(__msg, px);
 Nettention.Proud.Marshaler.Write(__msg, py);
 Nettention.Proud.Marshaler.Write(__msg, pz);
@@ -235,7 +263,7 @@ Nettention.Proud.Marshaler.Write(__msg, ry);
 Nettention.Proud.Marshaler.Write(__msg, rz);
 		
 	return RmiSend(remotes,rmiContext,__msg,
-		RmiName_GameStartInfo, Common.GameStartInfo);
+		RmiName_PlayerInfo, Common.PlayerInfo);
 }
 #if USE_RMI_NAME_STRING
 // RMI name declaration.
@@ -247,7 +275,8 @@ public const string RmiName_JoinGameRoom="JoinGameRoom";
 public const string RmiName_LeaveGameRoom="LeaveGameRoom";
 public const string RmiName_Room_Appear="Room_Appear";
 public const string RmiName_Room_Disappear="Room_Disappear";
-public const string RmiName_GameStartInfo="GameStartInfo";
+public const string RmiName_GameStart="GameStart";
+public const string RmiName_PlayerInfo="PlayerInfo";
        
 public const string RmiName_First = RmiName_RequestLogin;
 #else
@@ -260,7 +289,8 @@ public const string RmiName_JoinGameRoom="";
 public const string RmiName_LeaveGameRoom="";
 public const string RmiName_Room_Appear="";
 public const string RmiName_Room_Disappear="";
-public const string RmiName_GameStartInfo="";
+public const string RmiName_GameStart="";
+public const string RmiName_PlayerInfo="";
        
 public const string RmiName_First = "";
 #endif
