@@ -16,6 +16,8 @@ public class PlayerInput : MonoBehaviour
     public bool reload { get; private set; } // 감지된 장전 입력값
     public float mouseX { get; private set; } // 감지된 마우스 입력값
     public float mouseY { get; private set; } // 감지된 마우스 입력값
+    public bool mouseOut { get; private set; } // 감지된 ESC 입려값
+    public bool mouseOn { get; private set; } // 감지된 마우스 입력값
 
     // 매프레임 사용자 입력을 감지
     private void Update()
@@ -33,5 +35,10 @@ public class PlayerInput : MonoBehaviour
         mouseX = Input.GetAxis(mouseAxisNameX);
         // mouseY에 관한 입력 감지
         mouseY = Input.GetAxis(mouseAxisNameY);
+        // mouseOut에 관한 입력 감지
+        mouseOut = Input.GetKeyDown(KeyCode.Escape);
+        // mouseOn에 관한 입력 감지
+        mouseOn = Input.GetKeyDown(KeyCode.Mouse0);
+
     }
 }

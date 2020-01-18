@@ -265,6 +265,38 @@ Nettention.Proud.Marshaler.Write(__msg, rz);
 	return RmiSend(remotes,rmiContext,__msg,
 		RmiName_PlayerInfo, Common.PlayerInfo);
 }
+public bool Player_Move(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int m_team_num, float m_move, float m_rotate, float m_mouseX)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+		__msg.SimplePacketMode = core.IsSimplePacketMode();
+		Nettention.Proud.RmiID __msgid= Common.Player_Move;
+		__msg.Write(__msgid);
+		Nettention.Proud.Marshaler.Write(__msg, m_team_num);
+		Nettention.Proud.Marshaler.Write(__msg, m_move);
+		Nettention.Proud.Marshaler.Write(__msg, m_rotate);
+		Nettention.Proud.Marshaler.Write(__msg, m_mouseX);
+		
+	Nettention.Proud.HostID[] __list = new Nettention.Proud.HostID[1];
+	__list[0] = remote;
+		
+	return RmiSend(__list,rmiContext,__msg,
+		RmiName_Player_Move, Common.Player_Move);
+}
+
+public bool Player_Move(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext, int m_team_num, float m_move, float m_rotate, float m_mouseX)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+__msg.SimplePacketMode = core.IsSimplePacketMode();
+Nettention.Proud.RmiID __msgid= Common.Player_Move;
+__msg.Write(__msgid);
+Nettention.Proud.Marshaler.Write(__msg, m_team_num);
+Nettention.Proud.Marshaler.Write(__msg, m_move);
+Nettention.Proud.Marshaler.Write(__msg, m_rotate);
+Nettention.Proud.Marshaler.Write(__msg, m_mouseX);
+		
+	return RmiSend(remotes,rmiContext,__msg,
+		RmiName_Player_Move, Common.Player_Move);
+}
 #if USE_RMI_NAME_STRING
 // RMI name declaration.
 // It is the unique pointer that indicates RMI name such as RMI profiler.
@@ -277,6 +309,7 @@ public const string RmiName_Room_Appear="Room_Appear";
 public const string RmiName_Room_Disappear="Room_Disappear";
 public const string RmiName_GameStart="GameStart";
 public const string RmiName_PlayerInfo="PlayerInfo";
+public const string RmiName_Player_Move="Player_Move";
        
 public const string RmiName_First = RmiName_RequestLogin;
 #else
@@ -291,6 +324,7 @@ public const string RmiName_Room_Appear="";
 public const string RmiName_Room_Disappear="";
 public const string RmiName_GameStart="";
 public const string RmiName_PlayerInfo="";
+public const string RmiName_Player_Move="";
        
 public const string RmiName_First = "";
 #endif

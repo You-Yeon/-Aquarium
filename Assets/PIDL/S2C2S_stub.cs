@@ -61,6 +61,11 @@ public BeforeRmiInvocationDelegate BeforeRmiInvocation = delegate(Nettention.Pro
 		{ 
 			return false;
 		};
+		public delegate bool Player_MoveDelegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int m_team_num, float m_move, float m_rotate, float m_mouseX);  
+		public Player_MoveDelegate Player_Move = delegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int m_team_num, float m_move, float m_rotate, float m_mouseX)
+		{ 
+			return false;
+		};
 	public override bool ProcessReceivedMessage(Nettention.Proud.ReceivedMessage pa, Object hostTag) 
 	{
 		Nettention.Proud.HostID remote=pa.RemoteHostID;
@@ -103,6 +108,9 @@ public BeforeRmiInvocationDelegate BeforeRmiInvocation = delegate(Nettention.Pro
             break;
         case Common.PlayerInfo:
             ProcessReceivedMessage_PlayerInfo(__msg, pa, hostTag, remote);
+            break;
+        case Common.Player_Move:
+            ProcessReceivedMessage_Player_Move(__msg, pa, hostTag, remote);
             break;
 		default:
 			 goto __fail;
@@ -582,6 +590,62 @@ parameterString+=rz.ToString()+",";
         AfterRmiInvocation(summary);
         }
     }
+    void ProcessReceivedMessage_Player_Move(Nettention.Proud.Message __msg, Nettention.Proud.ReceivedMessage pa, Object hostTag, Nettention.Proud.HostID remote)
+    {
+        Nettention.Proud.RmiContext ctx = new Nettention.Proud.RmiContext();
+        ctx.sentFrom=pa.RemoteHostID;
+        ctx.relayed=pa.IsRelayed;
+        ctx.hostTag=hostTag;
+        ctx.encryptMode = pa.EncryptMode;
+        ctx.compressMode = pa.CompressMode;
+
+        int m_team_num; Nettention.Proud.Marshaler.Read(__msg,out m_team_num);	
+float m_move; Nettention.Proud.Marshaler.Read(__msg,out m_move);	
+float m_rotate; Nettention.Proud.Marshaler.Read(__msg,out m_rotate);	
+float m_mouseX; Nettention.Proud.Marshaler.Read(__msg,out m_mouseX);	
+core.PostCheckReadMessage(__msg, RmiName_Player_Move);
+        if(enableNotifyCallFromStub==true)
+        {
+        string parameterString = "";
+        parameterString+=m_team_num.ToString()+",";
+parameterString+=m_move.ToString()+",";
+parameterString+=m_rotate.ToString()+",";
+parameterString+=m_mouseX.ToString()+",";
+        NotifyCallFromStub(Common.Player_Move, RmiName_Player_Move,parameterString);
+        }
+
+        if(enableStubProfiling)
+        {
+        Nettention.Proud.BeforeRmiSummary summary = new Nettention.Proud.BeforeRmiSummary();
+        summary.rmiID = Common.Player_Move;
+        summary.rmiName = RmiName_Player_Move;
+        summary.hostID = remote;
+        summary.hostTag = hostTag;
+        BeforeRmiInvocation(summary);
+        }
+
+        long t0 = Nettention.Proud.PreciseCurrentTime.GetTimeMs();
+
+        // Call this method.
+        bool __ret =Player_Move (remote,ctx , m_team_num, m_move, m_rotate, m_mouseX );
+
+        if(__ret==false)
+        {
+        // Error: RMI function that a user did not create has been called. 
+        core.ShowNotImplementedRmiWarning(RmiName_Player_Move);
+        }
+
+        if(enableStubProfiling)
+        {
+        Nettention.Proud.AfterRmiSummary summary = new Nettention.Proud.AfterRmiSummary();
+        summary.rmiID = Common.Player_Move;
+        summary.rmiName = RmiName_Player_Move;
+        summary.hostID = remote;
+        summary.hostTag = hostTag;
+        summary.elapsedTime = Nettention.Proud.PreciseCurrentTime.GetTimeMs()-t0;
+        AfterRmiInvocation(summary);
+        }
+    }
 #if USE_RMI_NAME_STRING
 // RMI name declaration.
 // It is the unique pointer that indicates RMI name such as RMI profiler.
@@ -594,6 +658,7 @@ public const string RmiName_Room_Appear="Room_Appear";
 public const string RmiName_Room_Disappear="Room_Disappear";
 public const string RmiName_GameStart="GameStart";
 public const string RmiName_PlayerInfo="PlayerInfo";
+public const string RmiName_Player_Move="Player_Move";
        
 public const string RmiName_First = RmiName_RequestLogin;
 #else
@@ -608,6 +673,7 @@ public const string RmiName_Room_Appear="";
 public const string RmiName_Room_Disappear="";
 public const string RmiName_GameStart="";
 public const string RmiName_PlayerInfo="";
+public const string RmiName_Player_Move="";
        
 public const string RmiName_First = "";
 #endif

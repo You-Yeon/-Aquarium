@@ -1246,7 +1246,7 @@ GameObject:
   - component: {fileID: 458416}
   - component: {fileID: 911986147}
   - component: {fileID: 9550852}
-  - component: {fileID: 9045361528449281154}
+  - component: {fileID: -6936416797728721123}
   - component: {fileID: 4815727883849581228}
   - component: {fileID: 1787294595101278545}
   m_Layer: 0
@@ -1286,7 +1286,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!95 &9550852
 Animator:
@@ -1307,27 +1307,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &9045361528449281154
+--- !u!114 &-6936416797728721123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171554}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86fec59e04fd22a49b22887dae895d16, type: 3}
+  m_Script: {fileID: 11500000, guid: 35500fac1d6f5ef498836f0b3b72618d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vcam: {fileID: 0}
   bulletPrefab: {fileID: 6028002982283208695, guid: ada2224b85e294849b6f97c56604fee5,
     type: 3}
-  shootPoint: {fileID: 4396421933702729566}
+  shootPoint: {fileID: 0}
   RayPoint: {fileID: 0}
-  range: 200
+  range: 0
   audioSource_walk: {fileID: 4815727883849581228}
   audioSource_fire: {fileID: 1787294595101278545}
   reloadSound: {fileID: 8300000, guid: a18c55da92ec69b458d37bb1d8b7a18b, type: 3}
+  m_move: 0
+  m_rotate: 0
+  m_mouseX: 0
 --- !u!82 &4815727883849581228
 AudioSource:
   m_ObjectHideFlags: 0

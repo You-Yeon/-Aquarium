@@ -760,7 +760,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_IntArray() {
   void * jresult ;
   Proud::CFastArray< int > *result = 0 ;
   
-  result = (Proud::CFastArray< int > *)new Proud::CFastArray< int >();
+  {
+    try {
+      result = (Proud::CFastArray< int > *)new Proud::CFastArray< int >();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -770,7 +778,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IntArray(void * jarg1) {
   Proud::CFastArray< int > *arg1 = (Proud::CFastArray< int > *) 0 ;
   
   arg1 = (Proud::CFastArray< int > *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -778,7 +794,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IntArray_SuspendShrink(void * jarg1) {
   Proud::CFastArray< int > *arg1 = (Proud::CFastArray< int > *) 0 ;
   
   arg1 = (Proud::CFastArray< int > *)jarg1; 
-  (arg1)->SuspendShrink();
+  {
+    try {
+      (arg1)->SuspendShrink();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -786,7 +810,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IntArray_OnRecycle(void * jarg1) {
   Proud::CFastArray< int > *arg1 = (Proud::CFastArray< int > *) 0 ;
   
   arg1 = (Proud::CFastArray< int > *)jarg1; 
-  (arg1)->OnRecycle();
+  {
+    try {
+      (arg1)->OnRecycle();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -794,7 +826,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IntArray_OnDrop(void * jarg1) {
   Proud::CFastArray< int > *arg1 = (Proud::CFastArray< int > *) 0 ;
   
   arg1 = (Proud::CFastArray< int > *)jarg1; 
-  (arg1)->OnDrop();
+  {
+    try {
+      (arg1)->OnDrop();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -804,7 +844,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IntArray_AddCount(void * jarg1, int jarg2) {
   
   arg1 = (Proud::CFastArray< int > *)jarg1; 
   arg2 = (int)jarg2; 
-  (arg1)->AddCount(arg2);
+  {
+    try {
+      (arg1)->AddCount(arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -814,7 +862,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IntArray_resize(void * jarg1, int jarg2) {
   
   arg1 = (Proud::CFastArray< int > *)jarg1; 
   arg2 = (int)jarg2; 
-  (arg1)->resize(arg2);
+  {
+    try {
+      (arg1)->resize(arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -824,7 +880,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IntArray_GetCount(void * jarg1) {
   int result;
   
   arg1 = (Proud::CFastArray< int > *)jarg1; 
-  result = (int)((Proud::CFastArray< int > const *)arg1)->GetCount();
+  {
+    try {
+      result = (int)((Proud::CFastArray< int > const *)arg1)->GetCount();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -836,7 +900,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IntArray_size(void * jarg1) {
   int result;
   
   arg1 = (Proud::CFastArray< int > *)jarg1; 
-  result = (int)((Proud::CFastArray< int > const *)arg1)->size();
+  {
+    try {
+      result = (int)((Proud::CFastArray< int > const *)arg1)->size();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -848,7 +920,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IntArray_IsEmpty(void * jarg1) {
   bool result;
   
   arg1 = (Proud::CFastArray< int > *)jarg1; 
-  result = (bool)((Proud::CFastArray< int > const *)arg1)->IsEmpty();
+  {
+    try {
+      result = (bool)((Proud::CFastArray< int > const *)arg1)->IsEmpty();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -858,7 +938,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IntArray_Clear(void * jarg1) {
   Proud::CFastArray< int > *arg1 = (Proud::CFastArray< int > *) 0 ;
   
   arg1 = (Proud::CFastArray< int > *)jarg1; 
-  (arg1)->Clear();
+  {
+    try {
+      (arg1)->Clear();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -868,7 +956,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IntArray_RemoveAt(void * jarg1, int jarg2) {
   
   arg1 = (Proud::CFastArray< int > *)jarg1; 
   arg2 = (int)jarg2; 
-  (arg1)->RemoveAt(arg2);
+  {
+    try {
+      (arg1)->RemoveAt(arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -878,7 +974,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IntArray_Add(void * jarg1, int jarg2) {
   
   arg1 = (Proud::CFastArray< int > *)jarg1; 
   arg2 = (int)jarg2; 
-  Proud_CFastArray_Sl_int_Sg__Add(arg1,arg2);
+  {
+    try {
+      Proud_CFastArray_Sl_int_Sg__Add(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -890,15 +994,23 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IntArray_Get(void * jarg1, int jarg2) {
   
   arg1 = (Proud::CFastArray< int > *)jarg1; 
   arg2 = (int)jarg2; 
-  try {
-    result = (int)Proud_CFastArray_Sl_int_Sg__Get(arg1,arg2);
+  {
+    try {
+      try {
+        result = (int)Proud_CFastArray_Sl_int_Sg__Get(arg1,arg2);
+      }
+      catch(Proud::Exception &_e) {
+        (void)_e;
+        SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
+        return 0; 
+      }
+      
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
   }
-  catch(Proud::Exception &_e) {
-    (void)_e;
-    SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
-    return 0; 
-  }
-  
   jresult = result; 
   return jresult;
 }
@@ -918,7 +1030,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_AddrPortArray() {
   void * jresult ;
   Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *result = 0 ;
   
-  result = (Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *)new Proud::CFastArray< Proud::AddrPort,true,false,intptr_t >();
+  {
+    try {
+      result = (Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *)new Proud::CFastArray< Proud::AddrPort,true,false,intptr_t >();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -928,7 +1048,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_AddrPortArray(void * jarg1) {
   Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *arg1 = (Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *) 0 ;
   
   arg1 = (Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -936,7 +1064,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AddrPortArray_SuspendShrink(void * jarg1) {
   Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *arg1 = (Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *) 0 ;
   
   arg1 = (Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *)jarg1; 
-  (arg1)->SuspendShrink();
+  {
+    try {
+      (arg1)->SuspendShrink();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -944,7 +1080,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AddrPortArray_OnRecycle(void * jarg1) {
   Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *arg1 = (Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *) 0 ;
   
   arg1 = (Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *)jarg1; 
-  (arg1)->OnRecycle();
+  {
+    try {
+      (arg1)->OnRecycle();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -952,7 +1096,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AddrPortArray_OnDrop(void * jarg1) {
   Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *arg1 = (Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *) 0 ;
   
   arg1 = (Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *)jarg1; 
-  (arg1)->OnDrop();
+  {
+    try {
+      (arg1)->OnDrop();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -962,7 +1114,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AddrPortArray_AddCount(void * jarg1, int jarg
   
   arg1 = (Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *)jarg1; 
   arg2 = (int)jarg2; 
-  (arg1)->AddCount(arg2);
+  {
+    try {
+      (arg1)->AddCount(arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -972,7 +1132,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AddrPortArray_resize(void * jarg1, int jarg2)
   
   arg1 = (Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *)jarg1; 
   arg2 = (int)jarg2; 
-  (arg1)->resize(arg2);
+  {
+    try {
+      (arg1)->resize(arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -982,7 +1150,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_AddrPortArray_GetCount(void * jarg1) {
   int result;
   
   arg1 = (Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *)jarg1; 
-  result = (int)((Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > const *)arg1)->GetCount();
+  {
+    try {
+      result = (int)((Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > const *)arg1)->GetCount();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -994,7 +1170,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_AddrPortArray_size(void * jarg1) {
   int result;
   
   arg1 = (Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *)jarg1; 
-  result = (int)((Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > const *)arg1)->size();
+  {
+    try {
+      result = (int)((Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > const *)arg1)->size();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -1006,7 +1190,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_AddrPortArray_IsEmpty(void * jarg1) {
   bool result;
   
   arg1 = (Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *)jarg1; 
-  result = (bool)((Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > const *)arg1)->IsEmpty();
+  {
+    try {
+      result = (bool)((Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > const *)arg1)->IsEmpty();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -1016,7 +1208,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AddrPortArray_Clear(void * jarg1) {
   Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *arg1 = (Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *) 0 ;
   
   arg1 = (Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *)jarg1; 
-  (arg1)->Clear();
+  {
+    try {
+      (arg1)->Clear();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -1026,7 +1226,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AddrPortArray_RemoveAt(void * jarg1, int jarg
   
   arg1 = (Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *)jarg1; 
   arg2 = (int)jarg2; 
-  (arg1)->RemoveAt(arg2);
+  {
+    try {
+      (arg1)->RemoveAt(arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -1042,7 +1250,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AddrPortArray_Add(void * jarg1, void * jarg2)
     return ;
   }
   arg2 = *argp2; 
-  Proud_CFastArray_Sl_Proud_AddrPort_Sc_true_Sc_false_Sc_intptr_t_Sg__Add(arg1,arg2);
+  {
+    try {
+      Proud_CFastArray_Sl_Proud_AddrPort_Sc_true_Sc_false_Sc_intptr_t_Sg__Add(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -1054,15 +1270,23 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_AddrPortArray_Get(void * jarg1, int jarg2) 
   
   arg1 = (Proud::CFastArray< Proud::AddrPort,true,false,intptr_t > *)jarg1; 
   arg2 = (int)jarg2; 
-  try {
-    result = Proud_CFastArray_Sl_Proud_AddrPort_Sc_true_Sc_false_Sc_intptr_t_Sg__Get(arg1,arg2);
+  {
+    try {
+      try {
+        result = Proud_CFastArray_Sl_Proud_AddrPort_Sc_true_Sc_false_Sc_intptr_t_Sg__Get(arg1,arg2);
+      }
+      catch(Proud::Exception &_e) {
+        (void)_e;
+        SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
+        return 0; 
+      }
+      
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
   }
-  catch(Proud::Exception &_e) {
-    (void)_e;
-    SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
-    return 0; 
-  }
-  
   jresult = new Proud::AddrPort((const Proud::AddrPort &)result); 
   return jresult;
 }
@@ -1392,7 +1616,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_NetConnectionParam() {
   void * jresult ;
   Proud::CNetConnectionParam *result = 0 ;
   
-  result = (Proud::CNetConnectionParam *)new Proud::CNetConnectionParam();
+  {
+    try {
+      result = (Proud::CNetConnectionParam *)new Proud::CNetConnectionParam();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -1404,7 +1636,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NetConnectionParam_GetNativeUserData(void *
   void *result = 0 ;
   
   arg1 = (Proud::CNetConnectionParam *)jarg1; 
-  result = (void *)Proud_CNetConnectionParam_GetNativeUserData(arg1);
+  {
+    try {
+      result = (void *)Proud_CNetConnectionParam_GetNativeUserData(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -1416,16 +1656,23 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetConnectionParam_SetExternalUserWorkerThrea
   
   arg1 = (Proud::CNetConnectionParam *)jarg1; 
   arg2 = (Proud::CThreadPool *)jarg2; 
-  try {
-    Proud_CNetConnectionParam_SetExternalUserWorkerThreadPool(arg1,arg2);
-  }
-  catch(Proud::Exception &_e) {
+  {
+    try {
+      try {
+        Proud_CNetConnectionParam_SetExternalUserWorkerThreadPool(arg1,arg2);
+      }
+      catch(Proud::Exception &_e) {
+        (void)_e;
+        SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
+        return ; 
+      }
+      
+    } catch(std::exception& e)
     {
-      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, (&_e)->what());
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
       return ;
     }
   }
-  
 }
 
 
@@ -1435,16 +1682,23 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetConnectionParam_SetExternalNetWorkerThread
   
   arg1 = (Proud::CNetConnectionParam *)jarg1; 
   arg2 = (Proud::CThreadPool *)jarg2; 
-  try {
-    Proud_CNetConnectionParam_SetExternalNetWorkerThreadPool(arg1,arg2);
-  }
-  catch(Proud::Exception &_e) {
+  {
+    try {
+      try {
+        Proud_CNetConnectionParam_SetExternalNetWorkerThreadPool(arg1,arg2);
+      }
+      catch(Proud::Exception &_e) {
+        (void)_e;
+        SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
+        return ; 
+      }
+      
+    } catch(std::exception& e)
     {
-      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, (&_e)->what());
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
       return ;
     }
   }
-  
 }
 
 
@@ -1452,7 +1706,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_NetConnectionParam(void * jarg1) {
   Proud::CNetConnectionParam *arg1 = (Proud::CNetConnectionParam *) 0 ;
   
   arg1 = (Proud::CNetConnectionParam *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -1472,7 +1734,15 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_ToString(int jarg1) {
   PNTCHAR *result = 0 ;
   
   arg1 = (Proud::LogCategory)jarg1; 
-  result = (PNTCHAR *)Proud::ToString(arg1);
+  {
+    try {
+      result = (PNTCHAR *)Proud::ToString(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = SWIG_csharp_string_callback(StringT2A(result, GetUTF16toUTF8()).GetString()); 
   return jresult;
 }
@@ -1604,7 +1874,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_ErrorInfo() {
   void * jresult ;
   Proud::ErrorInfo *result = 0 ;
   
-  result = (Proud::ErrorInfo *)new Proud::ErrorInfo();
+  {
+    try {
+      result = (Proud::ErrorInfo *)new Proud::ErrorInfo();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -1616,7 +1894,15 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_ErrorInfo_GetString(void * jarg1) {
   Proud::String result;
   
   arg1 = (Proud::ErrorInfo *)jarg1; 
-  result = ((Proud::ErrorInfo const *)arg1)->ToString();
+  {
+    try {
+      result = ((Proud::ErrorInfo const *)arg1)->ToString();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = SWIG_csharp_string_callback(StringT2A(result, GetUTF16toUTF8()).GetString()); 
   return jresult;
 }
@@ -1628,7 +1914,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_ErrorInfo_Clone(void * jarg1) {
   Proud::ErrorInfo *result = 0 ;
   
   arg1 = (Proud::ErrorInfo *)jarg1; 
-  result = (Proud::ErrorInfo *)(arg1)->Clone();
+  {
+    try {
+      result = (Proud::ErrorInfo *)(arg1)->Clone();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -1640,7 +1934,15 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_ErrorInfo_TypeToString(int jarg1) {
   PNTCHAR *result = 0 ;
   
   arg1 = (Proud::ErrorType)jarg1; 
-  result = (PNTCHAR *)Proud::ErrorInfo::TypeToString(arg1);
+  {
+    try {
+      result = (PNTCHAR *)Proud::ErrorInfo::TypeToString(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = SWIG_csharp_string_callback(StringT2A(result, GetUTF16toUTF8()).GetString()); 
   return jresult;
 }
@@ -1654,7 +1956,15 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_ErrorInfo_TypeToStringByLangID(int jarg1, i
   
   arg1 = (Proud::ErrorType)jarg1; 
   arg2 = (int)jarg2; 
-  result = (PNTCHAR *)Proud::ErrorInfo::TypeToStringByLangID(arg1,arg2);
+  {
+    try {
+      result = (PNTCHAR *)Proud::ErrorInfo::TypeToStringByLangID(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = SWIG_csharp_string_callback(StringT2A(result, GetUTF16toUTF8()).GetString()); 
   return jresult;
 }
@@ -1666,7 +1976,15 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_ErrorInfo_TypeToPlainString(int jarg1) {
   PNTCHAR *result = 0 ;
   
   arg1 = (Proud::ErrorType)jarg1; 
-  result = (PNTCHAR *)Proud::ErrorInfo::TypeToPlainString(arg1);
+  {
+    try {
+      result = (PNTCHAR *)Proud::ErrorInfo::TypeToPlainString(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = SWIG_csharp_string_callback(StringT2A(result, GetUTF16toUTF8()).GetString()); 
   return jresult;
 }
@@ -1678,7 +1996,15 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_ErrorInfo_TypeToString_Kor(int jarg1) {
   PNTCHAR *result = 0 ;
   
   arg1 = (Proud::ErrorType)jarg1; 
-  result = (PNTCHAR *)Proud::ErrorInfo::TypeToString_Kor(arg1);
+  {
+    try {
+      result = (PNTCHAR *)Proud::ErrorInfo::TypeToString_Kor(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = SWIG_csharp_string_callback(StringT2A(result, GetUTF16toUTF8()).GetString()); 
   return jresult;
 }
@@ -1690,7 +2016,15 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_ErrorInfo_TypeToString_Eng(int jarg1) {
   PNTCHAR *result = 0 ;
   
   arg1 = (Proud::ErrorType)jarg1; 
-  result = (PNTCHAR *)Proud::ErrorInfo::TypeToString_Eng(arg1);
+  {
+    try {
+      result = (PNTCHAR *)Proud::ErrorInfo::TypeToString_Eng(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = SWIG_csharp_string_callback(StringT2A(result, GetUTF16toUTF8()).GetString()); 
   return jresult;
 }
@@ -1702,7 +2036,15 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_ErrorInfo_TypeToString_Chn(int jarg1) {
   PNTCHAR *result = 0 ;
   
   arg1 = (Proud::ErrorType)jarg1; 
-  result = (PNTCHAR *)Proud::ErrorInfo::TypeToString_Chn(arg1);
+  {
+    try {
+      result = (PNTCHAR *)Proud::ErrorInfo::TypeToString_Chn(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = SWIG_csharp_string_callback(StringT2A(result, GetUTF16toUTF8()).GetString()); 
   return jresult;
 }
@@ -1714,7 +2056,15 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_ErrorInfo_TypeToString_Jpn(int jarg1) {
   PNTCHAR *result = 0 ;
   
   arg1 = (Proud::ErrorType)jarg1; 
-  result = (PNTCHAR *)Proud::ErrorInfo::TypeToString_Jpn(arg1);
+  {
+    try {
+      result = (PNTCHAR *)Proud::ErrorInfo::TypeToString_Jpn(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = SWIG_csharp_string_callback(StringT2A(result, GetUTF16toUTF8()).GetString()); 
   return jresult;
 }
@@ -1726,16 +2076,23 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ErrorInfo_CopyFromNative(void * jarg1, void *
   
   arg1 = (Proud::ErrorInfo *)jarg1; 
   arg2 = jarg2; 
-  try {
-    Proud_ErrorInfo_CopyFromNative(arg1,arg2);
-  }
-  catch(Proud::Exception &_e) {
+  {
+    try {
+      try {
+        Proud_ErrorInfo_CopyFromNative(arg1,arg2);
+      }
+      catch(Proud::Exception &_e) {
+        (void)_e;
+        SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
+        return ; 
+      }
+      
+    } catch(std::exception& e)
     {
-      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, (&_e)->what());
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
       return ;
     }
   }
-  
 }
 
 
@@ -1745,16 +2102,23 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_ErrorInfo_GetNativeReceivedMessage(void * j
   void *result = 0 ;
   
   arg1 = (Proud::ErrorInfo *)jarg1; 
-  try {
-    result = (void *)Proud_ErrorInfo_GetNativeReceivedMessage(arg1);
-  }
-  catch(Proud::Exception &_e) {
+  {
+    try {
+      try {
+        result = (void *)Proud_ErrorInfo_GetNativeReceivedMessage(arg1);
+      }
+      catch(Proud::Exception &_e) {
+        (void)_e;
+        SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
+        return 0; 
+      }
+      
+    } catch(std::exception& e)
     {
-      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, (&_e)->what());
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
       return 0;
     }
   }
-  
   jresult = result; 
   return jresult;
 }
@@ -1766,16 +2130,23 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ErrorInfo_GetNativeReceivedMessageLength(void 
   int result;
   
   arg1 = (Proud::ErrorInfo *)jarg1; 
-  try {
-    result = (int)Proud_ErrorInfo_GetNativeReceivedMessageLength(arg1);
-  }
-  catch(Proud::Exception &_e) {
+  {
+    try {
+      try {
+        result = (int)Proud_ErrorInfo_GetNativeReceivedMessageLength(arg1);
+      }
+      catch(Proud::Exception &_e) {
+        (void)_e;
+        SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
+        return 0; 
+      }
+      
+    } catch(std::exception& e)
     {
-      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, (&_e)->what());
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
       return 0;
     }
   }
-  
   jresult = result; 
   return jresult;
 }
@@ -1785,7 +2156,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_ErrorInfo(void * jarg1) {
   Proud::ErrorInfo *arg1 = (Proud::ErrorInfo *) 0 ;
   
   arg1 = (Proud::ErrorInfo *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -1837,7 +2216,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_FrameMoveResult() {
   void * jresult ;
   Proud::CFrameMoveResult *result = 0 ;
   
-  result = (Proud::CFrameMoveResult *)new Proud::CFrameMoveResult();
+  {
+    try {
+      result = (Proud::CFrameMoveResult *)new Proud::CFrameMoveResult();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -1847,7 +2234,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_FrameMoveResult(void * jarg1) {
   Proud::CFrameMoveResult *arg1 = (Proud::CFrameMoveResult *) 0 ;
   
   arg1 = (Proud::CFrameMoveResult *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -1877,7 +2272,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_ServerConnectionState() {
   void * jresult ;
   Proud::CServerConnectionState *result = 0 ;
   
-  result = (Proud::CServerConnectionState *)new Proud::CServerConnectionState();
+  {
+    try {
+      result = (Proud::CServerConnectionState *)new Proud::CServerConnectionState();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -1887,7 +2290,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_ServerConnectionState(void * jarg1) {
   Proud::CServerConnectionState *arg1 = (Proud::CServerConnectionState *) 0 ;
   
   arg1 = (Proud::CServerConnectionState *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -1961,7 +2372,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_DirectP2PInfo() {
   void * jresult ;
   Proud::CDirectP2PInfo *result = 0 ;
   
-  result = (Proud::CDirectP2PInfo *)new Proud::CDirectP2PInfo();
+  {
+    try {
+      result = (Proud::CDirectP2PInfo *)new Proud::CDirectP2PInfo();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -1973,7 +2392,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_DirectP2PInfo_HasBeenHolepunched(void
   bool result;
   
   arg1 = (Proud::CDirectP2PInfo *)jarg1; 
-  result = (bool)(arg1)->HasBeenHolepunched();
+  {
+    try {
+      result = (bool)(arg1)->HasBeenHolepunched();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -1983,7 +2410,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_DirectP2PInfo(void * jarg1) {
   Proud::CDirectP2PInfo *arg1 = (Proud::CDirectP2PInfo *) 0 ;
   
   arg1 = (Proud::CDirectP2PInfo *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -1991,7 +2426,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_NativeNetClient(void * jarg1) {
   Proud::CNetClient *arg1 = (Proud::CNetClient *) 0 ;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -1999,7 +2442,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NativeNetClient_Create() {
   void * jresult ;
   Proud::CNetClient *result = 0 ;
   
-  result = (Proud::CNetClient *)Proud::CNetClient::Create();
+  {
+    try {
+      result = (Proud::CNetClient *)Proud::CNetClient::Create();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -2009,7 +2460,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeNetClient_Disconnect__SWIG_0(void * jar
   Proud::CNetClient *arg1 = (Proud::CNetClient *) 0 ;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  (arg1)->Disconnect();
+  {
+    try {
+      (arg1)->Disconnect();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -2023,7 +2482,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeNetClient_Disconnect__SWIG_1(void * jar
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "CDisconnectArgs const & type is null", 0);
     return ;
   } 
-  (arg1)->Disconnect((CDisconnectArgs const &)*arg2);
+  {
+    try {
+      (arg1)->Disconnect((CDisconnectArgs const &)*arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -2035,7 +2502,15 @@ SWIGEXPORT long long SWIGSTDCALL CSharp_NativeNetClient_GetIndirectServerTimeMs(
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  result = (int64_t)(arg1)->GetIndirectServerTimeMs(arg2);
+  {
+    try {
+      result = (int64_t)(arg1)->GetIndirectServerTimeMs(arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2047,7 +2522,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeNetClient_GetLocalHostID(void * jarg1) {
   Proud::HostID result;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  result = (Proud::HostID)(arg1)->GetLocalHostID();
+  {
+    try {
+      result = (Proud::HostID)(arg1)->GetLocalHostID();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (int)result; 
   return jresult;
 }
@@ -2059,7 +2542,15 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_NativeNetClient_GetNatDeviceName(void * jar
   Proud::String result;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  result = (arg1)->GetNatDeviceName();
+  {
+    try {
+      result = (arg1)->GetNatDeviceName();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = SWIG_csharp_string_callback(StringT2A(result, GetUTF16toUTF8()).GetString()); 
   return jresult;
 }
@@ -2073,7 +2564,15 @@ SWIGEXPORT long long SWIGSTDCALL CSharp_NativeNetClient_GetP2PServerTimeMs(void 
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  result = (int64_t)(arg1)->GetP2PServerTimeMs(arg2);
+  {
+    try {
+      result = (int64_t)(arg1)->GetP2PServerTimeMs(arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2087,7 +2586,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NativeNetClient_GetLocalUdpSocketAddr(void 
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  result = (arg1)->GetLocalUdpSocketAddr(arg2);
+  {
+    try {
+      result = (arg1)->GetLocalUdpSocketAddr(arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = new AddrPort((const AddrPort &)result); 
   return jresult;
 }
@@ -2107,7 +2614,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NativeNetClient_GetDirectP2PInfo(void
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Proud::CDirectP2PInfo & type is null", 0);
     return 0;
   } 
-  result = (bool)(arg1)->GetDirectP2PInfo(arg2,*arg3);
+  {
+    try {
+      result = (bool)(arg1)->GetDirectP2PInfo(arg2,*arg3);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2119,7 +2634,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NativeNetClient_GetServerAddrPort(void * ja
   AddrPort result;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  result = (arg1)->GetServerAddrPort();
+  {
+    try {
+      result = (arg1)->GetServerAddrPort();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = new AddrPort((const AddrPort &)result); 
   return jresult;
 }
@@ -2135,7 +2658,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NativeNetClient_SetHostTag(void * jar
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
   arg3 = jarg3; 
-  result = (bool)(arg1)->SetHostTag(arg2,arg3);
+  {
+    try {
+      result = (bool)(arg1)->SetHostTag(arg2,arg3);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2147,7 +2678,15 @@ SWIGEXPORT long long SWIGSTDCALL CSharp_NativeNetClient_GetServerTimeMs(void * j
   int64_t result;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  result = (int64_t)(arg1)->GetServerTimeMs();
+  {
+    try {
+      result = (int64_t)(arg1)->GetServerTimeMs();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2159,7 +2698,15 @@ SWIGEXPORT long long SWIGSTDCALL CSharp_NativeNetClient_GetServerTimeDiffMs(void
   int64_t result;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  result = (int64_t)(arg1)->GetServerTimeDiffMs();
+  {
+    try {
+      result = (int64_t)(arg1)->GetServerTimeDiffMs();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2177,7 +2724,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeNetClient_GetServerConnectionState(void 
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Proud::CServerConnectionState & type is null", 0);
     return 0;
   } 
-  result = (Proud::ConnectionState)(arg1)->GetServerConnectionState(*arg2);
+  {
+    try {
+      result = (Proud::ConnectionState)(arg1)->GetServerConnectionState(*arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (int)result; 
   return jresult;
 }
@@ -2189,7 +2744,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NativeNetClient_HasServerConnection(v
   bool result;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  result = (bool)(arg1)->HasServerConnection();
+  {
+    try {
+      result = (bool)(arg1)->HasServerConnection();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2209,7 +2772,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeNetClient_StartRoundTripLatencyTest(void
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "StartRoundTripLatencyTestParameter const & type is null", 0);
     return 0;
   } 
-  result = (Proud::ErrorType)(arg1)->StartRoundTripLatencyTest(arg2,(StartRoundTripLatencyTestParameter const &)*arg3);
+  {
+    try {
+      result = (Proud::ErrorType)(arg1)->StartRoundTripLatencyTest(arg2,(StartRoundTripLatencyTestParameter const &)*arg3);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (int)result; 
   return jresult;
 }
@@ -2223,7 +2794,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeNetClient_StopRoundTripLatencyTest(void 
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  result = (Proud::ErrorType)(arg1)->StopRoundTripLatencyTest(arg2);
+  {
+    try {
+      result = (Proud::ErrorType)(arg1)->StopRoundTripLatencyTest(arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (int)result; 
   return jresult;
 }
@@ -2243,7 +2822,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeNetClient_GetRoundTripLatency(void * jar
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "RoundTripLatencyTestResult & type is null", 0);
     return 0;
   } 
-  result = (Proud::ErrorType)(arg1)->GetRoundTripLatency(arg2,*arg3);
+  {
+    try {
+      result = (Proud::ErrorType)(arg1)->GetRoundTripLatency(arg2,*arg3);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (int)result; 
   return jresult;
 }
@@ -2257,7 +2844,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NativeNetClient_RestoreUdpSocket(void
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  result = (bool)(arg1)->RestoreUdpSocket(arg2);
+  {
+    try {
+      result = (bool)(arg1)->RestoreUdpSocket(arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2269,7 +2864,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeNetClient_TEST_FallbackUdpToTcp(void * 
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::FallbackMethod)jarg2; 
-  (arg1)->TEST_FallbackUdpToTcp(arg2);
+  {
+    try {
+      (arg1)->TEST_FallbackUdpToTcp(arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -2279,7 +2882,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeNetClient_TEST_EnableVirtualSpeedHack(v
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (int64_t)jarg2; 
-  (arg1)->TEST_EnableVirtualSpeedHack(arg2);
+  {
+    try {
+      (arg1)->TEST_EnableVirtualSpeedHack(arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -2291,7 +2902,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeNetClient_TEST_SetPacketTruncatePercent
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostType)jarg2; 
   arg3 = (int)jarg3; 
-  (arg1)->TEST_SetPacketTruncatePercent(arg2,arg3);
+  {
+    try {
+      (arg1)->TEST_SetPacketTruncatePercent(arg2,arg3);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -2301,7 +2920,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeNetClient_GetInternalVersion(void * jarg
   int result;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  result = (int)(arg1)->GetInternalVersion();
+  {
+    try {
+      result = (int)(arg1)->GetInternalVersion();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2313,7 +2940,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeNetClient_GetMessageMaxLength(void * jar
   int result;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  result = (int)(arg1)->GetMessageMaxLength();
+  {
+    try {
+      result = (int)(arg1)->GetMessageMaxLength();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2325,7 +2960,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NativeNetClient_GetPublicAddress(void * jar
   AddrPort result;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  result = (arg1)->GetPublicAddress();
+  {
+    try {
+      result = (arg1)->GetPublicAddress();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = new AddrPort((const AddrPort &)result); 
   return jresult;
 }
@@ -2351,7 +2994,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NativeNetClient_SendUserMessage(void 
   arg4 = (uint8_t*)(jarg4);
   
   arg5 = (int)jarg5; 
-  result = (bool)(arg1)->SendUserMessage(arg2,*arg3,arg4,arg5);
+  {
+    try {
+      result = (bool)(arg1)->SendUserMessage(arg2,*arg3,arg4,arg5);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2367,7 +3018,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeNetClient_SetCoalesceIntervalMs(void * j
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
   arg3 = (int)jarg3; 
-  result = (Proud::ErrorType)(arg1)->SetCoalesceIntervalMs(arg2,arg3);
+  {
+    try {
+      result = (Proud::ErrorType)(arg1)->SetCoalesceIntervalMs(arg2,arg3);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (int)result; 
   return jresult;
 }
@@ -2381,7 +3040,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeNetClient_SetCoalesceIntervalToAuto(void
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  result = (Proud::ErrorType)(arg1)->SetCoalesceIntervalToAuto(arg2);
+  {
+    try {
+      result = (Proud::ErrorType)(arg1)->SetCoalesceIntervalToAuto(arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (int)result; 
   return jresult;
 }
@@ -2393,7 +3060,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NativeNetClient_GetTcpLocalAddr(void * jarg
   AddrPort result;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  result = (arg1)->GetTcpLocalAddr();
+  {
+    try {
+      result = (arg1)->GetTcpLocalAddr();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = new AddrPort((const AddrPort &)result); 
   return jresult;
 }
@@ -2405,7 +3080,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NativeNetClient_GetUdpLocalAddr(void * jarg
   AddrPort result;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  result = (arg1)->GetUdpLocalAddr();
+  {
+    try {
+      result = (arg1)->GetUdpLocalAddr();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = new AddrPort((const AddrPort &)result); 
   return jresult;
 }
@@ -2417,7 +3100,15 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_NativeNetClient_TEST_GetDebugText(void * ja
   Proud::String result;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  result = (arg1)->TEST_GetDebugText();
+  {
+    try {
+      result = (arg1)->TEST_GetDebugText();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = SWIG_csharp_string_callback(StringT2A(result, GetUTF16toUTF8()).GetString()); 
   return jresult;
 }
@@ -2427,7 +3118,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeNetClient_TEST_FakeTurnOffSendAndReceiv
   Proud::CNetClient *arg1 = (Proud::CNetClient *) 0 ;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  (arg1)->TEST_FakeTurnOffSendAndReceive();
+  {
+    try {
+      (arg1)->TEST_FakeTurnOffSendAndReceive();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -2437,7 +3136,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeNetClient_TEST_SetAutoConnectionRecover
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (int)jarg2; 
-  (arg1)->TEST_SetAutoConnectionRecoverySimulatedDelay(arg2);
+  {
+    try {
+      (arg1)->TEST_SetAutoConnectionRecoverySimulatedDelay(arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -2451,7 +3158,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeNetClient_ForceP2PRelay(void * jarg1, in
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
   arg3 = jarg3 ? true : false; 
-  result = (Proud::ErrorType)(arg1)->ForceP2PRelay(arg2,arg3);
+  {
+    try {
+      result = (Proud::ErrorType)(arg1)->ForceP2PRelay(arg2,arg3);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (int)result; 
   return jresult;
 }
@@ -2461,7 +3176,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeNetClient_HolsterMoreCallbackUntilNextF
   Proud::CNetClient *arg1 = (Proud::CNetClient *) 0 ;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  Proud_CNetClient_HolsterMoreCallbackUntilNextFrameMove(arg1);
+  {
+    try {
+      Proud_CNetClient_HolsterMoreCallbackUntilNextFrameMove(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -2469,16 +3192,23 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeNetClient_DisconnectAsync(void * jarg1)
   Proud::CNetClient *arg1 = (Proud::CNetClient *) 0 ;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  try {
-    Proud_CNetClient_DisconnectAsync(arg1);
-  }
-  catch(Proud::Exception &_e) {
+  {
+    try {
+      try {
+        Proud_CNetClient_DisconnectAsync(arg1);
+      }
+      catch(Proud::Exception &_e) {
+        (void)_e;
+        SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
+        return ; 
+      }
+      
+    } catch(std::exception& e)
     {
-      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, (&_e)->what());
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
       return ;
     }
   }
-  
 }
 
 
@@ -2490,16 +3220,23 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NativeNetClient_Connect__SWIG_0(void 
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::CNetConnectionParam *)jarg2; 
-  try {
-    result = (bool)Proud_CNetClient_Connect__SWIG_0(arg1,arg2);
-  }
-  catch(Proud::Exception &_e) {
+  {
+    try {
+      try {
+        result = (bool)Proud_CNetClient_Connect__SWIG_0(arg1,arg2);
+      }
+      catch(Proud::Exception &_e) {
+        (void)_e;
+        SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
+        return 0; 
+      }
+      
+    } catch(std::exception& e)
     {
-      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, (&_e)->what());
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
       return 0;
     }
   }
-  
   jresult = result; 
   return jresult;
 }
@@ -2515,7 +3252,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NativeNetClient_Connect__SWIG_1(void 
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::CNetConnectionParam *)jarg2; 
   arg3 = (Proud::ErrorInfo *)jarg3; 
-  result = (bool)Proud_CNetClient_Connect__SWIG_1(arg1,arg2,arg3);
+  {
+    try {
+      result = (bool)Proud_CNetClient_Connect__SWIG_1(arg1,arg2,arg3);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2525,16 +3270,23 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeNetClient_FrameMove__SWIG_0(void * jarg
   Proud::CNetClient *arg1 = (Proud::CNetClient *) 0 ;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  try {
-    Proud_CNetClient_FrameMove__SWIG_0(arg1);
-  }
-  catch(Proud::Exception &_e) {
+  {
+    try {
+      try {
+        Proud_CNetClient_FrameMove__SWIG_0(arg1);
+      }
+      catch(Proud::Exception &_e) {
+        (void)_e;
+        SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
+        return ; 
+      }
+      
+    } catch(std::exception& e)
     {
-      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, (&_e)->what());
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
       return ;
     }
   }
-  
 }
 
 
@@ -2546,16 +3298,23 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeNetClient_FrameMove__SWIG_1(void * jarg
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (int)jarg2; 
   arg3 = (Proud::CFrameMoveResult *)jarg3; 
-  try {
-    Proud_CNetClient_FrameMove__SWIG_1(arg1,arg2,arg3);
-  }
-  catch(Proud::Exception &_e) {
+  {
+    try {
+      try {
+        Proud_CNetClient_FrameMove__SWIG_1(arg1,arg2,arg3);
+      }
+      catch(Proud::Exception &_e) {
+        (void)_e;
+        SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
+        return ; 
+      }
+      
+    } catch(std::exception& e)
     {
-      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, (&_e)->what());
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
       return ;
     }
   }
-  
 }
 
 
@@ -2567,7 +3326,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NativeNetClient_GetGroupMembers(void * jarg
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  result = Proud_CNetClient_GetGroupMembers(arg1,arg2);
+  {
+    try {
+      result = Proud_CNetClient_GetGroupMembers(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = new Proud::HostIDArray((const Proud::HostIDArray &)result); 
   return jresult;
 }
@@ -2579,7 +3346,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NativeNetClient_GetLocalJoinedP2PGroups(voi
   Proud::HostIDArray result;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  result = Proud_CNetClient_GetLocalJoinedP2PGroups(arg1);
+  {
+    try {
+      result = Proud_CNetClient_GetLocalJoinedP2PGroups(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = new Proud::HostIDArray((const Proud::HostIDArray &)result); 
   return jresult;
 }
@@ -2591,7 +3366,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NativeNetClient_GetStats(void * jarg1) {
   Proud::CNetClientStats result;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  result = Proud_CNetClient_GetStats(arg1);
+  {
+    try {
+      result = Proud_CNetClient_GetStats(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = new Proud::CNetClientStats((const Proud::CNetClientStats &)result); 
   return jresult;
 }
@@ -2605,7 +3388,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NativeNetClient_GetPeerInfo(void * jarg1, i
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  result = Proud_CNetClient_GetPeerInfo(arg1,arg2);
+  {
+    try {
+      result = Proud_CNetClient_GetPeerInfo(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = new Proud::CNetPeerInfo((const Proud::CNetPeerInfo &)result); 
   return jresult;
 }
@@ -2619,7 +3410,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NativeNetClient_InvalidateUdpSocket(void * 
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  result = Proud_CNetClient_InvalidateUdpSocket(arg1,arg2);
+  {
+    try {
+      result = Proud_CNetClient_InvalidateUdpSocket(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = new Proud::CDirectP2PInfo((const Proud::CDirectP2PInfo &)result); 
   return jresult;
 }
@@ -2633,7 +3432,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NativeNetClient_GetPeerReliableUdpStats(voi
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  result = Proud_CNetClient_GetPeerReliableUdpStats(arg1,arg2);
+  {
+    try {
+      result = Proud_CNetClient_GetPeerReliableUdpStats(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = new Proud::ReliableUdpHostStats((const Proud::ReliableUdpHostStats &)result); 
   return jresult;
 }
@@ -2645,7 +3452,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NativeNetClient_IsLocalHostBehindNat(
   bool result;
   
   arg1 = (Proud::CNetClient *)jarg1; 
-  result = (bool)Proud_CNetClient_IsLocalHostBehindNat(arg1);
+  {
+    try {
+      result = (bool)Proud_CNetClient_IsLocalHostBehindNat(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2659,7 +3474,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NativeNetClient_GetSocketInfo(void * jarg1,
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  result = Proud_CNetClient_GetSocketInfo(arg1,arg2);
+  {
+    try {
+      result = Proud_CNetClient_GetSocketInfo(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = new Proud::CSocketInfo((const Proud::CSocketInfo &)result); 
   return jresult;
 }
@@ -2673,7 +3496,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeNetClient_GetUnreliableMessagingLossRati
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  result = (int)Proud_CNetClient_GetUnreliableMessagingLossRatioPercent(arg1,arg2);
+  {
+    try {
+      result = (int)Proud_CNetClient_GetUnreliableMessagingLossRatioPercent(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2687,7 +3518,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeNetClient_GetUnreliableMessagingLossRati
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  result = (Proud::ErrorType)Proud_CNetClient_GetUnreliableMessagingLossRatioPercentErrorType(arg1,arg2);
+  {
+    try {
+      result = (Proud::ErrorType)Proud_CNetClient_GetUnreliableMessagingLossRatioPercentErrorType(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (int)result; 
   return jresult;
 }
@@ -2699,16 +3538,23 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeNetClient_SetEventSink(void * jarg1, vo
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = jarg2; 
-  try {
-    Proud_CNetClient_SetEventSink(arg1,arg2);
-  }
-  catch(Proud::Exception &_e) {
+  {
+    try {
+      try {
+        Proud_CNetClient_SetEventSink(arg1,arg2);
+      }
+      catch(Proud::Exception &_e) {
+        (void)_e;
+        SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
+        return ; 
+      }
+      
+    } catch(std::exception& e)
     {
-      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, (&_e)->what());
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
       return ;
     }
   }
-  
 }
 
 
@@ -2718,16 +3564,23 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeNetClient_AttachProxy(void * jarg1, voi
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = jarg2; 
-  try {
-    Proud_CNetClient_AttachProxy(arg1,arg2);
-  }
-  catch(Proud::Exception &_e) {
+  {
+    try {
+      try {
+        Proud_CNetClient_AttachProxy(arg1,arg2);
+      }
+      catch(Proud::Exception &_e) {
+        (void)_e;
+        SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
+        return ; 
+      }
+      
+    } catch(std::exception& e)
     {
-      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, (&_e)->what());
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
       return ;
     }
   }
-  
 }
 
 
@@ -2737,16 +3590,23 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeNetClient_AttachStub(void * jarg1, void
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = jarg2; 
-  try {
-    Proud_CNetClient_AttachStub(arg1,arg2);
-  }
-  catch(Proud::Exception &_e) {
+  {
+    try {
+      try {
+        Proud_CNetClient_AttachStub(arg1,arg2);
+      }
+      catch(Proud::Exception &_e) {
+        (void)_e;
+        SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
+        return ; 
+      }
+      
+    } catch(std::exception& e)
     {
-      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, (&_e)->what());
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
       return ;
     }
   }
-  
 }
 
 
@@ -2758,7 +3618,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeNetClient_GetLastUnreliablePingMs(void *
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  result = (int)Proud_CNetClient_GetLastUnreliablePingMs(arg1,arg2);
+  {
+    try {
+      result = (int)Proud_CNetClient_GetLastUnreliablePingMs(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2772,7 +3640,15 @@ SWIGEXPORT double SWIGSTDCALL CSharp_NativeNetClient_GetLastUnreliablePingSec(vo
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  result = (double)Proud_CNetClient_GetLastUnreliablePingSec(arg1,arg2);
+  {
+    try {
+      result = (double)Proud_CNetClient_GetLastUnreliablePingSec(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2786,7 +3662,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeNetClient_GetLastReliablePingMs(void * j
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  result = (int)Proud_CNetClient_GetLastReliablePingMs(arg1,arg2);
+  {
+    try {
+      result = (int)Proud_CNetClient_GetLastReliablePingMs(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2800,7 +3684,15 @@ SWIGEXPORT double SWIGSTDCALL CSharp_NativeNetClient_GetLastReliablePingSec(void
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  result = (double)Proud_CNetClient_GetLastReliablePingSec(arg1,arg2);
+  {
+    try {
+      result = (double)Proud_CNetClient_GetLastReliablePingSec(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2814,7 +3706,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeNetClient_GetRecentReliablePingMs(void *
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  result = (int)Proud_CNetClient_GetRecentReliablePingMs(arg1,arg2);
+  {
+    try {
+      result = (int)Proud_CNetClient_GetRecentReliablePingMs(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2828,7 +3728,15 @@ SWIGEXPORT double SWIGSTDCALL CSharp_NativeNetClient_GetRecentReliablePingSec(vo
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  result = (double)Proud_CNetClient_GetRecentReliablePingSec(arg1,arg2);
+  {
+    try {
+      result = (double)Proud_CNetClient_GetRecentReliablePingSec(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2842,7 +3750,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeNetClient_GetRecentUnreliablePingMs(void
   
   arg1 = (Proud::CNetClient *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  result = (int)Proud_CNetClient_GetRecentUnreliablePingMs(arg1,arg2);
+  {
+    try {
+      result = (int)Proud_CNetClient_GetRecentUnreliablePingMs(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -2876,7 +3792,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_RemoteOfflineEventArgs_CopyFromNative(void * 
   
   arg1 = (Proud::CRemoteOfflineEventArgs *)jarg1; 
   arg2 = jarg2; 
-  Proud_CRemoteOfflineEventArgs_CopyFromNative(arg1,arg2);
+  {
+    try {
+      Proud_CRemoteOfflineEventArgs_CopyFromNative(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -2884,7 +3808,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_RemoteOfflineEventArgs() {
   void * jresult ;
   Proud::CRemoteOfflineEventArgs *result = 0 ;
   
-  result = (Proud::CRemoteOfflineEventArgs *)new Proud::CRemoteOfflineEventArgs();
+  {
+    try {
+      result = (Proud::CRemoteOfflineEventArgs *)new Proud::CRemoteOfflineEventArgs();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -2894,7 +3826,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_RemoteOfflineEventArgs(void * jarg1) {
   Proud::CRemoteOfflineEventArgs *arg1 = (Proud::CRemoteOfflineEventArgs *) 0 ;
   
   arg1 = (Proud::CRemoteOfflineEventArgs *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -2926,7 +3866,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_RemoteOnlineEventArgs_CopyFromNative(void * j
   
   arg1 = (Proud::CRemoteOnlineEventArgs *)jarg1; 
   arg2 = jarg2; 
-  Proud_CRemoteOnlineEventArgs_CopyFromNative(arg1,arg2);
+  {
+    try {
+      Proud_CRemoteOnlineEventArgs_CopyFromNative(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -2934,7 +3882,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_RemoteOnlineEventArgs() {
   void * jresult ;
   Proud::CRemoteOnlineEventArgs *result = 0 ;
   
-  result = (Proud::CRemoteOnlineEventArgs *)new Proud::CRemoteOnlineEventArgs();
+  {
+    try {
+      result = (Proud::CRemoteOnlineEventArgs *)new Proud::CRemoteOnlineEventArgs();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -2944,7 +3900,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_RemoteOnlineEventArgs(void * jarg1) {
   Proud::CRemoteOnlineEventArgs *arg1 = (Proud::CRemoteOnlineEventArgs *) 0 ;
   
   arg1 = (Proud::CRemoteOnlineEventArgs *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -3024,7 +3988,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_NativeException__SWIG_0() {
   void * jresult ;
   Proud::Exception *result = 0 ;
   
-  result = (Proud::Exception *)new Proud::Exception();
+  {
+    try {
+      result = (Proud::Exception *)new Proud::Exception();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -3036,7 +4008,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_NativeException__SWIG_1(char * jarg1) {
   Proud::Exception *result = 0 ;
   
   arg1 = (char *)jarg1; 
-  result = (Proud::Exception *)new Proud::Exception((char const *)arg1);
+  {
+    try {
+      result = (Proud::Exception *)new Proud::Exception((char const *)arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -3048,7 +4028,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_NativeException__SWIG_2(void * jarg1) {
   Proud::Exception *result = 0 ;
   
   arg1 = (Proud::ErrorInfo *)jarg1; 
-  result = (Proud::Exception *)new Proud::Exception(arg1);
+  {
+    try {
+      result = (Proud::Exception *)new Proud::Exception(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -3064,7 +4052,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_NativeException__SWIG_3(void * jarg1) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Proud::Exception const & type is null", 0);
     return 0;
   } 
-  result = (Proud::Exception *)new Proud::Exception((Proud::Exception const &)*arg1);
+  {
+    try {
+      result = (Proud::Exception *)new Proud::Exception((Proud::Exception const &)*arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -3074,7 +4070,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_NativeException(void * jarg1) {
   Proud::Exception *arg1 = (Proud::Exception *) 0 ;
   
   arg1 = (Proud::Exception *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -3084,7 +4088,15 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_NativeException_what(void * jarg1) {
   char *result = 0 ;
   
   arg1 = (Proud::Exception *)jarg1; 
-  result = (char *)((Proud::Exception const *)arg1)->what();
+  {
+    try {
+      result = (char *)((Proud::Exception const *)arg1)->what();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = SWIG_csharp_string_callback((const char *)result); 
   return jresult;
 }
@@ -3226,7 +4238,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_ClientWorkerInfo() {
   void * jresult ;
   Proud::CClientWorkerInfo *result = 0 ;
   
-  result = (Proud::CClientWorkerInfo *)new Proud::CClientWorkerInfo();
+  {
+    try {
+      result = (Proud::CClientWorkerInfo *)new Proud::CClientWorkerInfo();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -3236,7 +4256,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_ClientWorkerInfo(void * jarg1) {
   Proud::CClientWorkerInfo *arg1 = (Proud::CClientWorkerInfo *) 0 ;
   
   arg1 = (Proud::CClientWorkerInfo *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -3244,7 +4272,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_SocketInfo() {
   void * jresult ;
   Proud::CSocketInfo *result = 0 ;
   
-  result = (Proud::CSocketInfo *)new Proud::CSocketInfo();
+  {
+    try {
+      result = (Proud::CSocketInfo *)new Proud::CSocketInfo();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -3256,7 +4292,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SocketInfo_GetTCPSocket(void * jarg1)
   uint32_t result;
   
   arg1 = (Proud::CSocketInfo *)jarg1; 
-  result = (uint32_t)Proud_CSocketInfo_GetTCPSocket(arg1);
+  {
+    try {
+      result = (uint32_t)Proud_CSocketInfo_GetTCPSocket(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -3268,7 +4312,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SocketInfo_GetUDPSocket(void * jarg1)
   uint32_t result;
   
   arg1 = (Proud::CSocketInfo *)jarg1; 
-  result = (uint32_t)Proud_CSocketInfo_GetUDPSocket(arg1);
+  {
+    try {
+      result = (uint32_t)Proud_CSocketInfo_GetUDPSocket(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -3278,7 +4330,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_SocketInfo(void * jarg1) {
   Proud::CSocketInfo *arg1 = (Proud::CSocketInfo *) 0 ;
   
   arg1 = (Proud::CSocketInfo *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -3308,7 +4368,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_ApplicationHint() {
   void * jresult ;
   Proud::CApplicationHint *result = 0 ;
   
-  result = (Proud::CApplicationHint *)new Proud::CApplicationHint();
+  {
+    try {
+      result = (Proud::CApplicationHint *)new Proud::CApplicationHint();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -3318,7 +4386,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_ApplicationHint(void * jarg1) {
   Proud::CApplicationHint *arg1 = (Proud::CApplicationHint *) 0 ;
   
   arg1 = (Proud::CApplicationHint *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -3722,7 +4798,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_ReliableUdpHostStats() {
   void * jresult ;
   Proud::ReliableUdpHostStats *result = 0 ;
   
-  result = (Proud::ReliableUdpHostStats *)new Proud::ReliableUdpHostStats();
+  {
+    try {
+      result = (Proud::ReliableUdpHostStats *)new Proud::ReliableUdpHostStats();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -3732,7 +4816,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_ReliableUdpHostStats(void * jarg1) {
   Proud::ReliableUdpHostStats *arg1 = (Proud::ReliableUdpHostStats *) 0 ;
   
   arg1 = (Proud::ReliableUdpHostStats *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -3784,7 +4876,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_DisconnectArgs() {
   void * jresult ;
   Proud::CDisconnectArgs *result = 0 ;
   
-  result = (Proud::CDisconnectArgs *)new Proud::CDisconnectArgs();
+  {
+    try {
+      result = (Proud::CDisconnectArgs *)new Proud::CDisconnectArgs();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -3796,7 +4896,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_DisconnectArgs_GetNativeComment(void * jarg
   void *result = 0 ;
   
   arg1 = (Proud::CDisconnectArgs *)jarg1; 
-  result = (void *)Proud_CDisconnectArgs_GetNativeComment(arg1);
+  {
+    try {
+      result = (void *)Proud_CDisconnectArgs_GetNativeComment(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -3806,7 +4914,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_DisconnectArgs(void * jarg1) {
   Proud::CDisconnectArgs *arg1 = (Proud::CDisconnectArgs *) 0 ;
   
   arg1 = (Proud::CDisconnectArgs *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -3858,7 +4974,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_AddrPort_IsIPv4MappedIPv6Addr(void * 
   bool result;
   
   arg1 = (Proud::AddrPort *)jarg1; 
-  result = (bool)((Proud::AddrPort const *)arg1)->IsIPv4MappedIPv6Addr();
+  {
+    try {
+      result = (bool)((Proud::AddrPort const *)arg1)->IsIPv4MappedIPv6Addr();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -3870,7 +4994,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AddrPort_SetIPv4MappedIPv6Address(void * jarg
   
   arg1 = (Proud::AddrPort *)jarg1; 
   arg2 = (uint32_t)jarg2; 
-  (arg1)->SetIPv4MappedIPv6Address(arg2);
+  {
+    try {
+      (arg1)->SetIPv4MappedIPv6Address(arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -3886,7 +5018,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_AddrPort_Synthesize(void * jarg1, void * jarg
   
   arg3 = (size_t)jarg3; 
   arg4 = (uint32_t)jarg4; 
-  (arg1)->Synthesize((uint8_t const *)arg2,arg3,arg4);
+  {
+    try {
+      (arg1)->Synthesize((uint8_t const *)arg2,arg3,arg4);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -3902,7 +5042,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_AddrPort_IsAddressEqualTo(void * jarg
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Proud::AddrPort const & type is null", 0);
     return 0;
   } 
-  result = (bool)((Proud::AddrPort const *)arg1)->IsAddressEqualTo((Proud::AddrPort const &)*arg2);
+  {
+    try {
+      result = (bool)((Proud::AddrPort const *)arg1)->IsAddressEqualTo((Proud::AddrPort const &)*arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -3912,7 +5060,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_AddrPort() {
   void * jresult ;
   Proud::AddrPort *result = 0 ;
   
-  result = (Proud::AddrPort *)new Proud::AddrPort();
+  {
+    try {
+      result = (Proud::AddrPort *)new Proud::AddrPort();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -3924,7 +5080,15 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_AddrPort_IPToString(void * jarg1) {
   Proud::String result;
   
   arg1 = (Proud::AddrPort *)jarg1; 
-  result = ((Proud::AddrPort const *)arg1)->IPToString();
+  {
+    try {
+      result = ((Proud::AddrPort const *)arg1)->IPToString();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = SWIG_csharp_string_callback(StringT2A(result, GetUTF16toUTF8()).GetString()); 
   return jresult;
 }
@@ -3944,7 +5108,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_AddrPort_FromIPPortV4(char * jarg1, unsigne
   arg1 = &arg1_str; 
   
   arg2 = (uint16_t)jarg2; 
-  result = Proud::AddrPort::FromIPPortV4((Proud::String const &)*arg1,arg2);
+  {
+    try {
+      result = Proud::AddrPort::FromIPPortV4((Proud::String const &)*arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = new Proud::AddrPort((const Proud::AddrPort &)result); 
   return jresult;
 }
@@ -3964,7 +5136,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_AddrPort_FromIPPortV6(char * jarg1, unsigne
   arg1 = &arg1_str; 
   
   arg2 = (uint16_t)jarg2; 
-  result = Proud::AddrPort::FromIPPortV6((Proud::String const &)*arg1,arg2);
+  {
+    try {
+      result = Proud::AddrPort::FromIPPortV6((Proud::String const &)*arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = new Proud::AddrPort((const Proud::AddrPort &)result); 
   return jresult;
 }
@@ -3988,7 +5168,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_AddrPort_FromIPPort(int jarg1, char * jarg2
   arg2 = &arg2_str; 
   
   arg3 = (uint16_t)jarg3; 
-  result = Proud::AddrPort::FromIPPort((int const &)*arg1,(Proud::String const &)*arg2,arg3);
+  {
+    try {
+      result = Proud::AddrPort::FromIPPort((int const &)*arg1,(Proud::String const &)*arg2,arg3);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = new Proud::AddrPort((const Proud::AddrPort &)result); 
   return jresult;
 }
@@ -4004,7 +5192,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_AddrPort_FromAnyIPPort(int jarg1, unsigned 
   temp1 = (int32_t)jarg1; 
   arg1 = &temp1; 
   arg2 = (uint16_t)jarg2; 
-  result = Proud::AddrPort::FromAnyIPPort((int const &)*arg1,arg2);
+  {
+    try {
+      result = Proud::AddrPort::FromAnyIPPort((int const &)*arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = new Proud::AddrPort((const Proud::AddrPort &)result); 
   return jresult;
 }
@@ -4020,7 +5216,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_AddrPort_From(void * jarg1) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Proud::NamedAddrPort const & type is null", 0);
     return 0;
   } 
-  result = Proud::AddrPort::From((Proud::NamedAddrPort const &)*arg1);
+  {
+    try {
+      result = Proud::AddrPort::From((Proud::NamedAddrPort const &)*arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = new Proud::AddrPort((const Proud::AddrPort &)result); 
   return jresult;
 }
@@ -4050,7 +5254,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_AddrPort_IsUnicastEndpoint(void * jar
   bool result;
   
   arg1 = (Proud::AddrPort *)jarg1; 
-  result = (bool)((Proud::AddrPort const *)arg1)->IsUnicastEndpoint();
+  {
+    try {
+      result = (bool)((Proud::AddrPort const *)arg1)->IsUnicastEndpoint();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -4062,7 +5274,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_AddrPort_IsAnyOrUnicastEndpoint(void 
   bool result;
   
   arg1 = (Proud::AddrPort *)jarg1; 
-  result = (bool)((Proud::AddrPort const *)arg1)->IsAnyOrUnicastEndpoint();
+  {
+    try {
+      result = (bool)((Proud::AddrPort const *)arg1)->IsAnyOrUnicastEndpoint();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -4084,7 +5304,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_AddrPort_IsEqualAddress(void * jarg1,
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Proud::AddrPort const & type is null", 0);
     return 0;
   } 
-  result = (bool)Proud::AddrPort::IsEqualAddress((Proud::AddrPort const &)*arg1,(Proud::AddrPort const &)*arg2);
+  {
+    try {
+      result = (bool)Proud::AddrPort::IsEqualAddress((Proud::AddrPort const &)*arg1,(Proud::AddrPort const &)*arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -4096,7 +5324,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_AddrPort_Hash(void * jarg1) {
   uint32_t result;
   
   arg1 = (Proud::AddrPort *)jarg1; 
-  result = (uint32_t)((Proud::AddrPort const *)arg1)->Hash();
+  {
+    try {
+      result = (uint32_t)((Proud::AddrPort const *)arg1)->Hash();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -4108,7 +5344,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_AddrPort_GetNativeIPAddr(void * jarg1) {
   void *result = 0 ;
   
   arg1 = (Proud::AddrPort *)jarg1; 
-  result = (void *)Proud_AddrPort_GetNativeIPAddr(arg1);
+  {
+    try {
+      result = (void *)Proud_AddrPort_GetNativeIPAddr(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -4118,7 +5362,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_AddrPort(void * jarg1) {
   Proud::AddrPort *arg1 = (Proud::AddrPort *) 0 ;
   
   arg1 = (Proud::AddrPort *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -4201,7 +5453,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NamedAddrPort_FromAddrPort(char * jarg1, un
   arg1 = StringA2T(jarg1, GetUTF8toUTF16());
   
   arg2 = (uint16_t)jarg2; 
-  result = Proud::NamedAddrPort::FromAddrPort(arg1,arg2);
+  {
+    try {
+      result = Proud::NamedAddrPort::FromAddrPort(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = new Proud::NamedAddrPort((const Proud::NamedAddrPort &)result); 
   return jresult;
 }
@@ -4217,7 +5477,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NamedAddrPort_From(void * jarg1) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Proud::AddrPort const & type is null", 0);
     return 0;
   } 
-  result = Proud::NamedAddrPort::From((Proud::AddrPort const &)*arg1);
+  {
+    try {
+      result = Proud::NamedAddrPort::From((Proud::AddrPort const &)*arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = new Proud::NamedAddrPort((const Proud::NamedAddrPort &)result); 
   return jresult;
 }
@@ -4235,7 +5503,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NamedAddrPort_OverwriteHostNameIfExists(void 
   Proud::String arg2_str(StringA2T(jarg2, GetUTF8toUTF16()));
   arg2 = &arg2_str; 
   
-  (arg1)->OverwriteHostNameIfExists((Proud::String const &)*arg2);
+  {
+    try {
+      (arg1)->OverwriteHostNameIfExists((Proud::String const &)*arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -4245,7 +5521,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NamedAddrPort_IsUnicastEndpoint(void 
   bool result;
   
   arg1 = (Proud::NamedAddrPort *)jarg1; 
-  result = (bool)(arg1)->IsUnicastEndpoint();
+  {
+    try {
+      result = (bool)(arg1)->IsUnicastEndpoint();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -4255,7 +5539,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_NamedAddrPort() {
   void * jresult ;
   Proud::NamedAddrPort *result = 0 ;
   
-  result = (Proud::NamedAddrPort *)new Proud::NamedAddrPort();
+  {
+    try {
+      result = (Proud::NamedAddrPort *)new Proud::NamedAddrPort();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -4265,7 +5557,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_NamedAddrPort(void * jarg1) {
   Proud::NamedAddrPort *arg1 = (Proud::NamedAddrPort *) 0 ;
   
   arg1 = (Proud::NamedAddrPort *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -4281,7 +5581,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeNetUtil_GetIPVersionFromString(char * ja
   Proud::String arg1_str(StringA2T(jarg1, GetUTF8toUTF16()));
   arg1 = &arg1_str; 
   
-  result = (int)Proud::CNetUtil::GetIPVersionFromString((Proud::String const &)*arg1);
+  {
+    try {
+      result = (int)Proud::CNetUtil::GetIPVersionFromString((Proud::String const &)*arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -4299,7 +5607,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NativeNetUtil_IsAddressAny(char * jar
   Proud::String arg1_str(StringA2T(jarg1, GetUTF8toUTF16()));
   arg1 = &arg1_str; 
   
-  result = (bool)Proud::CNetUtil::IsAddressAny((Proud::String const &)*arg1);
+  {
+    try {
+      result = (bool)Proud::CNetUtil::IsAddressAny((Proud::String const &)*arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -4317,7 +5633,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NativeNetUtil_IsAddressUnspecified(ch
   Proud::String arg1_str(StringA2T(jarg1, GetUTF8toUTF16()));
   arg1 = &arg1_str; 
   
-  result = (bool)Proud::CNetUtil::IsAddressUnspecified((Proud::String const &)*arg1);
+  {
+    try {
+      result = (bool)Proud::CNetUtil::IsAddressUnspecified((Proud::String const &)*arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -4335,7 +5659,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NativeNetUtil_IsAddressPhysical(char 
   Proud::String arg1_str(StringA2T(jarg1, GetUTF8toUTF16()));
   arg1 = &arg1_str; 
   
-  result = (bool)Proud::CNetUtil::IsAddressPhysical((Proud::String const &)*arg1);
+  {
+    try {
+      result = (bool)Proud::CNetUtil::IsAddressPhysical((Proud::String const &)*arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -4353,7 +5685,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NativeNetUtil_IsAddressLoopback(char 
   Proud::String arg1_str(StringA2T(jarg1, GetUTF8toUTF16()));
   arg1 = &arg1_str; 
   
-  result = (bool)Proud::CNetUtil::IsAddressLoopback((Proud::String const &)*arg1);
+  {
+    try {
+      result = (bool)Proud::CNetUtil::IsAddressLoopback((Proud::String const &)*arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -4363,7 +5703,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NativeNetUtil_LocalIPAddresses_New() {
   void * jresult ;
   void *result = 0 ;
   
-  result = (void *)Proud_CNetUtil_LocalIPAddresses_New();
+  {
+    try {
+      result = (void *)Proud_CNetUtil_LocalIPAddresses_New();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -4373,7 +5721,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeNetUtil_LocalIPAddresses_Delete(void * 
   void *arg1 = (void *) 0 ;
   
   arg1 = jarg1; 
-  Proud_CNetUtil_LocalIPAddresses_Delete(arg1);
+  {
+    try {
+      Proud_CNetUtil_LocalIPAddresses_Delete(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -4383,16 +5739,23 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeNetUtil_GetLocalIPAddresseCount(void * j
   int result;
   
   arg1 = jarg1; 
-  try {
-    result = (int)Proud_CNetUtil_GetLocalIPAddresseCount(arg1);
-  }
-  catch(Proud::Exception &_e) {
+  {
+    try {
+      try {
+        result = (int)Proud_CNetUtil_GetLocalIPAddresseCount(arg1);
+      }
+      catch(Proud::Exception &_e) {
+        (void)_e;
+        SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
+        return 0; 
+      }
+      
+    } catch(std::exception& e)
     {
-      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, (&_e)->what());
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
       return 0;
     }
   }
-  
   jresult = result; 
   return jresult;
 }
@@ -4406,16 +5769,23 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_NativeNetUtil_GetLocalIPAddress(void * jarg
   
   arg1 = jarg1; 
   arg2 = (int)jarg2; 
-  try {
-    result = Proud_CNetUtil_GetLocalIPAddress(arg1,arg2);
-  }
-  catch(Proud::Exception &_e) {
+  {
+    try {
+      try {
+        result = Proud_CNetUtil_GetLocalIPAddress(arg1,arg2);
+      }
+      catch(Proud::Exception &_e) {
+        (void)_e;
+        SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
+        return 0; 
+      }
+      
+    } catch(std::exception& e)
     {
-      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, (&_e)->what());
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
       return 0;
     }
   }
-  
   jresult = SWIG_csharp_string_callback(StringT2A(result, GetUTF16toUTF8()).GetString()); 
   return jresult;
 }
@@ -4425,7 +5795,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_NativeNetUtil() {
   void * jresult ;
   Proud::CNetUtil *result = 0 ;
   
-  result = (Proud::CNetUtil *)new Proud::CNetUtil();
+  {
+    try {
+      result = (Proud::CNetUtil *)new Proud::CNetUtil();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -4435,7 +5813,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_NativeNetUtil(void * jarg1) {
   Proud::CNetUtil *arg1 = (Proud::CNetUtil *) 0 ;
   
   arg1 = (Proud::CNetUtil *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -4445,7 +5831,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeHostIDArray_add(void * jarg1, int jarg2
   
   arg1 = (Proud::HostIDArray *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  Proud_HostIDArray_add(arg1,arg2);
+  {
+    try {
+      Proud_HostIDArray_add(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -4455,7 +5849,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeHostIDArray_Clear(void * jarg1, int jar
   
   arg1 = (Proud::HostIDArray *)jarg1; 
   arg2 = (Proud::HostID)jarg2; 
-  Proud_HostIDArray_Clear(arg1,arg2);
+  {
+    try {
+      Proud_HostIDArray_Clear(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -4465,7 +5867,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeHostIDArray_GetCount(void * jarg1) {
   int result;
   
   arg1 = (Proud::HostIDArray *)jarg1; 
-  result = (int)Proud_HostIDArray_GetCount(arg1);
+  {
+    try {
+      result = (int)Proud_HostIDArray_GetCount(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -4479,16 +5889,23 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeHostIDArray_at(void * jarg1, int jarg2) 
   
   arg1 = (Proud::HostIDArray *)jarg1; 
   arg2 = (int)jarg2; 
-  try {
-    result = (Proud::HostID)Proud_HostIDArray_at(arg1,arg2);
-  }
-  catch(Proud::Exception &_e) {
+  {
+    try {
+      try {
+        result = (Proud::HostID)Proud_HostIDArray_at(arg1,arg2);
+      }
+      catch(Proud::Exception &_e) {
+        (void)_e;
+        SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
+        return 0; 
+      }
+      
+    } catch(std::exception& e)
     {
-      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, (&_e)->what());
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
       return 0;
     }
   }
-  
   jresult = (int)result; 
   return jresult;
 }
@@ -4498,7 +5915,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_NativeHostIDArray() {
   void * jresult ;
   Proud::HostIDArray *result = 0 ;
   
-  result = (Proud::HostIDArray *)new Proud::HostIDArray();
+  {
+    try {
+      result = (Proud::HostIDArray *)new Proud::HostIDArray();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -4508,7 +5933,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_NativeHostIDArray(void * jarg1) {
   Proud::HostIDArray *arg1 = (Proud::HostIDArray *) 0 ;
   
   arg1 = (Proud::HostIDArray *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -4518,7 +5951,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_HostIDSet_GetCount(void * jarg1) {
   int result;
   
   arg1 = (Proud::HostIDSet *)jarg1; 
-  result = (int)Proud_HostIDSet_GetCount(arg1);
+  {
+    try {
+      result = (int)Proud_HostIDSet_GetCount(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -4528,7 +5969,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_HostIDSet() {
   void * jresult ;
   Proud::HostIDSet *result = 0 ;
   
-  result = (Proud::HostIDSet *)new Proud::HostIDSet();
+  {
+    try {
+      result = (Proud::HostIDSet *)new Proud::HostIDSet();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -4538,7 +5987,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_HostIDSet(void * jarg1) {
   Proud::HostIDSet *arg1 = (Proud::HostIDSet *) 0 ;
   
   arg1 = (Proud::HostIDSet *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -4810,7 +6267,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_NetPeerInfo() {
   void * jresult ;
   Proud::CNetPeerInfo *result = 0 ;
   
-  result = (Proud::CNetPeerInfo *)new Proud::CNetPeerInfo();
+  {
+    try {
+      result = (Proud::CNetPeerInfo *)new Proud::CNetPeerInfo();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -4824,7 +6289,15 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_NetPeerInfo_ToString(void * jarg1, unsigned
   
   arg1 = (Proud::CNetPeerInfo *)jarg1; 
   arg2 = jarg2 ? true : false; 
-  result = (arg1)->ToString(arg2);
+  {
+    try {
+      result = (arg1)->ToString(arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = SWIG_csharp_string_callback(StringT2A(result, GetUTF16toUTF8()).GetString()); 
   return jresult;
 }
@@ -4856,7 +6329,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_NetPeerInfo(void * jarg1) {
   Proud::CNetPeerInfo *arg1 = (Proud::CNetPeerInfo *) 0 ;
   
   arg1 = (Proud::CNetPeerInfo *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -4908,7 +6389,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_SendFailedRemote() {
   void * jresult ;
   Proud::SendFailedRemote *result = 0 ;
   
-  result = (Proud::SendFailedRemote *)new Proud::SendFailedRemote();
+  {
+    try {
+      result = (Proud::SendFailedRemote *)new Proud::SendFailedRemote();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -4918,7 +6407,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_SendFailedRemote(void * jarg1) {
   Proud::SendFailedRemote *arg1 = (Proud::SendFailedRemote *) 0 ;
   
   arg1 = (Proud::SendFailedRemote *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -5322,7 +6819,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_NativeRmiContext__SWIG_0() {
   void * jresult ;
   Proud::RmiContext *result = 0 ;
   
-  result = (Proud::RmiContext *)new Proud::RmiContext();
+  {
+    try {
+      result = (Proud::RmiContext *)new Proud::RmiContext();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -5340,7 +6845,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_NativeRmiContext__SWIG_1(int jarg1, int
   arg2 = (Proud::MessageReliability)jarg2; 
   arg3 = (int)jarg3; 
   arg4 = (EncryptMode)jarg4; 
-  result = (Proud::RmiContext *)new Proud::RmiContext(arg1,arg2,arg3,arg4);
+  {
+    try {
+      result = (Proud::RmiContext *)new Proud::RmiContext(arg1,arg2,arg3,arg4);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -5356,7 +6869,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_NativeRmiContext__SWIG_2(int jarg1, int
   arg1 = (Proud::MessagePriority)jarg1; 
   arg2 = (Proud::MessageReliability)jarg2; 
   arg3 = (int)jarg3; 
-  result = (Proud::RmiContext *)new Proud::RmiContext(arg1,arg2,arg3);
+  {
+    try {
+      result = (Proud::RmiContext *)new Proud::RmiContext(arg1,arg2,arg3);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -5366,7 +6887,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_NativeRmiContext(void * jarg1) {
   Proud::RmiContext *arg1 = (Proud::RmiContext *) 0 ;
   
   arg1 = (Proud::RmiContext *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -5374,7 +6903,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_Guid() {
   void * jresult ;
   Proud::Guid *result = 0 ;
   
-  result = (Proud::Guid *)new Proud::Guid();
+  {
+    try {
+      result = (Proud::Guid *)new Proud::Guid();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -5395,7 +6932,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_Guid_ConvertStringToUUID(char * jarg1
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Proud::Guid & type is null", 0);
     return 0;
   } 
-  result = (bool)Proud::Guid::ConvertStringToUUID(arg1,*arg2);
+  {
+    try {
+      result = (bool)Proud::Guid::ConvertStringToUUID(arg1,*arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -5411,7 +6956,15 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Guid_GetString__SWIG_0(void * jarg1) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Proud::Guid const & type is null", 0);
     return 0;
   } 
-  result = Proud::Guid::GetString((Proud::Guid const &)*arg1);
+  {
+    try {
+      result = Proud::Guid::GetString((Proud::Guid const &)*arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = SWIG_csharp_string_callback(StringT2A(result, GetUTF16toUTF8()).GetString()); 
   return jresult;
 }
@@ -5427,7 +6980,15 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_Guid_GetBracketString(void * jarg1) {
     SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Proud::Guid const & type is null", 0);
     return 0;
   } 
-  result = Proud::Guid::GetBracketString((Proud::Guid const &)*arg1);
+  {
+    try {
+      result = Proud::Guid::GetBracketString((Proud::Guid const &)*arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = SWIG_csharp_string_callback(StringT2A(result, GetUTF16toUTF8()).GetString()); 
   return jresult;
 }
@@ -5441,7 +7002,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_Guid_CopyManagedByteArrayToNativeGuid(void * 
   arg1 = (Proud::Guid *)jarg1; 
   arg2 = jarg2; 
   arg3 = (int)jarg3; 
-  Proud_Guid_CopyManagedByteArrayToNativeGuid(arg1,arg2,arg3);
+  {
+    try {
+      Proud_Guid_CopyManagedByteArrayToNativeGuid(arg1,arg2,arg3);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -5449,7 +7018,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_Guid(void * jarg1) {
   Proud::Guid *arg1 = (Proud::Guid *) 0 ;
   
   arg1 = (Proud::Guid *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -5457,7 +7034,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_NativeByteArray() {
   void * jresult ;
   Proud::ByteArray *result = 0 ;
   
-  result = (Proud::ByteArray *)new Proud::ByteArray();
+  {
+    try {
+      result = (Proud::ByteArray *)new Proud::ByteArray();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -5467,7 +7052,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_NativeByteArray(void * jarg1) {
   Proud::ByteArray *arg1 = (Proud::ByteArray *) 0 ;
   
   arg1 = (Proud::ByteArray *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -5477,7 +7070,15 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_NativeByteArray_ToHexString(void * jarg1) {
   Proud::String result;
   
   arg1 = (Proud::ByteArray *)jarg1; 
-  result = (arg1)->ToHexString();
+  {
+    try {
+      result = (arg1)->ToHexString();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = SWIG_csharp_string_callback(StringT2A(result, GetUTF16toUTF8()).GetString()); 
   return jresult;
 }
@@ -5489,7 +7090,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_NativeByteArray_Hash(void * jarg1) {
   uint32_t result;
   
   arg1 = (Proud::ByteArray *)jarg1; 
-  result = (uint32_t)((Proud::ByteArray const *)arg1)->Hash();
+  {
+    try {
+      result = (uint32_t)((Proud::ByteArray const *)arg1)->Hash();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -5501,7 +7110,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeByteArray_Add(void * jarg1, unsigned ch
   
   arg1 = (Proud::ByteArray *)jarg1; 
   arg2 = (uint8_t)jarg2; 
-  Proud_ByteArray_Add(arg1,arg2);
+  {
+    try {
+      Proud_ByteArray_Add(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -5511,7 +7128,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeByteArray_Clear(void * jarg1, unsigned 
   
   arg1 = (Proud::ByteArray *)jarg1; 
   arg2 = (uint8_t)jarg2; 
-  Proud_ByteArray_Clear(arg1,arg2);
+  {
+    try {
+      Proud_ByteArray_Clear(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -5521,7 +7146,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeByteArray_GetCount(void * jarg1) {
   int result;
   
   arg1 = (Proud::ByteArray *)jarg1; 
-  result = (int)Proud_ByteArray_GetCount(arg1);
+  {
+    try {
+      result = (int)Proud_ByteArray_GetCount(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -5535,16 +7168,23 @@ SWIGEXPORT unsigned char SWIGSTDCALL CSharp_NativeByteArray_At(void * jarg1, int
   
   arg1 = (Proud::ByteArray *)jarg1; 
   arg2 = (int)jarg2; 
-  try {
-    result = (uint8_t)Proud_ByteArray_At(arg1,arg2);
-  }
-  catch(Proud::Exception &_e) {
+  {
+    try {
+      try {
+        result = (uint8_t)Proud_ByteArray_At(arg1,arg2);
+      }
+      catch(Proud::Exception &_e) {
+        (void)_e;
+        SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
+        return 0; 
+      }
+      
+    } catch(std::exception& e)
     {
-      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, (&_e)->what());
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
       return 0;
     }
   }
-  
   jresult = result; 
   return jresult;
 }
@@ -5820,7 +7460,15 @@ SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_NetCoreStats_GetTotalReceiveByt
   uint64_t result;
   
   arg1 = (Proud::CNetCoreStats *)jarg1; 
-  result = (uint64_t)(arg1)->GetTotalReceiveBytes();
+  {
+    try {
+      result = (uint64_t)(arg1)->GetTotalReceiveBytes();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -5832,7 +7480,15 @@ SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_NetCoreStats_GetTotalSendCount(
   uint64_t result;
   
   arg1 = (Proud::CNetCoreStats *)jarg1; 
-  result = (uint64_t)(arg1)->GetTotalSendCount();
+  {
+    try {
+      result = (uint64_t)(arg1)->GetTotalSendCount();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -5844,7 +7500,15 @@ SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_NetCoreStats_GetTotalReceiveCou
   uint64_t result;
   
   arg1 = (Proud::CNetCoreStats *)jarg1; 
-  result = (uint64_t)(arg1)->GetTotalReceiveCount();
+  {
+    try {
+      result = (uint64_t)(arg1)->GetTotalReceiveCount();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -5856,7 +7520,15 @@ SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_NetCoreStats_GetTotalSendBytes(
   uint64_t result;
   
   arg1 = (Proud::CNetCoreStats *)jarg1; 
-  result = (uint64_t)(arg1)->GetTotalSendBytes();
+  {
+    try {
+      result = (uint64_t)(arg1)->GetTotalSendBytes();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -5866,7 +7538,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_NetCoreStats(void * jarg1) {
   Proud::CNetCoreStats *arg1 = (Proud::CNetCoreStats *) 0 ;
   
   arg1 = (Proud::CNetCoreStats *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -6006,7 +7686,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_NetClientStats() {
   void * jresult ;
   Proud::CNetClientStats *result = 0 ;
   
-  result = (Proud::CNetClientStats *)new Proud::CNetClientStats();
+  {
+    try {
+      result = (Proud::CNetClientStats *)new Proud::CNetClientStats();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -6016,7 +7704,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_NetClientStats(void * jarg1) {
   Proud::CNetClientStats *arg1 = (Proud::CNetClientStats *) 0 ;
   
   arg1 = (Proud::CNetClientStats *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -6654,7 +8350,15 @@ SWIGEXPORT long long SWIGSTDCALL CSharp_NetClientConfig_GetP2PHolepunchEndTimeMs
   long long jresult ;
   int64_t result;
   
-  result = (int64_t)Proud::CNetConfig::GetP2PHolepunchEndTimeMs();
+  {
+    try {
+      result = (int64_t)Proud::CNetConfig::GetP2PHolepunchEndTimeMs();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -7042,7 +8746,15 @@ SWIGEXPORT long long SWIGSTDCALL CSharp_NetClientConfig_GetFallbackServerUdpToTc
   long long jresult ;
   int64_t result;
   
-  result = (int64_t)Proud::CNetConfig::GetFallbackServerUdpToTcpTimeoutMs();
+  {
+    try {
+      result = (int64_t)Proud::CNetConfig::GetFallbackServerUdpToTcpTimeoutMs();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -7052,7 +8764,15 @@ SWIGEXPORT long long SWIGSTDCALL CSharp_NetClientConfig_GetFallbackP2PUdpToTcpTi
   long long jresult ;
   int64_t result;
   
-  result = (int64_t)Proud::CNetConfig::GetFallbackP2PUdpToTcpTimeoutMs();
+  {
+    try {
+      result = (int64_t)Proud::CNetConfig::GetFallbackP2PUdpToTcpTimeoutMs();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -7152,7 +8872,15 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_NetClientConfig_GetVersion() {
   char * jresult ;
   Proud::String result;
   
-  result = Proud::CNetConfig::GetVersion();
+  {
+    try {
+      result = Proud::CNetConfig::GetVersion();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = SWIG_csharp_string_callback(StringT2A(result, GetUTF16toUTF8()).GetString()); 
   return jresult;
 }
@@ -8112,7 +9840,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetClientConfig_AssertTimeoutTimeAppropriate(
   int64_t arg1 ;
   
   arg1 = (int64_t)jarg1; 
-  Proud::CNetConfig::AssertTimeoutTimeAppropriate(arg1);
+  {
+    try {
+      Proud::CNetConfig::AssertTimeoutTimeAppropriate(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8174,7 +9910,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetClientConfig_ThrowExceptionIfMessageLength
   int arg1 ;
   
   arg1 = (int)jarg1; 
-  Proud::CNetConfig::ThrowExceptionIfMessageLengthOutOfRange(arg1);
+  {
+    try {
+      Proud::CNetConfig::ThrowExceptionIfMessageLengthOutOfRange(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8328,7 +10072,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_NetClientConfig() {
   void * jresult ;
   Proud::CNetConfig *result = 0 ;
   
-  result = (Proud::CNetConfig *)new Proud::CNetConfig();
+  {
+    try {
+      result = (Proud::CNetConfig *)new Proud::CNetConfig();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -8338,7 +10090,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_NetClientConfig(void * jarg1) {
   Proud::CNetConfig *arg1 = (Proud::CNetConfig *) 0 ;
   
   arg1 = (Proud::CNetConfig *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8346,7 +10106,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IThreadPoolEvent_OnThreadBegin(void * jarg1) 
   Proud::IThreadPoolEvent *arg1 = (Proud::IThreadPoolEvent *) 0 ;
   
   arg1 = (Proud::IThreadPoolEvent *)jarg1; 
-  (arg1)->OnThreadBegin();
+  {
+    try {
+      (arg1)->OnThreadBegin();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8354,7 +10122,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_IThreadPoolEvent_OnThreadEnd(void * jarg1) {
   Proud::IThreadPoolEvent *arg1 = (Proud::IThreadPoolEvent *) 0 ;
   
   arg1 = (Proud::IThreadPoolEvent *)jarg1; 
-  (arg1)->OnThreadEnd();
+  {
+    try {
+      (arg1)->OnThreadEnd();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8362,7 +10138,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IThreadPoolEvent(void * jarg1) {
   Proud::IThreadPoolEvent *arg1 = (Proud::IThreadPoolEvent *) 0 ;
   
   arg1 = (Proud::IThreadPoolEvent *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8370,7 +10154,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_NativeThreadPool(void * jarg1) {
   Proud::CThreadPool *arg1 = (Proud::CThreadPool *) 0 ;
   
   arg1 = (Proud::CThreadPool *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8380,7 +10172,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeThreadPool_SetDesiredThreadCount(void *
   
   arg1 = (Proud::CThreadPool *)jarg1; 
   arg2 = (int)jarg2; 
-  (arg1)->SetDesiredThreadCount(arg2);
+  {
+    try {
+      (arg1)->SetDesiredThreadCount(arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8390,7 +10190,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeThreadPool_Process(void * jarg1, int ja
   
   arg1 = (Proud::CThreadPool *)jarg1; 
   arg2 = (int)jarg2; 
-  (arg1)->Process(arg2);
+  {
+    try {
+      (arg1)->Process(arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8400,16 +10208,23 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NativeThreadPool_Create(int jarg1) {
   Proud::CThreadPool *result = 0 ;
   
   arg1 = (int)jarg1; 
-  try {
-    result = (Proud::CThreadPool *)Proud_CThreadPool_Create(arg1);
-  }
-  catch(Proud::Exception &_e) {
+  {
+    try {
+      try {
+        result = (Proud::CThreadPool *)Proud_CThreadPool_Create(arg1);
+      }
+      catch(Proud::Exception &_e) {
+        (void)_e;
+        SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, "C++ Proud::Exception exception thrown");
+        return 0; 
+      }
+      
+    } catch(std::exception& e)
     {
-      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, (&_e)->what());
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
       return 0;
     }
   }
-  
   jresult = (void *)result; 
   return jresult;
 }
@@ -8573,7 +10388,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_NativeReceivedMessage() {
   void * jresult ;
   Proud::CReceivedMessage *result = 0 ;
   
-  result = (Proud::CReceivedMessage *)new Proud::CReceivedMessage();
+  {
+    try {
+      result = (Proud::CReceivedMessage *)new Proud::CReceivedMessage();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -8583,7 +10406,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeReceivedMessage_Clear(void * jarg1) {
   Proud::CReceivedMessage *arg1 = (Proud::CReceivedMessage *) 0 ;
   
   arg1 = (Proud::CReceivedMessage *)jarg1; 
-  (arg1)->Clear();
+  {
+    try {
+      (arg1)->Clear();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8593,7 +10424,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NativeReceivedMessage_GetMsgBuffer(void * j
   void *result = 0 ;
   
   arg1 = (Proud::CReceivedMessage *)jarg1; 
-  result = (void *)Proud_CReceivedMessage_GetMsgBuffer(arg1);
+  {
+    try {
+      result = (void *)Proud_CReceivedMessage_GetMsgBuffer(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -8605,7 +10444,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeReceivedMessage_GetMsgBufferLength(void 
   int result;
   
   arg1 = (Proud::CReceivedMessage *)jarg1; 
-  result = (int)Proud_CReceivedMessage_GetMsgBufferLength(arg1);
+  {
+    try {
+      result = (int)Proud_CReceivedMessage_GetMsgBufferLength(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -8617,7 +10464,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_NativeReceivedMessage_GetMsgReadOffset(void * 
   int result;
   
   arg1 = (Proud::CReceivedMessage *)jarg1; 
-  result = (int)Proud_CReceivedMessage_GetMsgReadOffset(arg1);
+  {
+    try {
+      result = (int)Proud_CReceivedMessage_GetMsgReadOffset(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -8627,7 +10482,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_NativeReceivedMessage(void * jarg1) {
   Proud::CReceivedMessage *arg1 = (Proud::CReceivedMessage *) 0 ;
   
   arg1 = (Proud::CReceivedMessage *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8679,7 +10542,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_StartRoundTripLatencyTestParameter() {
   void * jresult ;
   Proud::StartRoundTripLatencyTestParameter *result = 0 ;
   
-  result = (Proud::StartRoundTripLatencyTestParameter *)new Proud::StartRoundTripLatencyTestParameter();
+  {
+    try {
+      result = (Proud::StartRoundTripLatencyTestParameter *)new Proud::StartRoundTripLatencyTestParameter();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -8689,7 +10560,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_StartRoundTripLatencyTestParameter(voi
   Proud::StartRoundTripLatencyTestParameter *arg1 = (Proud::StartRoundTripLatencyTestParameter *) 0 ;
   
   arg1 = (Proud::StartRoundTripLatencyTestParameter *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8763,7 +10642,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_RoundTripLatencyTestResult() {
   void * jresult ;
   Proud::RoundTripLatencyTestResult *result = 0 ;
   
-  result = (Proud::RoundTripLatencyTestResult *)new Proud::RoundTripLatencyTestResult();
+  {
+    try {
+      result = (Proud::RoundTripLatencyTestResult *)new Proud::RoundTripLatencyTestResult();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = (void *)result; 
   return jresult;
 }
@@ -8773,7 +10660,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_RoundTripLatencyTestResult(void * jarg
   Proud::RoundTripLatencyTestResult *arg1 = (Proud::RoundTripLatencyTestResult *) 0 ;
   
   arg1 = (Proud::RoundTripLatencyTestResult *)jarg1; 
-  delete arg1;
+  {
+    try {
+      delete arg1;
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8781,7 +10676,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NativeToNetClientEventWrap_New() {
   void * jresult ;
   void *result = 0 ;
   
-  result = (void *)NativeToNetClientEventWrap_New();
+  {
+    try {
+      result = (void *)NativeToNetClientEventWrap_New();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -8791,7 +10694,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeToNetClientEventWrap_Delete(void * jarg
   void *arg1 = (void *) 0 ;
   
   arg1 = jarg1; 
-  NativeToNetClientEventWrap_Delete(arg1);
+  {
+    try {
+      NativeToNetClientEventWrap_Delete(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8799,7 +10710,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NativeToRmiStubWrap_New() {
   void * jresult ;
   void *result = 0 ;
   
-  result = (void *)NativeToRmiStubWrap_New();
+  {
+    try {
+      result = (void *)NativeToRmiStubWrap_New();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -8809,7 +10728,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeToRmiStubWrap_Delete(void * jarg1) {
   void *arg1 = (void *) 0 ;
   
   arg1 = jarg1; 
-  NativeToRmiStubWrap_Delete(arg1);
+  {
+    try {
+      NativeToRmiStubWrap_Delete(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8817,7 +10744,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NativeToRmiProxyWrap_New() {
   void * jresult ;
   void *result = 0 ;
   
-  result = (void *)NativeToRmiProxyWrap_New();
+  {
+    try {
+      result = (void *)NativeToRmiProxyWrap_New();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -8827,7 +10762,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeToRmiProxyWrap_Delete(void * jarg1) {
   void *arg1 = (void *) 0 ;
   
   arg1 = jarg1; 
-  NativeToRmiProxyWrap_Delete(arg1);
+  {
+    try {
+      NativeToRmiProxyWrap_Delete(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8835,7 +10778,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_NativeToRmiContext_New() {
   void * jresult ;
   void *result = 0 ;
   
-  result = (void *)NativeToRmiContext_New();
+  {
+    try {
+      result = (void *)NativeToRmiContext_New();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -8845,12 +10796,28 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NativeToRmiContext_Delete(void * jarg1) {
   void *arg1 = (void *) 0 ;
   
   arg1 = jarg1; 
-  NativeToRmiContext_Delete(arg1);
+  {
+    try {
+      NativeToRmiContext_Delete(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
 SWIGEXPORT void SWIGSTDCALL CSharp_ChangeErrorReactionTypeToDebugOutputTypeWhenUnityEngine() {
-  ChangeErrorReactionTypeToDebugOutputTypeWhenUnityEngine();
+  {
+    try {
+      ChangeErrorReactionTypeToDebugOutputTypeWhenUnityEngine();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8860,7 +10827,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetClientEvent_SetCSharpHandle(void * jarg1, 
   
   arg1 = jarg1; 
   arg2 = jarg2; 
-  NetClientEvent_SetCSharpHandle(arg1,arg2);
+  {
+    try {
+      NetClientEvent_SetCSharpHandle(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8870,7 +10845,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetClientEvent_SetCallbackJoinServerComplete(
   
   arg1 = jarg1; 
   arg2 = (CallbackJoinServerComplete)jarg2; 
-  NetClientEvent_SetCallbackJoinServerComplete(arg1,arg2);
+  {
+    try {
+      NetClientEvent_SetCallbackJoinServerComplete(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8880,7 +10863,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetClientEvent_SetCallbackLeaveServer(void * 
   
   arg1 = jarg1; 
   arg2 = (CallbackLeaveServer)jarg2; 
-  NetClientEvent_SetCallbackLeaveServer(arg1,arg2);
+  {
+    try {
+      NetClientEvent_SetCallbackLeaveServer(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8890,7 +10881,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetClientEvent_SetCallbackP2PMemberJoin(void 
   
   arg1 = jarg1; 
   arg2 = (CallbackP2PMemberJoin)jarg2; 
-  NetClientEvent_SetCallbackP2PMemberJoin(arg1,arg2);
+  {
+    try {
+      NetClientEvent_SetCallbackP2PMemberJoin(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8900,7 +10899,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetClientEvent_SetCallbackP2PMemberLeave(void
   
   arg1 = jarg1; 
   arg2 = (CallbackP2PMemberLeave)jarg2; 
-  NetClientEvent_SetCallbackP2PMemberLeave(arg1,arg2);
+  {
+    try {
+      NetClientEvent_SetCallbackP2PMemberLeave(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8910,7 +10917,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetClientEvent_SetCallbackChangeP2PRelayState
   
   arg1 = jarg1; 
   arg2 = (CallbackChangeP2PRelayState)jarg2; 
-  NetClientEvent_SetCallbackChangeP2PRelayState(arg1,arg2);
+  {
+    try {
+      NetClientEvent_SetCallbackChangeP2PRelayState(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8920,7 +10935,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetClientEvent_SetCallbackChangeServerUdpStat
   
   arg1 = jarg1; 
   arg2 = (CallbackChangeServerUdpState)jarg2; 
-  NetClientEvent_SetCallbackChangeServerUdpState(arg1,arg2);
+  {
+    try {
+      NetClientEvent_SetCallbackChangeServerUdpState(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8930,7 +10953,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetClientEvent_SetCallbackSynchronizeServerTi
   
   arg1 = jarg1; 
   arg2 = (CallbackSynchronizeServerTime)jarg2; 
-  NetClientEvent_SetCallbackSynchronizeServerTime(arg1,arg2);
+  {
+    try {
+      NetClientEvent_SetCallbackSynchronizeServerTime(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8940,7 +10971,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetClientEvent_SetCallbackError(void * jarg1,
   
   arg1 = jarg1; 
   arg2 = (CallbackError)jarg2; 
-  NetClientEvent_SetCallbackError(arg1,arg2);
+  {
+    try {
+      NetClientEvent_SetCallbackError(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8950,7 +10989,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetClientEvent_SetCallbackWarning(void * jarg
   
   arg1 = jarg1; 
   arg2 = (CallbackWarning)jarg2; 
-  NetClientEvent_SetCallbackWarning(arg1,arg2);
+  {
+    try {
+      NetClientEvent_SetCallbackWarning(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8960,7 +11007,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetClientEvent_SetCallbackInformation(void * 
   
   arg1 = jarg1; 
   arg2 = (CallbackInformation)jarg2; 
-  NetClientEvent_SetCallbackInformation(arg1,arg2);
+  {
+    try {
+      NetClientEvent_SetCallbackInformation(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8970,7 +11025,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetClientEvent_SetCallbackException(void * ja
   
   arg1 = jarg1; 
   arg2 = (CallbackException)jarg2; 
-  NetClientEvent_SetCallbackException(arg1,arg2);
+  {
+    try {
+      NetClientEvent_SetCallbackException(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8980,7 +11043,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetClientEvent_SetCallbackServerOffline(void 
   
   arg1 = jarg1; 
   arg2 = (CallbackServerOffline)jarg2; 
-  NetClientEvent_SetCallbackServerOffline(arg1,arg2);
+  {
+    try {
+      NetClientEvent_SetCallbackServerOffline(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -8990,7 +11061,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetClientEvent_SetCallbackServerOnline(void *
   
   arg1 = jarg1; 
   arg2 = (CallbackServerOnline)jarg2; 
-  NetClientEvent_SetCallbackServerOnline(arg1,arg2);
+  {
+    try {
+      NetClientEvent_SetCallbackServerOnline(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -9000,7 +11079,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetClientEvent_SetCallbackP2PMemberOffline(vo
   
   arg1 = jarg1; 
   arg2 = (CallbackP2PMemberOffline)jarg2; 
-  NetClientEvent_SetCallbackP2PMemberOffline(arg1,arg2);
+  {
+    try {
+      NetClientEvent_SetCallbackP2PMemberOffline(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -9010,7 +11097,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetClientEvent_SetCallbackP2PMemberOnline(voi
   
   arg1 = jarg1; 
   arg2 = (CallbackP2PMemberOnline)jarg2; 
-  NetClientEvent_SetCallbackP2PMemberOnline(arg1,arg2);
+  {
+    try {
+      NetClientEvent_SetCallbackP2PMemberOnline(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -9020,7 +11115,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetClientEvent_SetCallbackNoRmiProcessed(void
   
   arg1 = jarg1; 
   arg2 = (CallbackNoRmiProcessed)jarg2; 
-  NetClientEvent_SetCallbackNoRmiProcessed(arg1,arg2);
+  {
+    try {
+      NetClientEvent_SetCallbackNoRmiProcessed(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -9030,7 +11133,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_NetClientEvent_SetCallbackReceiveUserMessage(
   
   arg1 = jarg1; 
   arg2 = (CallbackReceiveUserMessage)jarg2; 
-  NetClientEvent_SetCallbackReceiveUserMessage(arg1,arg2);
+  {
+    try {
+      NetClientEvent_SetCallbackReceiveUserMessage(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -9040,7 +11151,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_RmiContext_SetHostTag(void * jarg1, long long
   
   arg1 = (Proud::RmiContext *)jarg1; 
   arg2 = (int64_t)jarg2; 
-  RmiContext_SetHostTag(arg1,arg2);
+  {
+    try {
+      RmiContext_SetHostTag(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -9050,7 +11169,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_ReceivedMessage_GetRemoteAddress(void * jar
   void *result = 0 ;
   
   arg1 = jarg1; 
-  result = (void *)ReceivedMessage_GetRemoteAddress(arg1);
+  {
+    try {
+      result = (void *)ReceivedMessage_GetRemoteAddress(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -9062,7 +11189,15 @@ SWIGEXPORT long long SWIGSTDCALL CSharp_RmiContext_GetHostTag(void * jarg1) {
   int64_t result;
   
   arg1 = jarg1; 
-  result = (int64_t)RmiContext_GetHostTag(arg1);
+  {
+    try {
+      result = (int64_t)RmiContext_GetHostTag(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -9072,7 +11207,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_AddrPort_GetAddrSize() {
   int jresult ;
   int result;
   
-  result = (int)AddrPort_GetAddrSize();
+  {
+    try {
+      result = (int)AddrPort_GetAddrSize();
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -9084,7 +11227,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_RmiStub_SetCSharpHandle(void * jarg1, void * 
   
   arg1 = jarg1; 
   arg2 = jarg2; 
-  RmiStub_SetCSharpHandle(arg1,arg2);
+  {
+    try {
+      RmiStub_SetCSharpHandle(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -9094,7 +11245,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_RmiStub_SetCallbackGetRmiIDList(void * jarg1,
   
   arg1 = jarg1; 
   arg2 = (CallbackGetRmiIDList)jarg2; 
-  RmiStub_SetCallbackGetRmiIDList(arg1,arg2);
+  {
+    try {
+      RmiStub_SetCallbackGetRmiIDList(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -9104,7 +11263,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_RmiStub_SetCallbackGetRmiIDListCount(void * j
   
   arg1 = jarg1; 
   arg2 = (CallbackGetRmiIDListCount)jarg2; 
-  RmiStub_SetCallbackGetRmiIDListCount(arg1,arg2);
+  {
+    try {
+      RmiStub_SetCallbackGetRmiIDListCount(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -9114,7 +11281,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_RmiStub_SetCallbackProcessReceivedMessage(voi
   
   arg1 = jarg1; 
   arg2 = (CallbackProcessReceivedMessage)jarg2; 
-  RmiStub_SetCallbackProcessReceivedMessage(arg1,arg2);
+  {
+    try {
+      RmiStub_SetCallbackProcessReceivedMessage(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -9124,7 +11299,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_RmiProxy_SetCSharpHandle(void * jarg1, void *
   
   arg1 = jarg1; 
   arg2 = jarg2; 
-  RmiProxy_SetCSharpHandle(arg1,arg2);
+  {
+    try {
+      RmiProxy_SetCSharpHandle(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -9134,7 +11317,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_RmiProxy_SetCallbackGetRmiIDList(void * jarg1
   
   arg1 = jarg1; 
   arg2 = (CallbackGetRmiIDList)jarg2; 
-  RmiProxy_SetCallbackGetRmiIDList(arg1,arg2);
+  {
+    try {
+      RmiProxy_SetCallbackGetRmiIDList(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -9144,7 +11335,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_RmiProxy_SetCallbackGetRmiIDListCount(void * 
   
   arg1 = jarg1; 
   arg2 = (CallbackGetRmiIDListCount)jarg2; 
-  RmiProxy_SetCallbackGetRmiIDListCount(arg1,arg2);
+  {
+    try {
+      RmiProxy_SetCallbackGetRmiIDListCount(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -9172,7 +11371,15 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_RmiProxy_RmiSend(void * jarg1, void *
   }
   (&arg7)->assign(jarg7); 
   arg8 = (int)jarg8; 
-  result = (bool)RmiProxy_RmiSend(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+  {
+    try {
+      result = (bool)RmiProxy_RmiSend(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -9186,7 +11393,15 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_ByteArrayToNative(void * jarg1, int jarg2) 
   
   arg1 = jarg1; 
   arg2 = (int)jarg2; 
-  result = (void *)ByteArrayToNative(arg1,arg2);
+  {
+    try {
+      result = (void *)ByteArrayToNative(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -9200,7 +11415,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CopyManagedByteArrayToNativeByteArray(void * 
   arg1 = jarg1; 
   arg2 = (int)jarg2; 
   arg3 = jarg3; 
-  CopyManagedByteArrayToNativeByteArray(arg1,arg2,arg3);
+  {
+    try {
+      CopyManagedByteArrayToNativeByteArray(arg1,arg2,arg3);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -9210,7 +11433,15 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ByteArray_GetCount(void * jarg1) {
   int result;
   
   arg1 = jarg1; 
-  result = (int)ByteArray_GetCount(arg1);
+  {
+    try {
+      result = (int)ByteArray_GetCount(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = result; 
   return jresult;
 }
@@ -9222,7 +11453,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CopyNativeByteArrayToManageByteArray__SWIG_0(
   
   arg1 = jarg1; 
   arg2 = jarg2; 
-  CopyNativeByteArrayToManageByteArray(arg1,arg2);
+  {
+    try {
+      CopyNativeByteArrayToManageByteArray(arg1,arg2);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -9234,7 +11473,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CopyNativeByteArrayToManageByteArray__SWIG_1(
   arg1 = jarg1; 
   arg2 = jarg2; 
   arg3 = (int)jarg3; 
-  CopyNativeByteArrayToManageByteArray(arg1,arg2,arg3);
+  {
+    try {
+      CopyNativeByteArrayToManageByteArray(arg1,arg2,arg3);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 
@@ -9244,7 +11491,15 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_ConvertNatvieStringToManagedString(void * j
   Proud::String result;
   
   arg1 = jarg1; 
-  result = ConvertNatvieStringToManagedString(arg1);
+  {
+    try {
+      result = ConvertNatvieStringToManagedString(arg1);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return 0;
+    }
+  }
   jresult = SWIG_csharp_string_callback(StringT2A(result, GetUTF16toUTF8()).GetString()); 
   return jresult;
 }
@@ -9258,7 +11513,15 @@ SWIGEXPORT void SWIGSTDCALL CSharp_CopyNativeAddrToManagedAddr(void * jarg1, voi
   arg1 = jarg1; 
   arg2 = jarg2; 
   arg3 = (int)jarg3; 
-  CopyNativeAddrToManagedAddr(arg1,arg2,arg3);
+  {
+    try {
+      CopyNativeAddrToManagedAddr(arg1,arg2,arg3);
+    } catch(std::exception& e)
+    {
+      SWIG_CSharpSetPendingException(SWIG_CSharpApplicationException, e.what());
+      return ;
+    }
+  }
 }
 
 

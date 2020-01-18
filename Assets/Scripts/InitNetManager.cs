@@ -10,7 +10,7 @@ public class InitNetManager : MonoBehaviour
     S2C2S.Stub m_stub = new S2C2S.Stub();
 
     // 프로토콜 버전과 서버 포트 번호
-    public static System.Guid Version = new System.Guid("{ 0xe71e4cec, 0x204e, 0x4374, { 0xb1, 0x63, 0x18, 0x6d, 0xc5, 0xc8, 0x4f, 0x5 } }");
+    public static System.Guid Version = new System.Guid("{ 0x75204ab8, 0x2e3, 0x4dee, { 0xb5, 0xb1, 0x8e, 0x7e, 0x17, 0x36, 0xfb, 0x48 } }");
     public static ushort ServerPort = 35475;
 
     // 클라이언트 객체
@@ -29,6 +29,9 @@ public class InitNetManager : MonoBehaviour
     public float[] r_rotY = new float[4];
     public float[] r_rotZ = new float[4];
 
+    // 플레이어의 hostID 값
+    public int[] m_hostID = new int[4];
+
     // 게임 방 유저 UI
     public GameObject GameRoom_canvas;
     
@@ -46,8 +49,14 @@ public class InitNetManager : MonoBehaviour
     // 팀 번호
     public int m_team_num;
 
+    // 플레이어 입력을 알려주는 컴포넌트
+    public PlayerInput playerInput;
+
     // 게임 시작하기 전 카운트 다운
     public bool Get_Ready = false;
+
+    // 게임 시작
+    public bool Get_Start = false;
 
     // 클라이언트 연결 상태
     enum MyState
@@ -121,14 +130,59 @@ public class InitNetManager : MonoBehaviour
         // 클라이언트에 모듈 부착
         m_Client.AttachProxy(m_proxy);
         m_Client.AttachStub(m_stub);
+
+        // P2P 그룹의 HostID 저장
+        m_Client.P2PMemberJoinHandler =
+            (HostID memberHostID, HostID groupHostID,
+        int memberCount, ByteArray customField) =>
+        {
+            Debug.Log("P2P Join");
+            m_playerP2PGroup = groupHostID;
+        };
     }
 
+    float m_lastSendTime = -1;
+
+    HostID m_playerP2PGroup = HostID.HostID_None;
+
     // Update is called once per frame
-    private void Update()
+    private void FixedUpdate()
     {
-        // 이벤트나 메시지를 수신할 경우 처리해야 함.
-        // 이를 하는 함수가 FrameMove()
-        m_Client.FrameMove();
+        // 연결 중이고
+        if (m_Client != null)
+        {
+            // P2P 그룹이 생성되었다면
+            if (m_Client.GetLocalHostID() != HostID.HostID_None)
+            {
+                // 그리고 게임이 시작되었다면
+                if (Get_Start)
+                {
+                    //// 0.1 sec 간격으로 전송
+                    //if (m_lastSendTime < 0 || Time.time - m_lastSendTime > 0.1)
+                    //{
+                        Debug.Log("m_playerP2PGroup : " + m_playerP2PGroup);
+
+                        var sendOption = new RmiContext();
+                        sendOption.reliability = MessageReliability.MessageReliability_Unreliable; // UDP 
+                        sendOption.maxDirectP2PMulticastCount = 30; // 트래픽 카운트
+                        sendOption.enableLoopback = false;
+
+                        m_proxy.Player_Move(m_playerP2PGroup, sendOption,
+                            m_team_num,
+                            playerInput.move,
+                            playerInput.rotate,
+                            playerInput.mouseX);
+
+                        m_lastSendTime = Time.time;
+
+                    //}
+                }
+            }
+
+            // 이벤트나 메시지를 수신할 경우 처리해야 함.
+            // 이를 하는 함수가 FrameMove()
+            m_Client.FrameMove();
+        }
 
         // 연결 해제 처리
         if (m_disconnectNow)
@@ -150,6 +204,9 @@ public class InitNetManager : MonoBehaviour
         // 아이디 비밀번호 업데이트
         m_userID = _id;
         m_password = _password;
+
+        m_proxy.RequestLogin(HostID.HostID_Server,
+            RmiContext.SecureReliableSend, m_userID, m_password);
 
         if (m_state == MyState.Disconnected) // 연결되지 않은상태이면
         {
@@ -317,14 +374,18 @@ public class InitNetManager : MonoBehaviour
                     Destroy(ui);
                 }
 
-                // 만약 카운트 중이였다면 종료 
-                if (Get_Ready)
+                // 게임이 아직 시작하지 않았는데
+                if (!Get_Start)
                 {
-                    // 카운트 종료
-                    Get_Ready = false;
+                    // 만약 카운트 중이였다면 종료 
+                    if (Get_Ready)
+                    {
+                        // 카운트 종료
+                        Get_Ready = false;
 
-                    // 카운트 캔버스 종료
-                    GameObject.Find("UIManager").GetComponent<SceneChange>().OffCountcanvas();
+                        // 카운트 캔버스 종료
+                        GameObject.Find("UIManager").GetComponent<SceneChange>().OffCountcanvas();
+                    }
                 }
             }
             return true;
@@ -348,7 +409,7 @@ public class InitNetManager : MonoBehaviour
             Debug.Log("리스폰 설정");
 
             // 플레이어의 정보 세팅
-            r_chr_num[_player_num-1] = _chr_num;
+            r_chr_num[_player_num - 1] = _chr_num;
 
             r_posX[_player_num - 1] = _px;
             r_posY[_player_num - 1] = _py;
@@ -357,6 +418,19 @@ public class InitNetManager : MonoBehaviour
             r_rotX[_player_num - 1] = _rx;
             r_rotY[_player_num - 1] = _ry;
             r_rotZ[_player_num - 1] = _rz;
+
+            return true;
+        };
+
+        // 플레이어 동기화
+        m_stub.Player_Move = (HostID remote, RmiContext rmiContext, int _team_num, float _move, float _rotate, float _mouseX) =>
+        {
+            // 플레이어 정보 갱신
+            var control = GameObject.Find("Team_num/" + _team_num).GetComponent<OthersController>();
+
+            control.m_move = _move;
+            control.m_rotate = _rotate;
+            control.m_mouseX = _mouseX;
 
             return true;
         };

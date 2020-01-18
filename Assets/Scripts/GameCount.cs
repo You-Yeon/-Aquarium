@@ -32,8 +32,12 @@ public class GameCount : MonoBehaviour
         {
             // 카운트 끝나면 게임 넘기기
             if (img_index == 4)
-            {
+            {                
+                // 씬 시작
                 GameObject.Find("UIManager").GetComponent<SceneChange>().ChangeGameScene();
+
+                // 게임 시작 여부 
+                GameObject.Find("NetManager").GetComponent<InitNetManager>().Get_Start = true;
             }
             else
             {

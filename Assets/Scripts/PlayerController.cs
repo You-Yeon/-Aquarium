@@ -192,7 +192,7 @@ public class PlayerController : MonoBehaviour {
 
     }
 
-private void Mouse()
+    private void Mouse()
     {
         playerRigidbody.rotation = playerRigidbody.rotation * Quaternion.Euler(Vector3.up * mouseSpeed * playerInput.mouseX); // X
 
