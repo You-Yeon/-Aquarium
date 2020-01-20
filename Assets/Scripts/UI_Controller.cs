@@ -44,7 +44,8 @@ public class UI_Controller : MonoBehaviour
 
     private void Move_ch() // 크로스헤어 이동시 거리 처리
     {
-        if (playerInput.move != 0 || playerInput.rotate != 0) // 움직일 때
+        // 움직이고 있고 채팅을 치고있지 않을 경우
+        if ((playerInput.move != 0 || playerInput.rotate != 0 ) && !GameObject.Find("Team_num/" + GameObject.Find("NetManager").GetComponent<InitNetManager>().m_team_num).GetComponent<PlayerController>().FocusChat)
         {
             crosshair1.localPosition = new Vector3(30, 0, 0);
             crosshair2.localPosition = new Vector3(-30, 0, 0);

@@ -14,7 +14,7 @@ public class InitNetManager : MonoBehaviour
     public static ushort ServerPort = 35475;
 
     // 클라이언트 객체
-    NetClient m_Client;
+    public NetClient m_Client;
 
     // 플레이어의 캐릭터 정보
     public int[] r_chr_num = new int[4];
@@ -97,7 +97,7 @@ public class InitNetManager : MonoBehaviour
     {
         // 클라이언트 객체 생성
         m_Client = new NetClient();
-
+        
         // 서버 접속 시도 결과 핸들러
         m_Client.JoinServerCompleteHandler =
             (ErrorInfo info, ByteArray replyFromServer) =>
@@ -143,7 +143,8 @@ public class InitNetManager : MonoBehaviour
 
     float m_lastSendTime = -1;
 
-    HostID m_playerP2PGroup = HostID.HostID_None;
+    // P2P 방 HostID
+    public HostID m_playerP2PGroup = HostID.HostID_None;
 
     // Update is called once per frame
     private void FixedUpdate()
@@ -160,20 +161,28 @@ public class InitNetManager : MonoBehaviour
                     //// 0.1 sec 간격으로 전송
                     //if (m_lastSendTime < 0 || Time.time - m_lastSendTime > 0.1)
                     //{
-                        Debug.Log("m_playerP2PGroup : " + m_playerP2PGroup);
 
                         var sendOption = new RmiContext();
                         sendOption.reliability = MessageReliability.MessageReliability_Unreliable; // UDP 
                         sendOption.maxDirectP2PMulticastCount = 30; // 트래픽 카운트
                         sendOption.enableLoopback = false;
 
+                        var pc = GameObject.Find("Team_num/" + m_team_num);
+
                         m_proxy.Player_Move(m_playerP2PGroup, sendOption,
                             m_team_num,
                             playerInput.move,
                             playerInput.rotate,
-                            playerInput.mouseX);
+                            playerInput.mouseX,
+                            pc.transform.position.x,
+                            pc.transform.position.y,
+                            pc.transform.position.z,
+                            pc.transform.rotation.x,
+                            pc.transform.rotation.y,
+                            pc.transform.rotation.z
+                            );
 
-                        m_lastSendTime = Time.time;
+                        //m_lastSendTime = Time.time;
 
                     //}
                 }
@@ -243,6 +252,33 @@ public class InitNetManager : MonoBehaviour
         // P2P 방 퇴장함.
         m_proxy.LeaveGameRoom(HostID.HostID_Server,
             RmiContext.SecureReliableSend);
+
+    }
+
+    public void GetChat(System.String _text)
+    {
+        var sendOption = new RmiContext();
+        sendOption.reliability = MessageReliability.MessageReliability_Reliable; // TCP 
+        sendOption.maxDirectP2PMulticastCount = 30; // 트래픽 카운트
+        sendOption.enableLoopback = false;
+
+        // P2P 방에 전송
+        m_proxy.Player_Chat(m_playerP2PGroup, sendOption, m_userID, _text);
+
+        // 본인 채팅창도 업데이트
+        string ChatText = GameObject.Find("ChatText").GetComponent<Text>().text;
+
+        // 채팅 창의 텍스트를 업데이트
+        ChatText += "[" + System.DateTime.Now.ToString("HH:mm:ss") + "] " + m_userID + " : " + _text + System.Environment.NewLine;
+        GameObject.Find("ChatText").GetComponent<Text>().text = ChatText;
+
+        // 입력 창 비우기
+        GameObject.Find("Chat_Input").GetComponent<InputField>().Select();
+        GameObject.Find("Chat_Input").GetComponent<InputField>().text = "";
+
+        // 스크롤바의 위치를 가장 아래로 내려준다. 
+        // 1.0f는 맨 위, 0.0f는 맨 아래
+        GameObject.Find("Chat_Scrollbar").GetComponent<Scrollbar>().value = 0.0f;
 
     }
 
@@ -423,7 +459,7 @@ public class InitNetManager : MonoBehaviour
         };
 
         // 플레이어 동기화
-        m_stub.Player_Move = (HostID remote, RmiContext rmiContext, int _team_num, float _move, float _rotate, float _mouseX) =>
+        m_stub.Player_Move = (HostID remote, RmiContext rmiContext, int _team_num, float _move, float _rotate, float _mouseX, float _px, float _py, float _pz, float _rx, float _ry, float _rz) =>
         {
             // 플레이어 정보 갱신
             var control = GameObject.Find("Team_num/" + _team_num).GetComponent<OthersController>();
@@ -432,8 +468,35 @@ public class InitNetManager : MonoBehaviour
             control.m_rotate = _rotate;
             control.m_mouseX = _mouseX;
 
+            control.m_px = _px;
+            control.m_py = _py;
+            control.m_pz = _pz;
+
+            control.m_rx = _rx;
+            control.m_ry = _ry;
+            control.m_rz = _rz;
+
             return true;
         };
+    
+        // 플레이어 채팅
+        m_stub.Player_Chat = (HostID remote, RmiContext rmiContext, System.String _id, System.String _text) =>
+        {
+            Debug.Log("Chat");
+
+            string ChatText = GameObject.Find("ChatText").GetComponent<Text>().text;
+
+            // 채팅 창의 텍스트를 업데이트
+            ChatText += "[" + System.DateTime.Now.ToString("HH:mm:ss") + "] " + _id + " : " + _text + System.Environment.NewLine;
+            GameObject.Find("ChatText").GetComponent<Text>().text = ChatText;
+
+            // 스크롤바의 위치를 가장 아래로 내려준다. 
+            // 1.0f는 맨 위, 0.0f는 맨 아래
+            GameObject.Find("Chat_Scrollbar").GetComponent<Scrollbar>().value = 0.0f;
+
+            return true;
+        };
+
     }
 
 }

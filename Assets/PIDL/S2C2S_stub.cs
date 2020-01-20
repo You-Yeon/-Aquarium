@@ -61,8 +61,13 @@ public BeforeRmiInvocationDelegate BeforeRmiInvocation = delegate(Nettention.Pro
 		{ 
 			return false;
 		};
-		public delegate bool Player_MoveDelegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int m_team_num, float m_move, float m_rotate, float m_mouseX);  
-		public Player_MoveDelegate Player_Move = delegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int m_team_num, float m_move, float m_rotate, float m_mouseX)
+		public delegate bool Player_MoveDelegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int m_team_num, float m_move, float m_rotate, float m_mouseX, float px, float py, float pz, float rx, float ry, float rz);  
+		public Player_MoveDelegate Player_Move = delegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int m_team_num, float m_move, float m_rotate, float m_mouseX, float px, float py, float pz, float rx, float ry, float rz)
+		{ 
+			return false;
+		};
+		public delegate bool Player_ChatDelegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, System.String id, System.String text);  
+		public Player_ChatDelegate Player_Chat = delegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, System.String id, System.String text)
 		{ 
 			return false;
 		};
@@ -111,6 +116,9 @@ public BeforeRmiInvocationDelegate BeforeRmiInvocation = delegate(Nettention.Pro
             break;
         case Common.Player_Move:
             ProcessReceivedMessage_Player_Move(__msg, pa, hostTag, remote);
+            break;
+        case Common.Player_Chat:
+            ProcessReceivedMessage_Player_Chat(__msg, pa, hostTag, remote);
             break;
 		default:
 			 goto __fail;
@@ -603,6 +611,12 @@ parameterString+=rz.ToString()+",";
 float m_move; Nettention.Proud.Marshaler.Read(__msg,out m_move);	
 float m_rotate; Nettention.Proud.Marshaler.Read(__msg,out m_rotate);	
 float m_mouseX; Nettention.Proud.Marshaler.Read(__msg,out m_mouseX);	
+float px; Nettention.Proud.Marshaler.Read(__msg,out px);	
+float py; Nettention.Proud.Marshaler.Read(__msg,out py);	
+float pz; Nettention.Proud.Marshaler.Read(__msg,out pz);	
+float rx; Nettention.Proud.Marshaler.Read(__msg,out rx);	
+float ry; Nettention.Proud.Marshaler.Read(__msg,out ry);	
+float rz; Nettention.Proud.Marshaler.Read(__msg,out rz);	
 core.PostCheckReadMessage(__msg, RmiName_Player_Move);
         if(enableNotifyCallFromStub==true)
         {
@@ -611,6 +625,12 @@ core.PostCheckReadMessage(__msg, RmiName_Player_Move);
 parameterString+=m_move.ToString()+",";
 parameterString+=m_rotate.ToString()+",";
 parameterString+=m_mouseX.ToString()+",";
+parameterString+=px.ToString()+",";
+parameterString+=py.ToString()+",";
+parameterString+=pz.ToString()+",";
+parameterString+=rx.ToString()+",";
+parameterString+=ry.ToString()+",";
+parameterString+=rz.ToString()+",";
         NotifyCallFromStub(Common.Player_Move, RmiName_Player_Move,parameterString);
         }
 
@@ -627,7 +647,7 @@ parameterString+=m_mouseX.ToString()+",";
         long t0 = Nettention.Proud.PreciseCurrentTime.GetTimeMs();
 
         // Call this method.
-        bool __ret =Player_Move (remote,ctx , m_team_num, m_move, m_rotate, m_mouseX );
+        bool __ret =Player_Move (remote,ctx , m_team_num, m_move, m_rotate, m_mouseX, px, py, pz, rx, ry, rz );
 
         if(__ret==false)
         {
@@ -640,6 +660,58 @@ parameterString+=m_mouseX.ToString()+",";
         Nettention.Proud.AfterRmiSummary summary = new Nettention.Proud.AfterRmiSummary();
         summary.rmiID = Common.Player_Move;
         summary.rmiName = RmiName_Player_Move;
+        summary.hostID = remote;
+        summary.hostTag = hostTag;
+        summary.elapsedTime = Nettention.Proud.PreciseCurrentTime.GetTimeMs()-t0;
+        AfterRmiInvocation(summary);
+        }
+    }
+    void ProcessReceivedMessage_Player_Chat(Nettention.Proud.Message __msg, Nettention.Proud.ReceivedMessage pa, Object hostTag, Nettention.Proud.HostID remote)
+    {
+        Nettention.Proud.RmiContext ctx = new Nettention.Proud.RmiContext();
+        ctx.sentFrom=pa.RemoteHostID;
+        ctx.relayed=pa.IsRelayed;
+        ctx.hostTag=hostTag;
+        ctx.encryptMode = pa.EncryptMode;
+        ctx.compressMode = pa.CompressMode;
+
+        System.String id; Nettention.Proud.Marshaler.Read(__msg,out id);	
+System.String text; Nettention.Proud.Marshaler.Read(__msg,out text);	
+core.PostCheckReadMessage(__msg, RmiName_Player_Chat);
+        if(enableNotifyCallFromStub==true)
+        {
+        string parameterString = "";
+        parameterString+=id.ToString()+",";
+parameterString+=text.ToString()+",";
+        NotifyCallFromStub(Common.Player_Chat, RmiName_Player_Chat,parameterString);
+        }
+
+        if(enableStubProfiling)
+        {
+        Nettention.Proud.BeforeRmiSummary summary = new Nettention.Proud.BeforeRmiSummary();
+        summary.rmiID = Common.Player_Chat;
+        summary.rmiName = RmiName_Player_Chat;
+        summary.hostID = remote;
+        summary.hostTag = hostTag;
+        BeforeRmiInvocation(summary);
+        }
+
+        long t0 = Nettention.Proud.PreciseCurrentTime.GetTimeMs();
+
+        // Call this method.
+        bool __ret =Player_Chat (remote,ctx , id, text );
+
+        if(__ret==false)
+        {
+        // Error: RMI function that a user did not create has been called. 
+        core.ShowNotImplementedRmiWarning(RmiName_Player_Chat);
+        }
+
+        if(enableStubProfiling)
+        {
+        Nettention.Proud.AfterRmiSummary summary = new Nettention.Proud.AfterRmiSummary();
+        summary.rmiID = Common.Player_Chat;
+        summary.rmiName = RmiName_Player_Chat;
         summary.hostID = remote;
         summary.hostTag = hostTag;
         summary.elapsedTime = Nettention.Proud.PreciseCurrentTime.GetTimeMs()-t0;
@@ -659,6 +731,7 @@ public const string RmiName_Room_Disappear="Room_Disappear";
 public const string RmiName_GameStart="GameStart";
 public const string RmiName_PlayerInfo="PlayerInfo";
 public const string RmiName_Player_Move="Player_Move";
+public const string RmiName_Player_Chat="Player_Chat";
        
 public const string RmiName_First = RmiName_RequestLogin;
 #else
@@ -674,6 +747,7 @@ public const string RmiName_Room_Disappear="";
 public const string RmiName_GameStart="";
 public const string RmiName_PlayerInfo="";
 public const string RmiName_Player_Move="";
+public const string RmiName_Player_Chat="";
        
 public const string RmiName_First = "";
 #endif

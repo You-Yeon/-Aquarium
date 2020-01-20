@@ -23,6 +23,7 @@ namespace S2C2S
 			public const Nettention.Proud.RmiID GameStart = (Nettention.Proud.RmiID)1000+8;
 			public const Nettention.Proud.RmiID PlayerInfo = (Nettention.Proud.RmiID)1000+9;
 			public const Nettention.Proud.RmiID Player_Move = (Nettention.Proud.RmiID)1000+10;
+			public const Nettention.Proud.RmiID Player_Chat = (Nettention.Proud.RmiID)1000+11;
 		// List that has RMI ID.
 		public static Nettention.Proud.RmiID[] RmiIDList = new Nettention.Proud.RmiID[] {
 			RequestLogin,
@@ -35,6 +36,7 @@ namespace S2C2S
 			GameStart,
 			PlayerInfo,
 			Player_Move,
+			Player_Chat,
 		};
 	}
 }

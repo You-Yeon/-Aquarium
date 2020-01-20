@@ -18,6 +18,7 @@ public class PlayerInput : MonoBehaviour
     public float mouseY { get; private set; } // 감지된 마우스 입력값
     public bool mouseOut { get; private set; } // 감지된 ESC 입려값
     public bool mouseOn { get; private set; } // 감지된 마우스 입력값
+    public bool enter { get; private set; } // 감지된 엔터키 입력값
 
     // 매프레임 사용자 입력을 감지
     private void Update()
@@ -39,6 +40,8 @@ public class PlayerInput : MonoBehaviour
         mouseOut = Input.GetKeyDown(KeyCode.Escape);
         // mouseOn에 관한 입력 감지
         mouseOn = Input.GetKeyDown(KeyCode.Mouse0);
+        // enter에 관한 입력 감지
+        enter = Input.GetKeyDown(KeyCode.Return);
 
     }
 }

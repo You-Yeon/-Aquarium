@@ -27,6 +27,14 @@ public class OthersController : MonoBehaviour
     public float m_rotate; // 회전 입력 값
     public float m_mouseX; // 마우스 입력 값
 
+    public float m_px; // 위치
+    public float m_py;
+    public float m_pz;
+
+    public float m_rx; // 방향
+    public float m_ry;
+    public float m_rz;
+
     private void Start()
     {
         // 사용할 컴포넌트들의 참조를 가져오기
@@ -60,16 +68,16 @@ public class OthersController : MonoBehaviour
     private void Move()
     {
         // 상대방 마우스 회전에 따른 캐릭터 방향 회전
-        playerRigidbody.rotation = playerRigidbody.rotation * Quaternion.Euler(Vector3.up * mouseSpeed * m_mouseX);
+        playerRigidbody.MoveRotation(Quaternion.Euler(m_rx, m_ry, m_rz));
 
-        // 이동 방향 벡터 계산
-        Vector3 moveDir = (m_move * transform.forward) + (m_rotate * transform.right);
+        //// 이동 방향 벡터 계산
+        //Vector3 moveDir = (m_move * transform.forward) + (m_rotate * transform.right);
 
-        // 상대적으로 이동할 거리 계산
-        Vector3 moveDistance = moveDir.normalized * moveSpeed * Time.deltaTime;
+        //// 상대적으로 이동할 거리 계산
+        //Vector3 moveDistance = moveDir.normalized * moveSpeed * Time.deltaTime;
 
         // 리지드바디를 이용해 게임 오브젝트 위치 변경
-        playerRigidbody.MovePosition(playerRigidbody.position + moveDistance);
+        playerRigidbody.MovePosition(new Vector3(m_px, m_py, m_pz));
 
         if (!audioSource_walk.isPlaying) // 걷는 사운드가 나오지 않으면
         {

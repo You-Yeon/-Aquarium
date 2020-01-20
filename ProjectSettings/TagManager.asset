@@ -9,6 +9,7 @@ TagManager:
   - User_UI
   - MyPlayer
   - OtherPlayer
+  - Chat_UI
   layers:
   - Default
   - TransparentFX

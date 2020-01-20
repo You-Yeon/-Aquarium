@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour {
     private bool isReloading = false; // 장전 애니메이션 진행 여부
     public AudioClip reloadSound; // 장전 사운드
 
+    public bool FocusChat = false; // 채팅 focus
+
     private void Start() {
         // 사용할 컴포넌트들의 참조를 가져오기
         playerInput = GetComponent<PlayerInput>();
@@ -64,14 +66,20 @@ public class PlayerController : MonoBehaviour {
 
         vcam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.y = 1.9f; // 초기 화면 y값
 
-        UI_Controller.ui_instance.bulletsText.text = currentBullets + " / " + bulletsTotal; // UI 총알 개수 반영11
+        UI_Controller.ui_instance.bulletsText.text = currentBullets + " / " + bulletsTotal; // UI 총알 개수 반영
     }
 
     // FixedUpdate는 물리 갱신 주기에 맞춰 실행됨
     private void FixedUpdate() {
 
+        // 채팅치고 있을 경우에는 return
+        if (FocusChat)
+        {
+            return;
+        }
+
         AnimatorStateInfo info = anim.GetCurrentAnimatorStateInfo(1); // 상의 애니메이션부분인 1번 레이어를 가져온다.
-        isReloading = info.IsName("Reload"); // 장전 중인지 아닌지 판별
+        isReloading = info.IsName("Reload"); // 장전 중인지 아닌지 판단
 
         // 움직임 실행
         Move();
@@ -104,7 +112,6 @@ public class PlayerController : MonoBehaviour {
     // 입력값에 따라 캐릭터를 앞뒤로 움직임
     private void Move()
     {
-
         // 이동 방향 벡터 계산
         Vector3 moveDir = (playerInput.move * transform.forward) + (playerInput.rotate * transform.right);
 

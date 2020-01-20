@@ -33,10 +33,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -45,12 +43,17 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.InputField
+    - UnityEngine.UI.Mask
     - UnityEngine.UI.Outline
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Shadow
     - UnityEngine.UI.Text
+    - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
     Assets/Scenes/Intro.unity:
     - Class: 1
@@ -241,7 +244,11 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 9642}
+    - Class: 114
       Script: {instanceID: 9644}
+    - Class: 114
+      Script: {instanceID: 9646}
     - Class: 114
       Script: {instanceID: 9650}
     - Class: 114
@@ -249,9 +256,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9664}
     - Class: 114
+      Script: {instanceID: 9666}
+    - Class: 114
+      Script: {instanceID: 9672}
+    - Class: 114
+      Script: {instanceID: 9676}
+    - Class: 114
+      Script: {instanceID: 9690}
+    - Class: 114
+      Script: {instanceID: 9692}
+    - Class: 114
       Script: {instanceID: 9700}
     - Class: 114
       Script: {instanceID: 9702}
+    - Class: 114
+      Script: {instanceID: 9712}
     - Class: 114
       Script: {instanceID: 9918}
     - Class: 114
@@ -841,7 +860,7 @@ ScriptsOnlyBuild:
     className: Vignette
   - hash:
       serializedVersion: 2
-      Hash: b16f25445fcfba2497c0dee8358bdf58
+      Hash: 14f905c6cf9697af859af1d9c3c2a83b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1261,7 +1280,7 @@ ScriptsOnlyBuild:
     className: CinemachineHardLookAt
   - hash:
       serializedVersion: 2
-      Hash: 00ab98f6b81f2d5046408ac40e42e7c1
+      Hash: dd0649432ed0a7b2c597c65e2dc581ee
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OthersController
@@ -1273,7 +1292,7 @@ ScriptsOnlyBuild:
     className: CloudSpawner
   - hash:
       serializedVersion: 2
-      Hash: 69e44189258eb5f10a509b8538c1ee55
+      Hash: 76f8258e23d59f9e25b673a138c3f299
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InitNetManager
@@ -1321,7 +1340,7 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
-      Hash: 0810e5060f2795dd8be2c3e6ea060238
+      Hash: fb43c9a13b81d39acaff184cb8a18a35
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
