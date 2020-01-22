@@ -8,6 +8,7 @@ ScriptsOnlyBuild:
     - GameCount
     - GameManager
     - InitNetManager
+    - OtherBullet
     - OthersController
     - PlayerController
     - PlayerInput
@@ -137,39 +138,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10244}
     - Class: 114
-      Script: {instanceID: 10354}
+      Script: {instanceID: 10356}
     - Class: 114
-      Script: {instanceID: 10414}
+      Script: {instanceID: 10416}
     - Class: 114
-      Script: {instanceID: 10426}
+      Script: {instanceID: 10428}
     - Class: 114
-      Script: {instanceID: 10538}
+      Script: {instanceID: 10540}
     - Class: 114
-      Script: {instanceID: 10586}
+      Script: {instanceID: 10588}
     - Class: 114
-      Script: {instanceID: 10594}
+      Script: {instanceID: 10596}
     - Class: 114
-      Script: {instanceID: 10606}
+      Script: {instanceID: 10608}
     - Class: 114
-      Script: {instanceID: 10674}
+      Script: {instanceID: 10676}
     - Class: 114
-      Script: {instanceID: 10684}
+      Script: {instanceID: 10686}
     - Class: 114
-      Script: {instanceID: 10812}
+      Script: {instanceID: 10814}
     - Class: 114
-      Script: {instanceID: 10936}
+      Script: {instanceID: 10938}
     - Class: 114
-      Script: {instanceID: 10952}
+      Script: {instanceID: 10954}
     - Class: 114
-      Script: {instanceID: 11042}
+      Script: {instanceID: 11044}
     - Class: 114
-      Script: {instanceID: 11046}
+      Script: {instanceID: 11048}
     - Class: 114
-      Script: {instanceID: 11142}
+      Script: {instanceID: 11144}
     - Class: 114
-      Script: {instanceID: 11180}
+      Script: {instanceID: 11182}
     - Class: 114
-      Script: {instanceID: 11230}
+      Script: {instanceID: 11232}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -280,23 +281,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10266}
     - Class: 114
-      Script: {instanceID: 10354}
+      Script: {instanceID: 10332}
     - Class: 114
-      Script: {instanceID: 10500}
+      Script: {instanceID: 10356}
     - Class: 114
-      Script: {instanceID: 10674}
+      Script: {instanceID: 10502}
     - Class: 114
-      Script: {instanceID: 10684}
+      Script: {instanceID: 10676}
     - Class: 114
-      Script: {instanceID: 10918}
+      Script: {instanceID: 10686}
     - Class: 114
-      Script: {instanceID: 10936}
+      Script: {instanceID: 10920}
     - Class: 114
-      Script: {instanceID: 11142}
+      Script: {instanceID: 10938}
     - Class: 114
-      Script: {instanceID: 11178}
+      Script: {instanceID: 11144}
     - Class: 114
       Script: {instanceID: 11180}
+    - Class: 114
+      Script: {instanceID: 11182}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -950,7 +953,7 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
-      Hash: 58c1f343dbc83abf1bcaa7c0ac826727
+      Hash: f850f5481ed50d99ccb1461f616d2ce1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Bullet
@@ -1026,6 +1029,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: 58c1f343dbc83abf1bcaa7c0ac826727
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OtherBullet
   - hash:
       serializedVersion: 2
       Hash: 204ea02909ea3f738dafe3ff633d2a93
@@ -1280,7 +1289,7 @@ ScriptsOnlyBuild:
     className: CinemachineHardLookAt
   - hash:
       serializedVersion: 2
-      Hash: dd0649432ed0a7b2c597c65e2dc581ee
+      Hash: 457219b7d89ad8b7d36a63a324ebfece
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OthersController
@@ -1292,7 +1301,7 @@ ScriptsOnlyBuild:
     className: CloudSpawner
   - hash:
       serializedVersion: 2
-      Hash: 76f8258e23d59f9e25b673a138c3f299
+      Hash: 9045ce3f97cc22f31f3bf17b2a80bc98
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InitNetManager
@@ -1340,7 +1349,7 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
-      Hash: fb43c9a13b81d39acaff184cb8a18a35
+      Hash: 3cc920b678ef251006eab655a4bd5a26
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController

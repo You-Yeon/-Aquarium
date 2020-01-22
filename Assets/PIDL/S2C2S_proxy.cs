@@ -265,7 +265,7 @@ Nettention.Proud.Marshaler.Write(__msg, rz);
 	return RmiSend(remotes,rmiContext,__msg,
 		RmiName_PlayerInfo, Common.PlayerInfo);
 }
-public bool Player_Move(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int m_team_num, float m_move, float m_rotate, float m_mouseX, float px, float py, float pz, float rx, float ry, float rz)
+public bool Player_Move(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int m_team_num, float m_move, float m_rotate, bool m_reload, float px, float py, float pz, float rx, float ry, float rz)
 {
 	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
 		__msg.SimplePacketMode = core.IsSimplePacketMode();
@@ -274,7 +274,7 @@ public bool Player_Move(Nettention.Proud.HostID remote,Nettention.Proud.RmiConte
 		Nettention.Proud.Marshaler.Write(__msg, m_team_num);
 		Nettention.Proud.Marshaler.Write(__msg, m_move);
 		Nettention.Proud.Marshaler.Write(__msg, m_rotate);
-		Nettention.Proud.Marshaler.Write(__msg, m_mouseX);
+		Nettention.Proud.Marshaler.Write(__msg, m_reload);
 		Nettention.Proud.Marshaler.Write(__msg, px);
 		Nettention.Proud.Marshaler.Write(__msg, py);
 		Nettention.Proud.Marshaler.Write(__msg, pz);
@@ -289,7 +289,7 @@ public bool Player_Move(Nettention.Proud.HostID remote,Nettention.Proud.RmiConte
 		RmiName_Player_Move, Common.Player_Move);
 }
 
-public bool Player_Move(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext, int m_team_num, float m_move, float m_rotate, float m_mouseX, float px, float py, float pz, float rx, float ry, float rz)
+public bool Player_Move(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext, int m_team_num, float m_move, float m_rotate, bool m_reload, float px, float py, float pz, float rx, float ry, float rz)
 {
 	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
 __msg.SimplePacketMode = core.IsSimplePacketMode();
@@ -298,7 +298,7 @@ __msg.Write(__msgid);
 Nettention.Proud.Marshaler.Write(__msg, m_team_num);
 Nettention.Proud.Marshaler.Write(__msg, m_move);
 Nettention.Proud.Marshaler.Write(__msg, m_rotate);
-Nettention.Proud.Marshaler.Write(__msg, m_mouseX);
+Nettention.Proud.Marshaler.Write(__msg, m_reload);
 Nettention.Proud.Marshaler.Write(__msg, px);
 Nettention.Proud.Marshaler.Write(__msg, py);
 Nettention.Proud.Marshaler.Write(__msg, pz);
@@ -337,6 +337,150 @@ Nettention.Proud.Marshaler.Write(__msg, text);
 	return RmiSend(remotes,rmiContext,__msg,
 		RmiName_Player_Chat, Common.Player_Chat);
 }
+public bool Player_Shoot(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int m_team_num, float bx, float by, float bz, int kind)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+		__msg.SimplePacketMode = core.IsSimplePacketMode();
+		Nettention.Proud.RmiID __msgid= Common.Player_Shoot;
+		__msg.Write(__msgid);
+		Nettention.Proud.Marshaler.Write(__msg, m_team_num);
+		Nettention.Proud.Marshaler.Write(__msg, bx);
+		Nettention.Proud.Marshaler.Write(__msg, by);
+		Nettention.Proud.Marshaler.Write(__msg, bz);
+		Nettention.Proud.Marshaler.Write(__msg, kind);
+		
+	Nettention.Proud.HostID[] __list = new Nettention.Proud.HostID[1];
+	__list[0] = remote;
+		
+	return RmiSend(__list,rmiContext,__msg,
+		RmiName_Player_Shoot, Common.Player_Shoot);
+}
+
+public bool Player_Shoot(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext, int m_team_num, float bx, float by, float bz, int kind)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+__msg.SimplePacketMode = core.IsSimplePacketMode();
+Nettention.Proud.RmiID __msgid= Common.Player_Shoot;
+__msg.Write(__msgid);
+Nettention.Proud.Marshaler.Write(__msg, m_team_num);
+Nettention.Proud.Marshaler.Write(__msg, bx);
+Nettention.Proud.Marshaler.Write(__msg, by);
+Nettention.Proud.Marshaler.Write(__msg, bz);
+Nettention.Proud.Marshaler.Write(__msg, kind);
+		
+	return RmiSend(remotes,rmiContext,__msg,
+		RmiName_Player_Shoot, Common.Player_Shoot);
+}
+public bool Player_GetHP(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int m_humidity)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+		__msg.SimplePacketMode = core.IsSimplePacketMode();
+		Nettention.Proud.RmiID __msgid= Common.Player_GetHP;
+		__msg.Write(__msgid);
+		Nettention.Proud.Marshaler.Write(__msg, m_humidity);
+		
+	Nettention.Proud.HostID[] __list = new Nettention.Proud.HostID[1];
+	__list[0] = remote;
+		
+	return RmiSend(__list,rmiContext,__msg,
+		RmiName_Player_GetHP, Common.Player_GetHP);
+}
+
+public bool Player_GetHP(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext, int m_humidity)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+__msg.SimplePacketMode = core.IsSimplePacketMode();
+Nettention.Proud.RmiID __msgid= Common.Player_GetHP;
+__msg.Write(__msgid);
+Nettention.Proud.Marshaler.Write(__msg, m_humidity);
+		
+	return RmiSend(remotes,rmiContext,__msg,
+		RmiName_Player_GetHP, Common.Player_GetHP);
+}
+public bool Player_SetHP(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int m_team_num, int m_damage)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+		__msg.SimplePacketMode = core.IsSimplePacketMode();
+		Nettention.Proud.RmiID __msgid= Common.Player_SetHP;
+		__msg.Write(__msgid);
+		Nettention.Proud.Marshaler.Write(__msg, m_team_num);
+		Nettention.Proud.Marshaler.Write(__msg, m_damage);
+		
+	Nettention.Proud.HostID[] __list = new Nettention.Proud.HostID[1];
+	__list[0] = remote;
+		
+	return RmiSend(__list,rmiContext,__msg,
+		RmiName_Player_SetHP, Common.Player_SetHP);
+}
+
+public bool Player_SetHP(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext, int m_team_num, int m_damage)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+__msg.SimplePacketMode = core.IsSimplePacketMode();
+Nettention.Proud.RmiID __msgid= Common.Player_SetHP;
+__msg.Write(__msgid);
+Nettention.Proud.Marshaler.Write(__msg, m_team_num);
+Nettention.Proud.Marshaler.Write(__msg, m_damage);
+		
+	return RmiSend(remotes,rmiContext,__msg,
+		RmiName_Player_SetHP, Common.Player_SetHP);
+}
+public bool Show_Player_Color(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int m_team_num, int m_humidity, float m_Max_humidity)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+		__msg.SimplePacketMode = core.IsSimplePacketMode();
+		Nettention.Proud.RmiID __msgid= Common.Show_Player_Color;
+		__msg.Write(__msgid);
+		Nettention.Proud.Marshaler.Write(__msg, m_team_num);
+		Nettention.Proud.Marshaler.Write(__msg, m_humidity);
+		Nettention.Proud.Marshaler.Write(__msg, m_Max_humidity);
+		
+	Nettention.Proud.HostID[] __list = new Nettention.Proud.HostID[1];
+	__list[0] = remote;
+		
+	return RmiSend(__list,rmiContext,__msg,
+		RmiName_Show_Player_Color, Common.Show_Player_Color);
+}
+
+public bool Show_Player_Color(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext, int m_team_num, int m_humidity, float m_Max_humidity)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+__msg.SimplePacketMode = core.IsSimplePacketMode();
+Nettention.Proud.RmiID __msgid= Common.Show_Player_Color;
+__msg.Write(__msgid);
+Nettention.Proud.Marshaler.Write(__msg, m_team_num);
+Nettention.Proud.Marshaler.Write(__msg, m_humidity);
+Nettention.Proud.Marshaler.Write(__msg, m_Max_humidity);
+		
+	return RmiSend(remotes,rmiContext,__msg,
+		RmiName_Show_Player_Color, Common.Show_Player_Color);
+}
+public bool Room_weather(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, System.String _weather)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+		__msg.SimplePacketMode = core.IsSimplePacketMode();
+		Nettention.Proud.RmiID __msgid= Common.Room_weather;
+		__msg.Write(__msgid);
+		Nettention.Proud.Marshaler.Write(__msg, _weather);
+		
+	Nettention.Proud.HostID[] __list = new Nettention.Proud.HostID[1];
+	__list[0] = remote;
+		
+	return RmiSend(__list,rmiContext,__msg,
+		RmiName_Room_weather, Common.Room_weather);
+}
+
+public bool Room_weather(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext, System.String _weather)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+__msg.SimplePacketMode = core.IsSimplePacketMode();
+Nettention.Proud.RmiID __msgid= Common.Room_weather;
+__msg.Write(__msgid);
+Nettention.Proud.Marshaler.Write(__msg, _weather);
+		
+	return RmiSend(remotes,rmiContext,__msg,
+		RmiName_Room_weather, Common.Room_weather);
+}
 #if USE_RMI_NAME_STRING
 // RMI name declaration.
 // It is the unique pointer that indicates RMI name such as RMI profiler.
@@ -351,6 +495,11 @@ public const string RmiName_GameStart="GameStart";
 public const string RmiName_PlayerInfo="PlayerInfo";
 public const string RmiName_Player_Move="Player_Move";
 public const string RmiName_Player_Chat="Player_Chat";
+public const string RmiName_Player_Shoot="Player_Shoot";
+public const string RmiName_Player_GetHP="Player_GetHP";
+public const string RmiName_Player_SetHP="Player_SetHP";
+public const string RmiName_Show_Player_Color="Show_Player_Color";
+public const string RmiName_Room_weather="Room_weather";
        
 public const string RmiName_First = RmiName_RequestLogin;
 #else
@@ -367,6 +516,11 @@ public const string RmiName_GameStart="";
 public const string RmiName_PlayerInfo="";
 public const string RmiName_Player_Move="";
 public const string RmiName_Player_Chat="";
+public const string RmiName_Player_Shoot="";
+public const string RmiName_Player_GetHP="";
+public const string RmiName_Player_SetHP="";
+public const string RmiName_Show_Player_Color="";
+public const string RmiName_Room_weather="";
        
 public const string RmiName_First = "";
 #endif

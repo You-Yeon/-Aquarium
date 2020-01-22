@@ -49,6 +49,12 @@ public class InitNetManager : MonoBehaviour
     // 팀 번호
     public int m_team_num;
 
+    // hp 최대 값
+    public float max_hp;
+
+    // 습도량
+    public int m_humidity;
+
     // 플레이어 입력을 알려주는 컴포넌트
     public PlayerInput playerInput;
 
@@ -162,10 +168,16 @@ public class InitNetManager : MonoBehaviour
                     //if (m_lastSendTime < 0 || Time.time - m_lastSendTime > 0.1)
                     //{
 
+                    // 채팅치고 있을 경우에는 return
+                    if (GameObject.Find("Team_num/" + m_team_num).GetComponent<PlayerController>().FocusChat)
+                    {
+                        return;
+                    }
+
                         var sendOption = new RmiContext();
-                        sendOption.reliability = MessageReliability.MessageReliability_Unreliable; // UDP 
-                        sendOption.maxDirectP2PMulticastCount = 30; // 트래픽 카운트
-                        sendOption.enableLoopback = false;
+                            sendOption.reliability = MessageReliability.MessageReliability_Unreliable; // UDP 
+                            sendOption.maxDirectP2PMulticastCount = 30; // 트래픽 카운트
+                            sendOption.enableLoopback = false;
 
                         var pc = GameObject.Find("Team_num/" + m_team_num);
 
@@ -173,13 +185,13 @@ public class InitNetManager : MonoBehaviour
                             m_team_num,
                             playerInput.move,
                             playerInput.rotate,
-                            playerInput.mouseX,
+                            playerInput.reload,
                             pc.transform.position.x,
                             pc.transform.position.y,
                             pc.transform.position.z,
-                            pc.transform.rotation.x,
-                            pc.transform.rotation.y,
-                            pc.transform.rotation.z
+                            pc.transform.rotation.eulerAngles.x,
+                            pc.transform.rotation.eulerAngles.y,
+                            pc.transform.rotation.eulerAngles.z
                             );
 
                         //m_lastSendTime = Time.time;
@@ -280,6 +292,22 @@ public class InitNetManager : MonoBehaviour
         // 1.0f는 맨 위, 0.0f는 맨 아래
         GameObject.Find("Chat_Scrollbar").GetComponent<Scrollbar>().value = 0.0f;
 
+    }
+
+    public void GetShoot(float bx, float by, float bz, int kind)
+    {
+        var sendOption = new RmiContext();
+        sendOption.reliability = MessageReliability.MessageReliability_Unreliable; // UDP 
+        sendOption.maxDirectP2PMulticastCount = 30; // 트래픽 카운트
+        sendOption.enableLoopback = false;
+
+        m_proxy.Player_Shoot(m_playerP2PGroup, sendOption, m_team_num, bx, by, bz, kind);
+    }
+
+    public void SetHP(int team_num, int damage)
+    {
+        // TCP로 체력에 입힌 데미지 전송
+        m_proxy.Player_SetHP(HostID.HostID_Server, RmiContext.SecureReliableSend, team_num, damage);
     }
 
     // 연결 해체를 위한 플래그
@@ -459,14 +487,14 @@ public class InitNetManager : MonoBehaviour
         };
 
         // 플레이어 동기화
-        m_stub.Player_Move = (HostID remote, RmiContext rmiContext, int _team_num, float _move, float _rotate, float _mouseX, float _px, float _py, float _pz, float _rx, float _ry, float _rz) =>
+        m_stub.Player_Move = (HostID remote, RmiContext rmiContext, int _team_num, float _move, float _rotate, bool _reload, float _px, float _py, float _pz, float _rx, float _ry, float _rz) =>
         {
             // 플레이어 정보 갱신
             var control = GameObject.Find("Team_num/" + _team_num).GetComponent<OthersController>();
 
             control.m_move = _move;
             control.m_rotate = _rotate;
-            control.m_mouseX = _mouseX;
+            control.m_reload = _reload;
 
             control.m_px = _px;
             control.m_py = _py;
@@ -497,6 +525,47 @@ public class InitNetManager : MonoBehaviour
             return true;
         };
 
+        // 플레이어 총알
+        m_stub.Player_Shoot = (HostID remote, RmiContext rmiContext, int _team_num, float _bx, float _by, float _bz, int kind) =>
+        {
+            // 레이캐스트 위치 전송 후 총알 발사 시작
+            var control = GameObject.Find("Team_num/" + _team_num).GetComponent<OthersController>();
+            control.fire(_bx, _by, _bz, kind);
+
+            return true;
+        };
+
+        // 플레이어의 체력
+        m_stub.Player_GetHP = (HostID remote, RmiContext rmiContext, int _m_humidity) =>
+        {
+            // 체력 초기화
+            m_humidity = _m_humidity;
+
+            // 본인의 색깔 변경
+            GameObject.Find("Team_num/" + m_team_num).GetComponent<PlayerController>().playerRenderer.material.SetColor("_Color", new Color32((byte)(255 - ((float)m_humidity / max_hp) * 155.0), 255, 255, 255));
+
+            Debug.Log(_m_humidity);
+            Debug.Log(max_hp);
+            Debug.Log((255 - ((float)m_humidity / max_hp) * 155.0));
+
+            // P2P로 체력을 전송하여 다른 사람에게도 본인의 색깔 변경
+            var sendOption = new RmiContext();
+            sendOption.reliability = MessageReliability.MessageReliability_Reliable; // TCP 
+            sendOption.maxDirectP2PMulticastCount = 30; // 트래픽 카운트  
+            sendOption.enableLoopback = false;
+
+            m_proxy.Show_Player_Color(m_playerP2PGroup, sendOption, m_team_num, m_humidity, max_hp);
+
+            return true;
+        };
+
+        m_stub.Show_Player_Color = (HostID remote, RmiContext rmiContext, int _m_team_num, int _m_humidity, float _max_hp) =>
+        {
+            // 플레이어의  색깔 변경
+            GameObject.Find("Team_num/" + _m_team_num).GetComponent<OthersController>().playerRenderer.material.SetColor("_Color", new Color32((byte)(255 - ((float)_m_humidity / _max_hp) * 155.0), 255, 255, 255));
+
+            return true;
+        };
     }
 
 }

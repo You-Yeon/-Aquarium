@@ -70,10 +70,17 @@ public class GameManager : MonoBehaviour
 
                 // 플레이어 팀 circle 설정 
                 if ((i + 1) % 2 == 0) // 루비
+                {
                     new_Player.transform.GetChild(2).GetComponent<MeshRenderer>().material = m_R_Circle;
+                    m_Net.max_hp = 120.0f; // 루비팀 특성상 최대 체력 상승
+                }
 
                 if ((i + 1) % 2 == 1) // 사파이어
+                {
                     new_Player.transform.GetChild(2).GetComponent<MeshRenderer>().material = m_S_Circle;
+                    m_Net.max_hp = 100.0f; // 사파이어 체력
+                }
+                
             }
             // 그 외 플레이어 생성
             else
@@ -93,12 +100,13 @@ public class GameManager : MonoBehaviour
         }
 
         // 플레이어 입력 컴포넌트 연결
-        GameObject.Find("NetManager").GetComponent<InitNetManager>().playerInput = GameObject.Find("Team_num/" + m_Net.m_team_num).GetComponent<PlayerInput>();
+        m_Net.playerInput = GameObject.Find("Team_num/" + m_Net.m_team_num).GetComponent<PlayerInput>();
     }
 
     private void Update()
     {
-        if (GameObject.Find("Team_num/" + m_Net.m_team_num).GetComponent<PlayerInput>().mouseOut) // ESC 키를 눌렀을 때
+        // ESC 키를 눌렀을 때
+        if (GameObject.Find("Team_num/" + m_Net.m_team_num).GetComponent<PlayerInput>().mouseOut)
         {
             Debug.Log("ESC");
 
@@ -112,7 +120,8 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (GameObject.Find("Team_num/" + m_Net.m_team_num).GetComponent<PlayerInput>().mouseOn) // 마우스를 눌렀을 때
+        // 마우스를 눌렀을 때
+        if (GameObject.Find("Team_num/" + m_Net.m_team_num).GetComponent<PlayerInput>().mouseOn)
         {
             Debug.Log("CLICK");
 
@@ -145,6 +154,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        // 엔터 키 눌렀을 때
         if (GameObject.Find("Team_num/" + m_Net.m_team_num).GetComponent<PlayerInput>().enter)
         {
             // 채팅 포커스 중이였다면
@@ -154,6 +164,9 @@ public class GameManager : MonoBehaviour
                 m_Net.GetChat(GameObject.Find("Input_Text").GetComponent<Text>().text);
             }
         }
+
+        // 플레이어 체력
+        GameObject.Find("hp_image").GetComponent<Image>().fillAmount = ((float)m_Net.m_humidity / m_Net.max_hp);
 
         // UDP 핑 업데이트
         GameObject.Find("Ping_Text").GetComponent<Text>().text = m_Net.m_Client.GetRecentUnreliablePingMs(m_Net.m_playerP2PGroup) + "ms";

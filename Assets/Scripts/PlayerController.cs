@@ -15,12 +15,14 @@ public class PlayerController : MonoBehaviour {
 
     public CinemachineVirtualCamera vcam; // 추적 카메라
 
-    public GameObject bulletPrefab; // 총알 Prefab
+    public GameObject bulletPrefab; // 기본총알 Prefab
+    public GameObject SapphirebulletPrefab; // 보라색 총알 Prefab
     public GameObject shootPoint; // 발사 지점
 
     private PlayerInput playerInput; // 플레이어 입력을 알려주는 컴포넌트
     private Rigidbody playerRigidbody; // 플레이어 캐릭터의 리지드바디
     private Animator playerAnimator; // 플레이어 캐릭터의 애니메이터
+    public SkinnedMeshRenderer playerRenderer; // 플레이어 캐릭터의 렌더링
 
     private int bulletsPerMag; // 탄창 속 총알 수
     private int bulletsTotal; // 총 총알 수
@@ -43,6 +45,7 @@ public class PlayerController : MonoBehaviour {
         playerInput = GetComponent<PlayerInput>();
         playerRigidbody = GetComponent<Rigidbody>();
         playerAnimator = GetComponent<Animator>();
+        playerRenderer = transform.GetChild(0).GetComponent<SkinnedMeshRenderer>();
         anim = GetComponent<Animator>();
 
         bulletsPerMag = 25; // 한 탄창의 수 
@@ -157,15 +160,40 @@ public class PlayerController : MonoBehaviour {
             accuracy = 0.02f;
         }
 
-
         playerAnimator.CrossFadeInFixedTime("Fire", 0.01f); // 발사 애니메이션
 
         RaycastHit hit;
         Debug.DrawRay(RayPoint.position, RayPoint.transform.forward * range + Random.onUnitSphere * accuracy, Color.blue, 0.3f); // 레이케스트 발사
         Physics.Raycast(RayPoint.position, RayPoint.transform.forward + Random.onUnitSphere * accuracy, out hit, range); // 레이케스트 발사
 
-        GameObject bullet = Instantiate(bulletPrefab, shootPoint.transform.position, shootPoint.transform.rotation); // 총알 생성
-        bullet.transform.LookAt(hit.point);
+        // 총알 종류
+        int kind = 0;
+
+        if (GameObject.Find("NetManager").GetComponent<InitNetManager>().m_team_num % 2 == 1) // 사파이어일 경우
+        {
+            // 20% 확률로 보라색 총알 나옴.
+            // 보라색 총알은 12의 데미지를 줌.
+            if (Random.Range(0, 5) == 0)
+            {
+                kind = 1;
+            }
+        }
+
+        // 디폴트 총알
+        if (kind == 0)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, shootPoint.transform.position, shootPoint.transform.rotation); // 총알 생성
+            bullet.transform.LookAt(hit.point);
+        }
+        // 보라색 총알
+        if (kind == 1)
+        {
+            GameObject bullet = Instantiate(SapphirebulletPrefab, shootPoint.transform.position, shootPoint.transform.rotation); // 총알 생성
+            bullet.transform.LookAt(hit.point);
+        }
+
+        // 총알 발사 네트워크 전송
+        GameObject.Find("NetManager").GetComponent<InitNetManager>().GetShoot(hit.point.x, hit.point.y, hit.point.z, kind);
 
         fireTimer = 0.0f; // 시간 리셋
 

@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\GameCount.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\InitNetManager.cs" />
+     <Compile Include="Assets\Scripts\OtherBullet.cs" />
      <Compile Include="Assets\Scripts\OthersController.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerInput.cs" />
