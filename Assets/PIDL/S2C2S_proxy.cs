@@ -481,6 +481,64 @@ Nettention.Proud.Marshaler.Write(__msg, _weather);
 	return RmiSend(remotes,rmiContext,__msg,
 		RmiName_Room_weather, Common.Room_weather);
 }
+public bool Room_Item(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int idx, float ix, float iy, float iz)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+		__msg.SimplePacketMode = core.IsSimplePacketMode();
+		Nettention.Proud.RmiID __msgid= Common.Room_Item;
+		__msg.Write(__msgid);
+		Nettention.Proud.Marshaler.Write(__msg, idx);
+		Nettention.Proud.Marshaler.Write(__msg, ix);
+		Nettention.Proud.Marshaler.Write(__msg, iy);
+		Nettention.Proud.Marshaler.Write(__msg, iz);
+		
+	Nettention.Proud.HostID[] __list = new Nettention.Proud.HostID[1];
+	__list[0] = remote;
+		
+	return RmiSend(__list,rmiContext,__msg,
+		RmiName_Room_Item, Common.Room_Item);
+}
+
+public bool Room_Item(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext, int idx, float ix, float iy, float iz)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+__msg.SimplePacketMode = core.IsSimplePacketMode();
+Nettention.Proud.RmiID __msgid= Common.Room_Item;
+__msg.Write(__msgid);
+Nettention.Proud.Marshaler.Write(__msg, idx);
+Nettention.Proud.Marshaler.Write(__msg, ix);
+Nettention.Proud.Marshaler.Write(__msg, iy);
+Nettention.Proud.Marshaler.Write(__msg, iz);
+		
+	return RmiSend(remotes,rmiContext,__msg,
+		RmiName_Room_Item, Common.Room_Item);
+}
+public bool Del_Item(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, System.String name)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+		__msg.SimplePacketMode = core.IsSimplePacketMode();
+		Nettention.Proud.RmiID __msgid= Common.Del_Item;
+		__msg.Write(__msgid);
+		Nettention.Proud.Marshaler.Write(__msg, name);
+		
+	Nettention.Proud.HostID[] __list = new Nettention.Proud.HostID[1];
+	__list[0] = remote;
+		
+	return RmiSend(__list,rmiContext,__msg,
+		RmiName_Del_Item, Common.Del_Item);
+}
+
+public bool Del_Item(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext, System.String name)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+__msg.SimplePacketMode = core.IsSimplePacketMode();
+Nettention.Proud.RmiID __msgid= Common.Del_Item;
+__msg.Write(__msgid);
+Nettention.Proud.Marshaler.Write(__msg, name);
+		
+	return RmiSend(remotes,rmiContext,__msg,
+		RmiName_Del_Item, Common.Del_Item);
+}
 #if USE_RMI_NAME_STRING
 // RMI name declaration.
 // It is the unique pointer that indicates RMI name such as RMI profiler.
@@ -500,6 +558,8 @@ public const string RmiName_Player_GetHP="Player_GetHP";
 public const string RmiName_Player_SetHP="Player_SetHP";
 public const string RmiName_Show_Player_Color="Show_Player_Color";
 public const string RmiName_Room_weather="Room_weather";
+public const string RmiName_Room_Item="Room_Item";
+public const string RmiName_Del_Item="Del_Item";
        
 public const string RmiName_First = RmiName_RequestLogin;
 #else
@@ -521,6 +581,8 @@ public const string RmiName_Player_GetHP="";
 public const string RmiName_Player_SetHP="";
 public const string RmiName_Show_Player_Color="";
 public const string RmiName_Room_weather="";
+public const string RmiName_Room_Item="";
+public const string RmiName_Del_Item="";
        
 public const string RmiName_First = "";
 #endif

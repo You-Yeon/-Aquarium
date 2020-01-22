@@ -29,6 +29,8 @@ namespace S2C2S
 			public const Nettention.Proud.RmiID Player_SetHP = (Nettention.Proud.RmiID)1000+14;
 			public const Nettention.Proud.RmiID Show_Player_Color = (Nettention.Proud.RmiID)1000+15;
 			public const Nettention.Proud.RmiID Room_weather = (Nettention.Proud.RmiID)1000+16;
+			public const Nettention.Proud.RmiID Room_Item = (Nettention.Proud.RmiID)1000+17;
+			public const Nettention.Proud.RmiID Del_Item = (Nettention.Proud.RmiID)1000+18;
 		// List that has RMI ID.
 		public static Nettention.Proud.RmiID[] RmiIDList = new Nettention.Proud.RmiID[] {
 			RequestLogin,
@@ -47,6 +49,8 @@ namespace S2C2S
 			Player_SetHP,
 			Show_Player_Color,
 			Room_weather,
+			Room_Item,
+			Del_Item,
 		};
 	}
 }

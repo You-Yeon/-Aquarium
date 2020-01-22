@@ -295,6 +295,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10938}
     - Class: 114
+      Script: {instanceID: 11044}
+    - Class: 114
       Script: {instanceID: 11144}
     - Class: 114
       Script: {instanceID: 11180}
@@ -863,7 +865,7 @@ ScriptsOnlyBuild:
     className: Vignette
   - hash:
       serializedVersion: 2
-      Hash: 14f905c6cf9697af859af1d9c3c2a83b
+      Hash: 16d420d146cc1da9dd92432e1e48bfb3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1301,7 +1303,7 @@ ScriptsOnlyBuild:
     className: CloudSpawner
   - hash:
       serializedVersion: 2
-      Hash: 9045ce3f97cc22f31f3bf17b2a80bc98
+      Hash: 18cc469dc33cfdd720185c128bfb933e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InitNetManager
@@ -1349,7 +1351,7 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
-      Hash: 3cc920b678ef251006eab655a4bd5a26
+      Hash: 13032ad6bf2ef2e1d8640aae0de73cdd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController

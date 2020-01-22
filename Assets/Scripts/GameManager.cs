@@ -24,6 +24,16 @@ public class GameManager : MonoBehaviour
     public Material m_R_Circle; // 루비 circle
     public Material m_S_Circle; // 사파이어 circle
 
+    public Texture m_Morning; // 낮
+    public Texture m_Evening; // 저녁
+    public Texture m_Dawn; // 밤/새벽
+
+    public GameObject m_Item_Prefabs; // 아이템
+
+    public Light m_light; // 게임 빛
+
+    private int m_weather_passive; // 날씨에 의한 체력 영향
+
     private void Awake() // 싱글턴 구성
     {
         if (gm_instance == null)
@@ -48,6 +58,42 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         mouseOut = false;
+
+        // 방 날씨 설정
+
+        // - 낮
+        if (m_Net.m_weather == "Morning")
+        {
+            // 텍스쳐 변경
+            GameObject.Find("SkyDome").GetComponent<MeshRenderer>().material.mainTexture = m_Morning;
+            m_light.color = new Color32(248, 198, 158, 255);
+            m_weather_passive = 1;
+        }
+
+        // - 저녁
+        if (m_Net.m_weather == "Evening")
+        {
+            // 텍스쳐 변경
+            GameObject.Find("SkyDome").GetComponent<MeshRenderer>().material.mainTexture = m_Evening;
+            m_light.color = new Color32(255, 28, 0, 255);
+            m_weather_passive = 0;
+        }
+
+        // - 밤/새벽
+        if (m_Net.m_weather == "Dawn")
+        {
+            // 텍스쳐 변경
+            GameObject.Find("SkyDome").GetComponent<MeshRenderer>().material.mainTexture = m_Dawn;
+            m_light.color = new Color32(82, 2, 142, 255);
+            m_weather_passive = -1;
+        }
+
+        // 아이템 생성
+        for (int i = 0; i < 5; ++i)
+        {
+            var new_Item = (GameObject)Instantiate(m_Item_Prefabs, new Vector3(m_Net.m_items_x[i], m_Net.m_items_y[i], m_Net.m_items_z[i]), Quaternion.identity);
+            new_Item.name = "Item_num/" + (i + 1); // 오브젝트 이름 설정
+        }
 
         // 플레이어 UI 설정
         if (m_Net.m_team_num % 2 == 0) // 루비
@@ -101,6 +147,9 @@ public class GameManager : MonoBehaviour
 
         // 플레이어 입력 컴포넌트 연결
         m_Net.playerInput = GameObject.Find("Team_num/" + m_Net.m_team_num).GetComponent<PlayerInput>();
+
+        // 날씨 영향 시작
+        StartCoroutine(Weather_Passive());
     }
 
     private void Update()
@@ -188,5 +237,19 @@ public class GameManager : MonoBehaviour
     {
         // 채팅 끝
         GameObject.Find("Team_num/" + m_Net.m_team_num).GetComponent<PlayerController>().FocusChat = false ;
+    }
+
+    IEnumerator Weather_Passive()
+    {
+        while (true)
+        {
+            // 1초마다 체력에 날씨 영향을 준다.
+            if (m_Net.m_humidity < m_Net.max_hp && m_Net.m_humidity >= 0)
+            {
+                m_Net.SetHP(m_Net.m_team_num, m_weather_passive);
+            }
+   
+            yield return new WaitForSeconds(1);
+        }
     }
 }

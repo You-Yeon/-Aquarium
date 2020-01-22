@@ -525,7 +525,7 @@ Animator:
   m_GameObject: {fileID: 130974}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 4a5a8c8ff5d6d2e48ab8d2b27100cf57, type: 3}
-  m_Controller: {fileID: 9100000, guid: 6d1ec7875d5989643a1a73a44e489912, type: 2}
+  m_Controller: {fileID: 9100000, guid: ad35f02acd4d89b44bb09701ba01e093, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 0
@@ -557,6 +557,7 @@ MonoBehaviour:
   reloadSound: {fileID: 8300000, guid: a18c55da92ec69b458d37bb1d8b7a18b, type: 3}
   m_move: 0
   m_rotate: 0
+  m_reload: 0
   m_px: 0
   m_py: 0
   m_pz: 0

@@ -96,6 +96,16 @@ public BeforeRmiInvocationDelegate BeforeRmiInvocation = delegate(Nettention.Pro
 		{ 
 			return false;
 		};
+		public delegate bool Room_ItemDelegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int idx, float ix, float iy, float iz);  
+		public Room_ItemDelegate Room_Item = delegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int idx, float ix, float iy, float iz)
+		{ 
+			return false;
+		};
+		public delegate bool Del_ItemDelegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, System.String name);  
+		public Del_ItemDelegate Del_Item = delegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, System.String name)
+		{ 
+			return false;
+		};
 	public override bool ProcessReceivedMessage(Nettention.Proud.ReceivedMessage pa, Object hostTag) 
 	{
 		Nettention.Proud.HostID remote=pa.RemoteHostID;
@@ -159,6 +169,12 @@ public BeforeRmiInvocationDelegate BeforeRmiInvocation = delegate(Nettention.Pro
             break;
         case Common.Room_weather:
             ProcessReceivedMessage_Room_weather(__msg, pa, hostTag, remote);
+            break;
+        case Common.Room_Item:
+            ProcessReceivedMessage_Room_Item(__msg, pa, hostTag, remote);
+            break;
+        case Common.Del_Item:
+            ProcessReceivedMessage_Del_Item(__msg, pa, hostTag, remote);
             break;
 		default:
 			 goto __fail;
@@ -1022,6 +1038,112 @@ core.PostCheckReadMessage(__msg, RmiName_Room_weather);
         AfterRmiInvocation(summary);
         }
     }
+    void ProcessReceivedMessage_Room_Item(Nettention.Proud.Message __msg, Nettention.Proud.ReceivedMessage pa, Object hostTag, Nettention.Proud.HostID remote)
+    {
+        Nettention.Proud.RmiContext ctx = new Nettention.Proud.RmiContext();
+        ctx.sentFrom=pa.RemoteHostID;
+        ctx.relayed=pa.IsRelayed;
+        ctx.hostTag=hostTag;
+        ctx.encryptMode = pa.EncryptMode;
+        ctx.compressMode = pa.CompressMode;
+
+        int idx; Nettention.Proud.Marshaler.Read(__msg,out idx);	
+float ix; Nettention.Proud.Marshaler.Read(__msg,out ix);	
+float iy; Nettention.Proud.Marshaler.Read(__msg,out iy);	
+float iz; Nettention.Proud.Marshaler.Read(__msg,out iz);	
+core.PostCheckReadMessage(__msg, RmiName_Room_Item);
+        if(enableNotifyCallFromStub==true)
+        {
+        string parameterString = "";
+        parameterString+=idx.ToString()+",";
+parameterString+=ix.ToString()+",";
+parameterString+=iy.ToString()+",";
+parameterString+=iz.ToString()+",";
+        NotifyCallFromStub(Common.Room_Item, RmiName_Room_Item,parameterString);
+        }
+
+        if(enableStubProfiling)
+        {
+        Nettention.Proud.BeforeRmiSummary summary = new Nettention.Proud.BeforeRmiSummary();
+        summary.rmiID = Common.Room_Item;
+        summary.rmiName = RmiName_Room_Item;
+        summary.hostID = remote;
+        summary.hostTag = hostTag;
+        BeforeRmiInvocation(summary);
+        }
+
+        long t0 = Nettention.Proud.PreciseCurrentTime.GetTimeMs();
+
+        // Call this method.
+        bool __ret =Room_Item (remote,ctx , idx, ix, iy, iz );
+
+        if(__ret==false)
+        {
+        // Error: RMI function that a user did not create has been called. 
+        core.ShowNotImplementedRmiWarning(RmiName_Room_Item);
+        }
+
+        if(enableStubProfiling)
+        {
+        Nettention.Proud.AfterRmiSummary summary = new Nettention.Proud.AfterRmiSummary();
+        summary.rmiID = Common.Room_Item;
+        summary.rmiName = RmiName_Room_Item;
+        summary.hostID = remote;
+        summary.hostTag = hostTag;
+        summary.elapsedTime = Nettention.Proud.PreciseCurrentTime.GetTimeMs()-t0;
+        AfterRmiInvocation(summary);
+        }
+    }
+    void ProcessReceivedMessage_Del_Item(Nettention.Proud.Message __msg, Nettention.Proud.ReceivedMessage pa, Object hostTag, Nettention.Proud.HostID remote)
+    {
+        Nettention.Proud.RmiContext ctx = new Nettention.Proud.RmiContext();
+        ctx.sentFrom=pa.RemoteHostID;
+        ctx.relayed=pa.IsRelayed;
+        ctx.hostTag=hostTag;
+        ctx.encryptMode = pa.EncryptMode;
+        ctx.compressMode = pa.CompressMode;
+
+        System.String name; Nettention.Proud.Marshaler.Read(__msg,out name);	
+core.PostCheckReadMessage(__msg, RmiName_Del_Item);
+        if(enableNotifyCallFromStub==true)
+        {
+        string parameterString = "";
+        parameterString+=name.ToString()+",";
+        NotifyCallFromStub(Common.Del_Item, RmiName_Del_Item,parameterString);
+        }
+
+        if(enableStubProfiling)
+        {
+        Nettention.Proud.BeforeRmiSummary summary = new Nettention.Proud.BeforeRmiSummary();
+        summary.rmiID = Common.Del_Item;
+        summary.rmiName = RmiName_Del_Item;
+        summary.hostID = remote;
+        summary.hostTag = hostTag;
+        BeforeRmiInvocation(summary);
+        }
+
+        long t0 = Nettention.Proud.PreciseCurrentTime.GetTimeMs();
+
+        // Call this method.
+        bool __ret =Del_Item (remote,ctx , name );
+
+        if(__ret==false)
+        {
+        // Error: RMI function that a user did not create has been called. 
+        core.ShowNotImplementedRmiWarning(RmiName_Del_Item);
+        }
+
+        if(enableStubProfiling)
+        {
+        Nettention.Proud.AfterRmiSummary summary = new Nettention.Proud.AfterRmiSummary();
+        summary.rmiID = Common.Del_Item;
+        summary.rmiName = RmiName_Del_Item;
+        summary.hostID = remote;
+        summary.hostTag = hostTag;
+        summary.elapsedTime = Nettention.Proud.PreciseCurrentTime.GetTimeMs()-t0;
+        AfterRmiInvocation(summary);
+        }
+    }
 #if USE_RMI_NAME_STRING
 // RMI name declaration.
 // It is the unique pointer that indicates RMI name such as RMI profiler.
@@ -1041,6 +1163,8 @@ public const string RmiName_Player_GetHP="Player_GetHP";
 public const string RmiName_Player_SetHP="Player_SetHP";
 public const string RmiName_Show_Player_Color="Show_Player_Color";
 public const string RmiName_Room_weather="Room_weather";
+public const string RmiName_Room_Item="Room_Item";
+public const string RmiName_Del_Item="Del_Item";
        
 public const string RmiName_First = RmiName_RequestLogin;
 #else
@@ -1062,6 +1186,8 @@ public const string RmiName_Player_GetHP="";
 public const string RmiName_Player_SetHP="";
 public const string RmiName_Show_Player_Color="";
 public const string RmiName_Room_weather="";
+public const string RmiName_Room_Item="";
+public const string RmiName_Del_Item="";
        
 public const string RmiName_First = "";
 #endif

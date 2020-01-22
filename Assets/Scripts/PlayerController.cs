@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour {
     public SkinnedMeshRenderer playerRenderer; // 플레이어 캐릭터의 렌더링
 
     private int bulletsPerMag; // 탄창 속 총알 수
-    private int bulletsTotal; // 총 총알 수
+    public int bulletsTotal; // 총 총알 수
     private int currentBullets; // 현재 탄창의 총알 수
 
     public Transform RayPoint; // 레이캐스트 시작 지점

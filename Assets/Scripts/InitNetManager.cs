@@ -38,6 +38,9 @@ public class InitNetManager : MonoBehaviour
     public GameObject m_Ruby_PlayerPrefab;
     public GameObject m_Sapphire_PlayerPrefab;
 
+    // 방 날씨
+    public string m_weather;
+
     // 캐릭터 이미지
     public Sprite[] m_S_character_imgs = new Sprite[18];
     public Sprite[] m_R_character_imgs = new Sprite[18];
@@ -54,6 +57,11 @@ public class InitNetManager : MonoBehaviour
 
     // 습도량
     public int m_humidity;
+
+    // 아이템 정보
+    public float[] m_items_x = new float[5];
+    public float[] m_items_y = new float[5];
+    public float[] m_items_z = new float[5];
 
     // 플레이어 입력을 알려주는 컴포넌트
     public PlayerInput playerInput;
@@ -310,6 +318,17 @@ public class InitNetManager : MonoBehaviour
         m_proxy.Player_SetHP(HostID.HostID_Server, RmiContext.SecureReliableSend, team_num, damage);
     }
 
+    public void DelItem(string item_name)
+    {
+        var sendOption = new RmiContext();
+        sendOption.reliability = MessageReliability.MessageReliability_Reliable; // TCP 
+        sendOption.maxDirectP2PMulticastCount = 30; // 트래픽 카운트
+        sendOption.enableLoopback = false;
+
+        // TCP로 아이템 삭제 메시지 전송
+        m_proxy.Del_Item(m_playerP2PGroup, sendOption, item_name);
+    }
+
     // 연결 해체를 위한 플래그
     bool m_disconnectNow = false;
 
@@ -544,10 +563,6 @@ public class InitNetManager : MonoBehaviour
             // 본인의 색깔 변경
             GameObject.Find("Team_num/" + m_team_num).GetComponent<PlayerController>().playerRenderer.material.SetColor("_Color", new Color32((byte)(255 - ((float)m_humidity / max_hp) * 155.0), 255, 255, 255));
 
-            Debug.Log(_m_humidity);
-            Debug.Log(max_hp);
-            Debug.Log((255 - ((float)m_humidity / max_hp) * 155.0));
-
             // P2P로 체력을 전송하여 다른 사람에게도 본인의 색깔 변경
             var sendOption = new RmiContext();
             sendOption.reliability = MessageReliability.MessageReliability_Reliable; // TCP 
@@ -559,6 +574,7 @@ public class InitNetManager : MonoBehaviour
             return true;
         };
 
+        // 플레이어 색깔 변경
         m_stub.Show_Player_Color = (HostID remote, RmiContext rmiContext, int _m_team_num, int _m_humidity, float _max_hp) =>
         {
             // 플레이어의  색깔 변경
@@ -566,6 +582,43 @@ public class InitNetManager : MonoBehaviour
 
             return true;
         };
+
+        // 방 날씨 변경
+        m_stub.Room_weather = (HostID remote, RmiContext rmiContext, System.String _weather) =>
+        {
+            Debug.Log("Room_weather");
+
+            // 날씨 가져오기
+            m_weather = _weather;
+
+            return true;
+        };
+
+        // 방 날씨 변경
+        m_stub.Room_Item = (HostID remote, RmiContext rmiContext, int _idx, float _ix, float _iy, float _iz) =>
+        {
+            Debug.Log("Room_Item");
+
+            // 아이템 위치 세팅
+            m_items_x[_idx] = _ix;
+            m_items_y[_idx] = _iy;
+            m_items_z[_idx] = _iz;
+
+            return true;
+        };
+
+        // 아이템 삭제
+        m_stub.Del_Item = (HostID remote, RmiContext rmiContext, System.String _item_name) =>
+        {
+            Debug.Log("Del_Item");
+
+            // 아이템 삭제
+            var item = GameObject.Find(_item_name);
+            Destroy(item); // 아이템 삭제
+
+            return true;
+        };
+
     }
 
 }
