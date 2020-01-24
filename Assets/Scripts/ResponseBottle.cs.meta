@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 9eaa36e8f3e7ed8489bc776ce921f131
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_bottle_prefabs: {fileID: 5439923281817334187, guid: 3278492229f3506498f2c3f2bb08f963,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -130,4 +130,4 @@ MonoBehaviour:
   - {fileID: 2100000, guid: bd1320a9cac9e17478e8f0b00626f297, type: 2}
   - {fileID: 2100000, guid: acc894d62f8c39f42a15898e2625e49d, type: 2}
   - {fileID: 2100000, guid: 5c98064adabb11e46a11125b483853da, type: 2}
-  damage: 12
+  damage: 15

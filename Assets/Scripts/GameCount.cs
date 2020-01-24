@@ -38,6 +38,7 @@ public class GameCount : MonoBehaviour
 
                 // 게임 시작 여부 
                 GameObject.Find("NetManager").GetComponent<InitNetManager>().Get_Start = true;
+
             }
             else
             {

@@ -150,6 +150,9 @@ public class GameManager : MonoBehaviour
 
         // 날씨 영향 시작
         StartCoroutine(Weather_Passive());
+
+        // 게임 시작 호출
+        m_Net.GameStart();
     }
 
     private void Update()
@@ -243,13 +246,13 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
-            // 1초마다 체력에 날씨 영향을 준다.
-            if (m_Net.m_humidity < m_Net.max_hp && m_Net.m_humidity >= 0)
+            yield return new WaitForSeconds(1);
+
+            // 1초마다 체력에 날씨 영향을 준다. ( 영향을 받은 값이 max_hp 이하 0 이상 )
+            if (m_Net.m_humidity + m_weather_passive <= m_Net.max_hp && m_Net.m_humidity + m_weather_passive >= 0)
             {
                 m_Net.SetHP(m_Net.m_team_num, m_weather_passive);
             }
-   
-            yield return new WaitForSeconds(1);
         }
     }
 }

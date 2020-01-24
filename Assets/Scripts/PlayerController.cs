@@ -22,10 +22,10 @@ public class PlayerController : MonoBehaviour {
     private PlayerInput playerInput; // 플레이어 입력을 알려주는 컴포넌트
     private Rigidbody playerRigidbody; // 플레이어 캐릭터의 리지드바디
     private Animator playerAnimator; // 플레이어 캐릭터의 애니메이터
-    public SkinnedMeshRenderer playerRenderer; // 플레이어 캐릭터의 렌더링
+    public SkinnedMeshRenderer playerRenderer ; // 플레이어 캐릭터의 렌더링
 
     private int bulletsPerMag; // 탄창 속 총알 수
-    public int bulletsTotal; // 총 총알 수
+    private int bulletsTotal; // 총 총알 수
     private int currentBullets; // 현재 탄창의 총알 수
 
     public Transform RayPoint; // 레이캐스트 시작 지점
@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour {
     public AudioClip reloadSound; // 장전 사운드
 
     public bool FocusChat = false; // 채팅 focus
+
+    public bool GetResponse = false; // 무적 여부
 
     private void Start() {
         // 사용할 컴포넌트들의 참조를 가져오기
@@ -202,7 +204,6 @@ public class PlayerController : MonoBehaviour {
         currentBullets--; // 총알 초기화
         UI_Controller.ui_instance.bulletsText.text = currentBullets + " / " + bulletsTotal; // UI 총알 개수 반영
 
-        Debug.Log("ray : " + hit.point);
     }
 
     private void DoReload() // 장전 시작
@@ -225,6 +226,13 @@ public class PlayerController : MonoBehaviour {
         bulletsTotal -= bulletsToReload; // 전체는 지우고
         UI_Controller.ui_instance.bulletsText.text = currentBullets + " / " + bulletsTotal; // UI에 반영
 
+    }
+
+    public void Item(int bullets) // 아이템 적용
+    {
+        // 플레이어의 총알을 늘린다.
+        bulletsTotal += bullets;
+        UI_Controller.ui_instance.bulletsText.text = currentBullets + " / " + bulletsTotal; // UI 총알 개수 반영
     }
 
     private void Mouse()

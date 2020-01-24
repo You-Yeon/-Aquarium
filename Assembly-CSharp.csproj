@@ -71,6 +71,9 @@
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\Reload_State.cs" />
+     <Compile Include="Assets\Scripts\ResponseBottle.cs" />
+     <Compile Include="Assets\Scripts\ResponseOtherPlayer.cs" />
+     <Compile Include="Assets\Scripts\ResponsePlayer.cs" />
      <Compile Include="Assets\Scripts\SceneChange.cs" />
      <Compile Include="Assets\Scripts\SetScreen.cs" />
      <Compile Include="Assets\Scripts\UI_Button.cs" />

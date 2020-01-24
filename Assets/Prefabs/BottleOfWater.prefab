@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4528452099674952151}
   - component: {fileID: 7520616357137666042}
   - component: {fileID: 7445451207814384313}
+  - component: {fileID: 5121641459937342123}
   m_Layer: 0
   m_Name: BottleOfWater
   m_TagString: Untagged
@@ -27,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5439923281817334187}
-  m_LocalRotation: {x: -0.8279626, y: 0, z: 0, w: 0.5607835}
-  m_LocalPosition: {x: -330.77106, y: -228.23936, z: -60.76274}
+  m_LocalRotation: {x: -0.7660445, y: 0, z: 0, w: 0.64278764}
+  m_LocalPosition: {x: 0, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -111.78, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -100, y: 0, z: 0}
 --- !u!33 &4933240526893465875
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -110,3 +111,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e439ada09fb764e896a37a77412e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &5121641459937342123
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439923281817334187}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.40532044, y: 0.3510179, z: 1.256731}
+  m_Center: {x: 0, y: 0.000000007450581, z: 0.27169043}

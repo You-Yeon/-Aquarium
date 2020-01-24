@@ -20,17 +20,21 @@ namespace S2C2S
 			public const Nettention.Proud.RmiID LeaveGameRoom = (Nettention.Proud.RmiID)1000+5;
 			public const Nettention.Proud.RmiID Room_Appear = (Nettention.Proud.RmiID)1000+6;
 			public const Nettention.Proud.RmiID Room_Disappear = (Nettention.Proud.RmiID)1000+7;
-			public const Nettention.Proud.RmiID GameStart = (Nettention.Proud.RmiID)1000+8;
-			public const Nettention.Proud.RmiID PlayerInfo = (Nettention.Proud.RmiID)1000+9;
-			public const Nettention.Proud.RmiID Player_Move = (Nettention.Proud.RmiID)1000+10;
-			public const Nettention.Proud.RmiID Player_Chat = (Nettention.Proud.RmiID)1000+11;
-			public const Nettention.Proud.RmiID Player_Shoot = (Nettention.Proud.RmiID)1000+12;
-			public const Nettention.Proud.RmiID Player_GetHP = (Nettention.Proud.RmiID)1000+13;
-			public const Nettention.Proud.RmiID Player_SetHP = (Nettention.Proud.RmiID)1000+14;
-			public const Nettention.Proud.RmiID Show_Player_Color = (Nettention.Proud.RmiID)1000+15;
-			public const Nettention.Proud.RmiID Room_weather = (Nettention.Proud.RmiID)1000+16;
-			public const Nettention.Proud.RmiID Room_Item = (Nettention.Proud.RmiID)1000+17;
-			public const Nettention.Proud.RmiID Del_Item = (Nettention.Proud.RmiID)1000+18;
+			public const Nettention.Proud.RmiID CountStart = (Nettention.Proud.RmiID)1000+8;
+			public const Nettention.Proud.RmiID GameStart = (Nettention.Proud.RmiID)1000+9;
+			public const Nettention.Proud.RmiID Player_SetReady = (Nettention.Proud.RmiID)1000+10;
+			public const Nettention.Proud.RmiID Player_SetResponse = (Nettention.Proud.RmiID)1000+11;
+			public const Nettention.Proud.RmiID Player_GetResponse = (Nettention.Proud.RmiID)1000+12;
+			public const Nettention.Proud.RmiID PlayerInfo = (Nettention.Proud.RmiID)1000+13;
+			public const Nettention.Proud.RmiID Player_Move = (Nettention.Proud.RmiID)1000+14;
+			public const Nettention.Proud.RmiID Player_Chat = (Nettention.Proud.RmiID)1000+15;
+			public const Nettention.Proud.RmiID Player_Shoot = (Nettention.Proud.RmiID)1000+16;
+			public const Nettention.Proud.RmiID Player_GetHP = (Nettention.Proud.RmiID)1000+17;
+			public const Nettention.Proud.RmiID Player_SetHP = (Nettention.Proud.RmiID)1000+18;
+			public const Nettention.Proud.RmiID Show_Player_Color = (Nettention.Proud.RmiID)1000+19;
+			public const Nettention.Proud.RmiID Room_weather = (Nettention.Proud.RmiID)1000+20;
+			public const Nettention.Proud.RmiID Room_Item = (Nettention.Proud.RmiID)1000+21;
+			public const Nettention.Proud.RmiID Player_Kill = (Nettention.Proud.RmiID)1000+22;
 		// List that has RMI ID.
 		public static Nettention.Proud.RmiID[] RmiIDList = new Nettention.Proud.RmiID[] {
 			RequestLogin,
@@ -40,7 +44,11 @@ namespace S2C2S
 			LeaveGameRoom,
 			Room_Appear,
 			Room_Disappear,
+			CountStart,
 			GameStart,
+			Player_SetReady,
+			Player_SetResponse,
+			Player_GetResponse,
 			PlayerInfo,
 			Player_Move,
 			Player_Chat,
@@ -50,7 +58,7 @@ namespace S2C2S
 			Show_Player_Color,
 			Room_weather,
 			Room_Item,
-			Del_Item,
+			Player_Kill,
 		};
 	}
 }

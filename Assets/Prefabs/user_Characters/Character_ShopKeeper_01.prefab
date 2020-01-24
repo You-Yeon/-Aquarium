@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 404912}
   - component: {fileID: 1490465434}
   - component: {fileID: 9580940}
+  - component: {fileID: -6755463954627675964}
   - component: {fileID: 4871391111050088250}
   - component: {fileID: 2211220655227361823}
   - component: {fileID: 7661561054301192152}
@@ -290,6 +291,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-6755463954627675964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4412ff973cb79a64b9dfa10be3114985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4871391111050088250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +328,7 @@ MonoBehaviour:
   audioSource_fire: {fileID: 8942493762277823764}
   reloadSound: {fileID: 8300000, guid: a18c55da92ec69b458d37bb1d8b7a18b, type: 3}
   FocusChat: 0
+  GetResponse: 0
 --- !u!114 &2211220655227361823
 MonoBehaviour:
   m_ObjectHideFlags: 0

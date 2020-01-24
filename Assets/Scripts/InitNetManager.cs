@@ -182,27 +182,27 @@ public class InitNetManager : MonoBehaviour
                         return;
                     }
 
-                        var sendOption = new RmiContext();
-                            sendOption.reliability = MessageReliability.MessageReliability_Unreliable; // UDP 
-                            sendOption.maxDirectP2PMulticastCount = 30; // 트래픽 카운트
-                            sendOption.enableLoopback = false;
+                    var sendOption = new RmiContext();
+                    sendOption.reliability = MessageReliability.MessageReliability_Unreliable; // UDP 
+                    sendOption.maxDirectP2PMulticastCount = 30; // 트래픽 카운트
+                    sendOption.enableLoopback = false;
 
-                        var pc = GameObject.Find("Team_num/" + m_team_num);
+                    var pc = GameObject.Find("Team_num/" + m_team_num);
 
-                        m_proxy.Player_Move(m_playerP2PGroup, sendOption,
-                            m_team_num,
-                            playerInput.move,
-                            playerInput.rotate,
-                            playerInput.reload,
-                            pc.transform.position.x,
-                            pc.transform.position.y,
-                            pc.transform.position.z,
-                            pc.transform.rotation.eulerAngles.x,
-                            pc.transform.rotation.eulerAngles.y,
-                            pc.transform.rotation.eulerAngles.z
-                            );
+                    m_proxy.Player_Move(m_playerP2PGroup, sendOption,
+                        m_team_num,
+                        playerInput.move,
+                        playerInput.rotate,
+                        playerInput.reload,
+                        pc.transform.position.x,
+                        pc.transform.position.y,
+                        pc.transform.position.z,
+                        pc.transform.rotation.eulerAngles.x,
+                        pc.transform.rotation.eulerAngles.y,
+                        pc.transform.rotation.eulerAngles.z
+                        );
 
-                        //m_lastSendTime = Time.time;
+                    //m_lastSendTime = Time.time;
 
                     //}
                 }
@@ -318,15 +318,22 @@ public class InitNetManager : MonoBehaviour
         m_proxy.Player_SetHP(HostID.HostID_Server, RmiContext.SecureReliableSend, team_num, damage);
     }
 
-    public void DelItem(string item_name)
+    public void GameStart()
     {
-        var sendOption = new RmiContext();
-        sendOption.reliability = MessageReliability.MessageReliability_Reliable; // TCP 
-        sendOption.maxDirectP2PMulticastCount = 30; // 트래픽 카운트
-        sendOption.enableLoopback = false;
+        Debug.Log("game start");
 
-        // TCP로 아이템 삭제 메시지 전송
-        m_proxy.Del_Item(m_playerP2PGroup, sendOption, item_name);
+        // TCP로 서버에 게임준비가 완료 되었음을 알린다.
+        m_proxy.Player_SetReady(HostID.HostID_Server, RmiContext.SecureReliableSend);
+
+        // 본인의 색깔 변경
+        GameObject.Find("Team_num/" + m_team_num).GetComponent<PlayerController>().transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().material.SetColor("_Color", new Color32(255, 215, 100, 255));
+
+    }
+
+    public void SetResponse(bool value)
+    {
+        // TCP로 서버에 플레이어 리스폰 상태를 알린다
+        m_proxy.Player_SetResponse(HostID.HostID_Server, RmiContext.SecureReliableSend, m_team_num, value);
     }
 
     // 연결 해체를 위한 플래그
@@ -475,7 +482,7 @@ public class InitNetManager : MonoBehaviour
         };
 
         // 게임 카운트 시작
-        m_stub.GameStart = (HostID remote, RmiContext rmiContext) =>
+        m_stub.CountStart = (HostID remote, RmiContext rmiContext) =>
         {
             // 카운트 시작
             Get_Ready = true;
@@ -501,6 +508,25 @@ public class InitNetManager : MonoBehaviour
             r_rotX[_player_num - 1] = _rx;
             r_rotY[_player_num - 1] = _ry;
             r_rotZ[_player_num - 1] = _rz;
+
+            return true;
+        };
+
+        // 게임 시작
+        m_stub.GameStart = (HostID remote, RmiContext rmiContext) =>
+        {
+            Debug.Log("Game_Start");
+
+            // 무적 5초 후 해제
+            GameObject.Find("Team_num/" + m_team_num).GetComponent<ResponsePlayer>().FirstResponse();
+
+            var sendOption = new RmiContext();
+            sendOption.reliability = MessageReliability.MessageReliability_Reliable; // TCP 
+            sendOption.maxDirectP2PMulticastCount = 30; // 트래픽 카운트
+            sendOption.enableLoopback = false;
+
+            // P2P 방에 무적 상태 전송
+            m_proxy.Player_SetResponse(m_playerP2PGroup, sendOption, m_team_num, true);
 
             return true;
         };
@@ -607,14 +633,19 @@ public class InitNetManager : MonoBehaviour
             return true;
         };
 
-        // 아이템 삭제
-        m_stub.Del_Item = (HostID remote, RmiContext rmiContext, System.String _item_name) =>
+        // 다른 플레이어의 처음 리스폰 상태 업데이트
+        m_stub.Player_SetResponse = (HostID remote, RmiContext rmiContext, int _m_team_num, bool _value) =>
         {
-            Debug.Log("Del_Item");
+            Debug.Log("Player_SetResponse");
 
-            // 아이템 삭제
-            var item = GameObject.Find(_item_name);
-            Destroy(item); // 아이템 삭제
+            if (_value)
+            {
+                // 본인의 색깔 변경
+                GameObject.Find("Team_num/" + _m_team_num).GetComponent<OthersController>().transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().material.SetColor("_Color", new Color32(255, 215, 100, 255));
+
+                // 무적 5초 후 해제
+                GameObject.Find("Team_num/" + _m_team_num).GetComponent<ResponseOtherPlayer>().FirstResponse();
+            }
 
             return true;
         };

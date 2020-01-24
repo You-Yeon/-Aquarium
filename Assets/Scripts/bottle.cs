@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class bottle : MonoBehaviour
 {
+    private PlayerController m_Controller; // 컨트롤러 컴포넌트
+
     private float rotationSpeed; // 물병 회전 속도
     private int GetBullet = 25; // 25개의 총알
 
@@ -12,6 +14,7 @@ public class bottle : MonoBehaviour
     private void Start()
     {
         rotationSpeed = 60f; // 물병 회전 속도
+        m_Controller = GameObject.Find("Team_num/" + GameObject.Find("NetManager").GetComponent<InitNetManager>().m_team_num).GetComponent<PlayerController>(); // 컴포넌트 가져오기 
     }
 
     private void Update()
@@ -21,37 +24,34 @@ public class bottle : MonoBehaviour
 
     private void OnTriggerEnter(Collider colli)
     {
-        if (has_signal)
-            return;
-
         if (colli.gameObject.tag == "MyPlayer") // 본인이 얻을 경우
         {
-            has_signal = true;
+            if (!has_signal)
+            {
+                has_signal = true;
 
-            // 플레이어의 총알을 늘린다.
-            GameObject.Find("Team_num/" + GameObject.Find("NetManager").GetComponent<InitNetManager>().m_team_num).GetComponent<PlayerController>().bulletsTotal += GetBullet;
+                // 플레이어 탄창에 아이템을 반영한다.
+                m_Controller.Item(GetBullet);
 
+                Destroy(gameObject); // 아이템 삭제
 
-            Debug.Log("gameObject.name : " + gameObject.name);
-
-            // 다른 플레이어에게 아이템을 먹은 것을 알린다.
-            GameObject.Find("NetManager").GetComponent<InitNetManager>().DelItem(gameObject.name);
-
-            Destroy(gameObject); // 아이템 삭제
+                // 10초 뒤 아이템 리스폰을 요구한다.
+                transform.parent.GetComponent<ResponseBottle>().Response();
+            }
         }
-
-        if (colli.gameObject.tag == "OtherPlayer")
+        else if (colli.gameObject.tag == "OtherPlayer")
         {
-            has_signal = true;
+            if (!has_signal)
+            {
+                has_signal = true;
 
-            Destroy(gameObject); // 아이템 삭제
+                Destroy(gameObject); // 아이템 삭제
+
+                // 10초 뒤 아이템 리스폰을 요구한다.
+                transform.parent.GetComponent<ResponseBottle>().Response();
+            }
         }
 
 
-    }
-
-    public void GetSound()
-    {
-        // 먹었을때 소리 재생 시키기
     }
 }
