@@ -18,7 +18,6 @@ public class ResponsePlayer : MonoBehaviour
 
     IEnumerator First()
     {
-        Debug.Log("first");
         // 5초 뒤 무적해제 하기.
         yield return new WaitForSeconds(5);
         GameObject.Find("NetManager").GetComponent<InitNetManager>().SetResponse(false); // 서버에 상태를 알린다.

@@ -76,6 +76,7 @@
      <Compile Include="Assets\Scripts\ResponsePlayer.cs" />
      <Compile Include="Assets\Scripts\SceneChange.cs" />
      <Compile Include="Assets\Scripts\SetScreen.cs" />
+     <Compile Include="Assets\Scripts\timer.cs" />
      <Compile Include="Assets\Scripts\UI_Button.cs" />
      <Compile Include="Assets\Scripts\UI_Character.cs" />
      <Compile Include="Assets\Scripts\UI_Controller.cs" />

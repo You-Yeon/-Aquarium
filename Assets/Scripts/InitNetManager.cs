@@ -320,8 +320,6 @@ public class InitNetManager : MonoBehaviour
 
     public void GameStart()
     {
-        Debug.Log("game start");
-
         // TCP로 서버에 게임준비가 완료 되었음을 알린다.
         m_proxy.Player_SetReady(HostID.HostID_Server, RmiContext.SecureReliableSend);
 
@@ -516,6 +514,9 @@ public class InitNetManager : MonoBehaviour
         m_stub.GameStart = (HostID remote, RmiContext rmiContext) =>
         {
             Debug.Log("Game_Start");
+
+            // 타이머 시작
+            GameObject.Find("Time_text").GetComponent<timer>().TimerStart();
 
             // 무적 5초 후 해제
             GameObject.Find("Team_num/" + m_team_num).GetComponent<ResponsePlayer>().FirstResponse();

@@ -18,7 +18,6 @@ public class ResponseOtherPlayer : MonoBehaviour
 
     IEnumerator First()
     {
-        Debug.Log("first");
         // 5초 뒤 무적해제 하기.
         yield return new WaitForSeconds(5);
         GetComponent<OthersController>().playerRenderer.material.SetColor("_Color", new Color32(255, 255, 255, 255));
