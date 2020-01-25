@@ -42,6 +42,5 @@ public class PlayerInput : MonoBehaviour
         mouseOn = Input.GetKeyDown(KeyCode.Mouse0);
         // enter에 관한 입력 감지
         enter = Input.GetKeyDown(KeyCode.Return);
-
     }
 }

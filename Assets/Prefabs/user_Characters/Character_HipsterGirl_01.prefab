@@ -1657,13 +1657,15 @@ MonoBehaviour:
     type: 3}
   shootPoint: {fileID: 7618347406098747878}
   playerRenderer: {fileID: 0}
+  default_controller: {fileID: 9100000, guid: 6d1ec7875d5989643a1a73a44e489912, type: 2}
+  dead_controller: {fileID: 9100000, guid: 3102e4b0f518f3e46a8ecd462f8194b4, type: 2}
   RayPoint: {fileID: 0}
   range: 200
   audioSource_walk: {fileID: 5408548312041169100}
   audioSource_fire: {fileID: 3555407123347854965}
   reloadSound: {fileID: 8300000, guid: a18c55da92ec69b458d37bb1d8b7a18b, type: 3}
   FocusChat: 0
-  GetResponse: 0
+  Dead: 0
 --- !u!114 &2765996211212663463
 MonoBehaviour:
   m_ObjectHideFlags: 0

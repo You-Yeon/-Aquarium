@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -118,13 +117,13 @@ public class GameManager : MonoBehaviour
                 if ((i + 1) % 2 == 0) // 루비
                 {
                     new_Player.transform.GetChild(2).GetComponent<MeshRenderer>().material = m_R_Circle;
-                    m_Net.max_hp = 120.0f; // 루비팀 특성상 최대 체력 상승
+                    m_Net.max_hp = 120; // 루비팀 특성상 최대 체력 상승
                 }
 
                 if ((i + 1) % 2 == 1) // 사파이어
                 {
                     new_Player.transform.GetChild(2).GetComponent<MeshRenderer>().material = m_S_Circle;
-                    m_Net.max_hp = 100.0f; // 사파이어 체력
+                    m_Net.max_hp = 100; // 사파이어 체력
                 }
                 
             }
@@ -218,7 +217,7 @@ public class GameManager : MonoBehaviour
         }
 
         // 플레이어 체력
-        GameObject.Find("hp_image").GetComponent<Image>().fillAmount = ((float)m_Net.m_humidity / m_Net.max_hp);
+        GameObject.Find("hp_image").GetComponent<Image>().fillAmount = ((float)m_Net.m_humidity / (float)m_Net.max_hp);
 
         // UDP 핑 업데이트
         GameObject.Find("Ping_Text").GetComponent<Text>().text = m_Net.m_Client.GetRecentUnreliablePingMs(m_Net.m_playerP2PGroup) + "ms";
@@ -248,8 +247,8 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
 
-            // 1초마다 체력에 날씨 영향을 준다. ( 영향을 받은 값이 max_hp 이하 0 이상 )
-            if (m_Net.m_humidity + m_weather_passive <= m_Net.max_hp && m_Net.m_humidity + m_weather_passive >= 0)
+            // 1초마다 체력에 날씨 영향을 준다. ( 영향을 받은 값이 0 이상 )
+            if (m_Net.m_humidity + m_weather_passive >= 0)
             {
                 m_Net.SetHP(m_Net.m_team_num, m_weather_passive);
             }

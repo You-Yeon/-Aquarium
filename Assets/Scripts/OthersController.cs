@@ -9,13 +9,15 @@ public class OthersController : MonoBehaviour
     public GameObject shootPoint; // 발사 지점
 
     private Rigidbody playerRigidbody; // 플레이어 캐릭터의 리지드바디
-    private Animator playerAnimator; // 플레이어 캐릭터의 애니메이터
+    public Animator playerAnimator; // 플레이어 캐릭터의 애니메이터
     public SkinnedMeshRenderer playerRenderer; // 플레이어 캐릭터의 렌더링
+
+    public RuntimeAnimatorController default_controller; // 플레이어 기본 애니메이터 컨트롤러
+    public RuntimeAnimatorController dead_controller; // 플레이어 죽음 애니메이터 컨트롤러
 
     public AudioSource audioSource_walk; // 걷는 소리
     public AudioSource audioSource_fire; // 발사 소리
 
-    private Animator anim; // 애니메이터 
     private bool isReloading = false; // 장전 애니메이션 진행 여부
     public AudioClip reloadSound; // 장전 사운드
 
@@ -31,20 +33,24 @@ public class OthersController : MonoBehaviour
     public float m_ry;
     public float m_rz;
 
+    public bool Dead = false; // 죽은 여부
+
     private void Start()
     {
         // 사용할 컴포넌트들의 참조를 가져오기
         playerRigidbody = GetComponent<Rigidbody>();
         playerAnimator = GetComponent<Animator>();
         playerRenderer = transform.GetChild(0).GetComponent<SkinnedMeshRenderer>();
-        anim = GetComponent<Animator>();
     }
 
     // FixedUpdate는 물리 갱신 주기에 맞춰 실행됨
     private void FixedUpdate()
     {
+        // 죽어있는 경우 제외
+        if (Dead)
+            return;
 
-        AnimatorStateInfo info = anim.GetCurrentAnimatorStateInfo(1); // 상의 애니메이션부분인 1번 레이어를 가져온다.
+        AnimatorStateInfo info = playerAnimator.GetCurrentAnimatorStateInfo(1); // 상의 애니메이션부분인 1번 레이어를 가져온다.
         isReloading = info.IsName("Reload"); // 장전 중인지 아닌지 판별
 
         // 움직임 실행
@@ -109,7 +115,7 @@ public class OthersController : MonoBehaviour
 
     private void DoReload() // 장전 시작
     {
-        anim.CrossFadeInFixedTime("Reload", 0.01f); // 장전 애니메이션
+        playerAnimator.CrossFadeInFixedTime("Reload", 0.01f); // 장전 애니메이션
         audioSource_fire.PlayOneShot(reloadSound); // 장전 사운드
     }
 

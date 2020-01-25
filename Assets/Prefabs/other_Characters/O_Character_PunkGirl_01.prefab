@@ -244,6 +244,8 @@ MonoBehaviour:
     type: 3}
   shootPoint: {fileID: 3166948743096143042}
   playerRenderer: {fileID: 0}
+  default_controller: {fileID: 9100000, guid: ad35f02acd4d89b44bb09701ba01e093, type: 2}
+  dead_controller: {fileID: 9100000, guid: 3102e4b0f518f3e46a8ecd462f8194b4, type: 2}
   audioSource_walk: {fileID: 6855907367159777083}
   audioSource_fire: {fileID: 5324089235788859373}
   reloadSound: {fileID: 8300000, guid: a18c55da92ec69b458d37bb1d8b7a18b, type: 3}

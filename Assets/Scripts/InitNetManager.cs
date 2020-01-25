@@ -53,7 +53,7 @@ public class InitNetManager : MonoBehaviour
     public int m_team_num;
 
     // hp 최대 값
-    public float max_hp;
+    public int max_hp;
 
     // 습도량
     public int m_humidity;
@@ -322,6 +322,9 @@ public class InitNetManager : MonoBehaviour
     {
         // TCP로 서버에 게임준비가 완료 되었음을 알린다.
         m_proxy.Player_SetReady(HostID.HostID_Server, RmiContext.SecureReliableSend);
+
+        // 임시 플레이어 컨트롤 잠금
+        GameObject.Find("Team_num/" + m_team_num).GetComponent<PlayerController>().Dead = true;
 
         // 본인의 색깔 변경
         GameObject.Find("Team_num/" + m_team_num).GetComponent<PlayerController>().transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().material.SetColor("_Color", new Color32(255, 215, 100, 255));
@@ -641,12 +644,72 @@ public class InitNetManager : MonoBehaviour
 
             if (_value)
             {
-                // 본인의 색깔 변경
+                // 임시 플레이어 컨트롤 잠금
+                GameObject.Find("Team_num/" + _m_team_num).GetComponent<OthersController>().Dead = true;
+
+                // 플레이어의 색깔 변경
                 GameObject.Find("Team_num/" + _m_team_num).GetComponent<OthersController>().transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().material.SetColor("_Color", new Color32(255, 215, 100, 255));
 
                 // 무적 5초 후 해제
                 GameObject.Find("Team_num/" + _m_team_num).GetComponent<ResponseOtherPlayer>().FirstResponse();
             }
+
+            return true;
+        };
+
+        // 플레이어 죽음..
+        m_stub.Player_Kill = (HostID remote, RmiContext rmiContext, int _m_team_num) =>
+        {
+            Debug.Log("Player kill");
+
+            // 본인의 경우
+            if (m_team_num == _m_team_num)
+            {
+                // 체력 전부 채우기
+                m_humidity = max_hp;
+
+                // 본인의 색깔 변경
+                GameObject.Find("Team_num/" + m_team_num).GetComponent<PlayerController>().playerRenderer.material.SetColor("_Color", new Color32(100, 255, 255, 255));
+
+                // 죽음 여부 on ( 플레이어 컨트롤 잠금 )
+                GameObject.Find("Team_num/" + m_team_num).GetComponent<PlayerController>().Dead = true;
+
+                // 애니메이션 바꾸기
+                GameObject.Find("Team_num/" + m_team_num).GetComponent<PlayerController>().playerAnimator.runtimeAnimatorController = GameObject.Find("Team_num/" + m_team_num).GetComponent<PlayerController>().dead_controller;
+
+                // P2P로 자신이 죽었음을 알림.
+                var sendOption = new RmiContext();
+                sendOption.reliability = MessageReliability.MessageReliability_Reliable; // TCP 
+                sendOption.maxDirectP2PMulticastCount = 30; // 트래픽 카운트  
+                sendOption.enableLoopback = false;
+
+                m_proxy.Player_Kill(m_playerP2PGroup, sendOption, m_team_num);
+
+                // 리스폰 처리
+                GameObject.Find("Team_num/" + m_team_num).GetComponent<ResponsePlayer>().AfterResponse();
+            }
+            // 다른 플레이어의 경우
+            else
+            {
+                // 플레이어의 색깔 변경
+                GameObject.Find("Team_num/" + _m_team_num).GetComponent<OthersController>().playerRenderer.material.SetColor("_Color", new Color32(100, 255, 255, 255));
+
+                // 죽음 여부 on ( 플레이어 컨트롤 잠금 )
+                GameObject.Find("Team_num/" + _m_team_num).GetComponent<OthersController>().Dead = true;
+
+                // 애니메이션 바꾸기
+                GameObject.Find("Team_num/" + _m_team_num).GetComponent<OthersController>().playerAnimator.runtimeAnimatorController = GameObject.Find("Team_num/" + _m_team_num).GetComponent<OthersController>().dead_controller;
+
+                // 리스폰 처리
+                GameObject.Find("Team_num/" + _m_team_num).GetComponent<ResponseOtherPlayer>().AfterResponse(_m_team_num);
+            }
+
+            // 죽으면 무적하고 플레이어 컨트롤 막고 애니메이터를 바꿔서 죽음 표시하기, 서버에서 무적 만듬.
+            // 3초 뒤에 플레이어의 chlid 0번과 1번의 Raygun, 2번을 setActive false 처리하기.
+            // 애니메이터 원 위치로 바꾸고, 플레이어 인포 작성. 노란색으로 변경
+            // 2초 뒤에 리스폰 장소로 옮기고 setActive true 처리하기, 죽음 false
+            // 5초 뒤 리스폰 해제처리. 무적 해제
+            // Player_GetHP 처리
 
             return true;
         };
