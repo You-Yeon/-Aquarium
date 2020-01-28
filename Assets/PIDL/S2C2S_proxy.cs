@@ -117,6 +117,34 @@ Nettention.Proud.Marshaler.Write(__msg, character_num);
 	return RmiSend(remotes,rmiContext,__msg,
 		RmiName_JoinGameRoom, Common.JoinGameRoom);
 }
+public bool JoinInGame(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int character_num, int Room_id)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+		__msg.SimplePacketMode = core.IsSimplePacketMode();
+		Nettention.Proud.RmiID __msgid= Common.JoinInGame;
+		__msg.Write(__msgid);
+		Nettention.Proud.Marshaler.Write(__msg, character_num);
+		Nettention.Proud.Marshaler.Write(__msg, Room_id);
+		
+	Nettention.Proud.HostID[] __list = new Nettention.Proud.HostID[1];
+	__list[0] = remote;
+		
+	return RmiSend(__list,rmiContext,__msg,
+		RmiName_JoinInGame, Common.JoinInGame);
+}
+
+public bool JoinInGame(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext, int character_num, int Room_id)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+__msg.SimplePacketMode = core.IsSimplePacketMode();
+Nettention.Proud.RmiID __msgid= Common.JoinInGame;
+__msg.Write(__msgid);
+Nettention.Proud.Marshaler.Write(__msg, character_num);
+Nettention.Proud.Marshaler.Write(__msg, Room_id);
+		
+	return RmiSend(remotes,rmiContext,__msg,
+		RmiName_JoinInGame, Common.JoinInGame);
+}
 public bool LeaveGameRoom(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext)
 {
 	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
@@ -200,6 +228,38 @@ Nettention.Proud.Marshaler.Write(__msg, team_num);
 		
 	return RmiSend(remotes,rmiContext,__msg,
 		RmiName_Room_Disappear, Common.Room_Disappear);
+}
+public bool Game_Appear(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int value, int team_num, int Min, int Sec)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+		__msg.SimplePacketMode = core.IsSimplePacketMode();
+		Nettention.Proud.RmiID __msgid= Common.Game_Appear;
+		__msg.Write(__msgid);
+		Nettention.Proud.Marshaler.Write(__msg, value);
+		Nettention.Proud.Marshaler.Write(__msg, team_num);
+		Nettention.Proud.Marshaler.Write(__msg, Min);
+		Nettention.Proud.Marshaler.Write(__msg, Sec);
+		
+	Nettention.Proud.HostID[] __list = new Nettention.Proud.HostID[1];
+	__list[0] = remote;
+		
+	return RmiSend(__list,rmiContext,__msg,
+		RmiName_Game_Appear, Common.Game_Appear);
+}
+
+public bool Game_Appear(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext, int value, int team_num, int Min, int Sec)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+__msg.SimplePacketMode = core.IsSimplePacketMode();
+Nettention.Proud.RmiID __msgid= Common.Game_Appear;
+__msg.Write(__msgid);
+Nettention.Proud.Marshaler.Write(__msg, value);
+Nettention.Proud.Marshaler.Write(__msg, team_num);
+Nettention.Proud.Marshaler.Write(__msg, Min);
+Nettention.Proud.Marshaler.Write(__msg, Sec);
+		
+	return RmiSend(remotes,rmiContext,__msg,
+		RmiName_Game_Appear, Common.Game_Appear);
 }
 public bool CountStart(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext)
 {
@@ -300,34 +360,6 @@ Nettention.Proud.Marshaler.Write(__msg, value);
 		
 	return RmiSend(remotes,rmiContext,__msg,
 		RmiName_Player_SetResponse, Common.Player_SetResponse);
-}
-public bool Player_GetResponse(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int team_num, bool value)
-{
-	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
-		__msg.SimplePacketMode = core.IsSimplePacketMode();
-		Nettention.Proud.RmiID __msgid= Common.Player_GetResponse;
-		__msg.Write(__msgid);
-		Nettention.Proud.Marshaler.Write(__msg, team_num);
-		Nettention.Proud.Marshaler.Write(__msg, value);
-		
-	Nettention.Proud.HostID[] __list = new Nettention.Proud.HostID[1];
-	__list[0] = remote;
-		
-	return RmiSend(__list,rmiContext,__msg,
-		RmiName_Player_GetResponse, Common.Player_GetResponse);
-}
-
-public bool Player_GetResponse(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext, int team_num, bool value)
-{
-	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
-__msg.SimplePacketMode = core.IsSimplePacketMode();
-Nettention.Proud.RmiID __msgid= Common.Player_GetResponse;
-__msg.Write(__msgid);
-Nettention.Proud.Marshaler.Write(__msg, team_num);
-Nettention.Proud.Marshaler.Write(__msg, value);
-		
-	return RmiSend(remotes,rmiContext,__msg,
-		RmiName_Player_GetResponse, Common.Player_GetResponse);
 }
 public bool PlayerInfo(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int team_num, int character_num, float px, float py, float pz, float rx, float ry, float rz)
 {
@@ -643,6 +675,62 @@ Nettention.Proud.Marshaler.Write(__msg, m_team_num);
 	return RmiSend(remotes,rmiContext,__msg,
 		RmiName_Player_Kill, Common.Player_Kill);
 }
+public bool Get_selete(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+		__msg.SimplePacketMode = core.IsSimplePacketMode();
+		Nettention.Proud.RmiID __msgid= Common.Get_selete;
+		__msg.Write(__msgid);
+		
+	Nettention.Proud.HostID[] __list = new Nettention.Proud.HostID[1];
+	__list[0] = remote;
+		
+	return RmiSend(__list,rmiContext,__msg,
+		RmiName_Get_selete, Common.Get_selete);
+}
+
+public bool Get_selete(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+__msg.SimplePacketMode = core.IsSimplePacketMode();
+Nettention.Proud.RmiID __msgid= Common.Get_selete;
+__msg.Write(__msgid);
+		
+	return RmiSend(remotes,rmiContext,__msg,
+		RmiName_Get_selete, Common.Get_selete);
+}
+public bool Set_selete(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int result, int Room_id, int Min, int Sec)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+		__msg.SimplePacketMode = core.IsSimplePacketMode();
+		Nettention.Proud.RmiID __msgid= Common.Set_selete;
+		__msg.Write(__msgid);
+		Nettention.Proud.Marshaler.Write(__msg, result);
+		Nettention.Proud.Marshaler.Write(__msg, Room_id);
+		Nettention.Proud.Marshaler.Write(__msg, Min);
+		Nettention.Proud.Marshaler.Write(__msg, Sec);
+		
+	Nettention.Proud.HostID[] __list = new Nettention.Proud.HostID[1];
+	__list[0] = remote;
+		
+	return RmiSend(__list,rmiContext,__msg,
+		RmiName_Set_selete, Common.Set_selete);
+}
+
+public bool Set_selete(Nettention.Proud.HostID[] remotes,Nettention.Proud.RmiContext rmiContext, int result, int Room_id, int Min, int Sec)
+{
+	Nettention.Proud.Message __msg=new Nettention.Proud.Message();
+__msg.SimplePacketMode = core.IsSimplePacketMode();
+Nettention.Proud.RmiID __msgid= Common.Set_selete;
+__msg.Write(__msgid);
+Nettention.Proud.Marshaler.Write(__msg, result);
+Nettention.Proud.Marshaler.Write(__msg, Room_id);
+Nettention.Proud.Marshaler.Write(__msg, Min);
+Nettention.Proud.Marshaler.Write(__msg, Sec);
+		
+	return RmiSend(remotes,rmiContext,__msg,
+		RmiName_Set_selete, Common.Set_selete);
+}
 #if USE_RMI_NAME_STRING
 // RMI name declaration.
 // It is the unique pointer that indicates RMI name such as RMI profiler.
@@ -650,14 +738,15 @@ public const string RmiName_RequestLogin="RequestLogin";
 public const string RmiName_NotifyLoginSuccess="NotifyLoginSuccess";
 public const string RmiName_NotifyLoginFailed="NotifyLoginFailed";
 public const string RmiName_JoinGameRoom="JoinGameRoom";
+public const string RmiName_JoinInGame="JoinInGame";
 public const string RmiName_LeaveGameRoom="LeaveGameRoom";
 public const string RmiName_Room_Appear="Room_Appear";
 public const string RmiName_Room_Disappear="Room_Disappear";
+public const string RmiName_Game_Appear="Game_Appear";
 public const string RmiName_CountStart="CountStart";
 public const string RmiName_GameStart="GameStart";
 public const string RmiName_Player_SetReady="Player_SetReady";
 public const string RmiName_Player_SetResponse="Player_SetResponse";
-public const string RmiName_Player_GetResponse="Player_GetResponse";
 public const string RmiName_PlayerInfo="PlayerInfo";
 public const string RmiName_Player_Move="Player_Move";
 public const string RmiName_Player_Chat="Player_Chat";
@@ -668,6 +757,8 @@ public const string RmiName_Show_Player_Color="Show_Player_Color";
 public const string RmiName_Room_weather="Room_weather";
 public const string RmiName_Room_Item="Room_Item";
 public const string RmiName_Player_Kill="Player_Kill";
+public const string RmiName_Get_selete="Get_selete";
+public const string RmiName_Set_selete="Set_selete";
        
 public const string RmiName_First = RmiName_RequestLogin;
 #else
@@ -677,14 +768,15 @@ public const string RmiName_RequestLogin="";
 public const string RmiName_NotifyLoginSuccess="";
 public const string RmiName_NotifyLoginFailed="";
 public const string RmiName_JoinGameRoom="";
+public const string RmiName_JoinInGame="";
 public const string RmiName_LeaveGameRoom="";
 public const string RmiName_Room_Appear="";
 public const string RmiName_Room_Disappear="";
+public const string RmiName_Game_Appear="";
 public const string RmiName_CountStart="";
 public const string RmiName_GameStart="";
 public const string RmiName_Player_SetReady="";
 public const string RmiName_Player_SetResponse="";
-public const string RmiName_Player_GetResponse="";
 public const string RmiName_PlayerInfo="";
 public const string RmiName_Player_Move="";
 public const string RmiName_Player_Chat="";
@@ -695,6 +787,8 @@ public const string RmiName_Show_Player_Color="";
 public const string RmiName_Room_weather="";
 public const string RmiName_Room_Item="";
 public const string RmiName_Player_Kill="";
+public const string RmiName_Get_selete="";
+public const string RmiName_Set_selete="";
        
 public const string RmiName_First = "";
 #endif

@@ -6,11 +6,20 @@ using UnityEngine.UI;
 public class timer : MonoBehaviour
 {
     // 타이머 설정
-    private int Min = 5;
-    private int Sec = 0;
+    private int Min;
+    private int Sec;
 
     public void TimerStart()
     {
+        Min = 10;
+        Sec = 0;
+        StartCoroutine(Timer());
+    }
+
+    public void GetTimerStart(int min, int sec)
+    {
+        Min = min;
+        Sec = sec - 4; // 카운터 만큼 제거
         StartCoroutine(Timer());
     }
 

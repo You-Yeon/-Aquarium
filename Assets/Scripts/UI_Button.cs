@@ -66,6 +66,16 @@ public class UI_Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         // 게임 방을 떠날 때
         GameObject.Find("NetManager").GetComponent<InitNetManager>().LeaveRoom(); // 네트워크 매니저
     }
+
+    public void OnSeleteYes() // 선택 중에서 YES
+    {
+        GameObject.Find("NetManager").GetComponent<InitNetManager>().SetRoom(1);
+    }
+
+    public void OnSeleteNo() // 선택 중에서 NO
+    {
+        GameObject.Find("NetManager").GetComponent<InitNetManager>().SetRoom(0);
+    }
 }
 
 

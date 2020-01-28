@@ -23,6 +23,7 @@ ScriptsOnlyBuild:
     - UI_Controller
     - UnityEngine.UI.Extensions.UIParticleSystem
     - bottle
+    - canvas_timer
     - timer
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
@@ -38,10 +39,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -177,6 +176,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11192}
     - Class: 114
       Script: {instanceID: 11242}
+    - Class: 114
+      Script: {instanceID: 22402}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -1101,7 +1102,7 @@ ScriptsOnlyBuild:
     className: UIParticleSystem
   - hash:
       serializedVersion: 2
-      Hash: 5c0fa1d6fea4fb4291f5f7286783c152
+      Hash: 3a9fe1423152c695e6e95da7f5495878
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SceneChange
@@ -1335,7 +1336,7 @@ ScriptsOnlyBuild:
     className: CloudSpawner
   - hash:
       serializedVersion: 2
-      Hash: af83daeef0b8908155c882da03a24352
+      Hash: c26535fd96e5da3cf0bd72e7cc1b2a49
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InitNetManager
@@ -1453,6 +1454,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: canvas_timer
   platform: 19
   scenePathNames:
   - Assets/Scenes/Intro.unity

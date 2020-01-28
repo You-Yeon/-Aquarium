@@ -15,8 +15,9 @@ public class SceneChange : MonoBehaviour
     public GameObject I_Main_canvas; // 인트로 메인 캔버스
 
     // * 캐릭터 자식 캔버스
-    public GameObject C_Loading_canvas;
-    public GameObject C_Main_canvas;
+    public GameObject C_Loading_canvas; // 로딩 캔버스
+    public GameObject C_Main_canvas; // 메인 캔버스
+    public GameObject C_Selete_canvas; // 선택 캔버스
 
     // * 게임 방 자식 캔버스
     public GameObject G_Count_canvas; // 카운트 캔버스
@@ -101,6 +102,21 @@ public class SceneChange : MonoBehaviour
     {
         C_Loading_canvas.SetActive(false); // 로딩 캔버스 off
         C_Main_canvas.SetActive(true); // 메인 캔버스 on
+    }
+
+    public void C_LoadingToSelete(int Min, int Sec)
+    {
+        C_Loading_canvas.SetActive(false); // 로딩 캔버스 off
+        C_Selete_canvas.SetActive(true); // 선택 캔버스 on
+        C_Main_canvas.SetActive(true); // 메인 캔버스 on
+
+        // 캔버스 타이머 시작
+        C_Selete_canvas.transform.GetChild(2).GetComponent<canvas_timer>().timer(Min, Sec);
+    }
+
+    public void C_SeleteToMain()
+    {
+        C_Selete_canvas.SetActive(false); // 선택 캔버스 off
     }
 
     // * 게임 방 자식 캔버스

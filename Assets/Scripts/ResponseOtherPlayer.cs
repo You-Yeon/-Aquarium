@@ -17,6 +17,12 @@ public class ResponseOtherPlayer : MonoBehaviour
         StartCoroutine(First());
     }
 
+    // 중간 입장 플레이어 처음 리스폰
+    public void NewFirstResponse()
+    {
+        StartCoroutine(NewFirst());
+    }
+
     // 처음 이후 리스폰
     public void AfterResponse(int team_num)
     {
@@ -30,6 +36,17 @@ public class ResponseOtherPlayer : MonoBehaviour
 
         // 5초 뒤 무적해제 하기.
         yield return new WaitForSeconds(5);
+
+        GetComponent<OthersController>().playerRenderer.material.SetColor("_Color", new Color32(255, 255, 255, 255)); // 색상 변경 ( 흰색 )
+    }
+
+    IEnumerator NewFirst()
+    {
+        // 임시 플레이어 컨트롤 잠금 해제
+        GetComponent<OthersController>().Dead = false;
+
+        // 5초 뒤 무적해제 하기.
+        yield return new WaitForSeconds(9); // 카운터 때문에
 
         GetComponent<OthersController>().playerRenderer.material.SetColor("_Color", new Color32(255, 255, 255, 255)); // 색상 변경 ( 흰색 )
     }

@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
             // 텍스쳐 변경
             GameObject.Find("SkyDome").GetComponent<MeshRenderer>().material.mainTexture = m_Morning;
             m_light.color = new Color32(248, 198, 158, 255);
-            m_weather_passive = 1;
+            m_weather_passive = -1;
         }
 
         // - 저녁
@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
             // 텍스쳐 변경
             GameObject.Find("SkyDome").GetComponent<MeshRenderer>().material.mainTexture = m_Dawn;
             m_light.color = new Color32(82, 2, 142, 255);
-            m_weather_passive = -1;
+            m_weather_passive = 1;
         }
 
         // 아이템 생성
@@ -150,8 +150,25 @@ public class GameManager : MonoBehaviour
         // 날씨 영향 시작
         StartCoroutine(Weather_Passive());
 
-        // 게임 시작 호출
-        m_Net.GameStart();
+        if (m_Net.new_player)
+        {
+            // 임시 플레이어 컨트롤 잠금
+            GameObject.Find("Team_num/" + m_Net.m_team_num).GetComponent<PlayerController>().Dead = true;
+
+            // 본인의 색깔 변경
+            GameObject.Find("Team_num/" + m_Net.m_team_num).GetComponent<PlayerController>().transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().material.SetColor("_Color", new Color32(255, 215, 100, 255));
+
+            // 무적 5초 후 해제
+            GameObject.Find("Team_num/" + m_Net.m_team_num).GetComponent<ResponsePlayer>().FirstResponse();
+
+            // 타이머 시작
+            GameObject.Find("Time_text").GetComponent<timer>().GetTimerStart(m_Net.new_Min, m_Net.new_Sec);
+        }
+        else
+        {
+            // 게임 시작 호출
+            m_Net.GameStart();
+        }
     }
 
     private void Update()
@@ -241,6 +258,31 @@ public class GameManager : MonoBehaviour
         GameObject.Find("Team_num/" + m_Net.m_team_num).GetComponent<PlayerController>().FocusChat = false ;
     }
 
+    public void GetNewPlayer(int _num)
+    {
+        // 플레이어 생성
+        var new_Player = (GameObject)Instantiate(m_other_Character_Prefabs[m_Net.r_chr_num[_num - 1] - 1], UnityEngine.Vector3.zero, Quaternion.identity);
+        new_Player.name = "Team_num/" + _num; // 오브젝트 이름 설정
+        new_Player.transform.localPosition = new UnityEngine.Vector3(m_Net.r_posX[_num - 1], m_Net.r_posY[_num - 1], m_Net.r_posZ[_num - 1]); // 오브젝트 위치 설정
+        new_Player.transform.eulerAngles = new UnityEngine.Vector3(m_Net.r_rotX[_num - 1], m_Net.r_rotY[_num - 1], m_Net.r_rotZ[_num - 1]); // 오브젝트 방향 설정
+
+        // 플레이어 팀 circle 설정 
+        if (_num % 2 == 0) // 루비
+            new_Player.transform.GetChild(2).GetComponent<MeshRenderer>().material = m_R_Circle;
+
+        if (_num % 2 == 1) // 사파이어
+            new_Player.transform.GetChild(2).GetComponent<MeshRenderer>().material = m_S_Circle;
+
+        // 임시 플레이어 컨트롤 잠금
+        GameObject.Find("Team_num/" + _num).GetComponent<OthersController>().Dead = true;
+
+        // 플레이어의 색깔 변경
+        GameObject.Find("Team_num/" + _num).GetComponent<OthersController>().transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().material.SetColor("_Color", new Color32(255, 215, 100, 255));
+
+        // 무적 9초 후 해제 (카운터 포함)
+        GameObject.Find("Team_num/" + _num).GetComponent<ResponseOtherPlayer>().NewFirstResponse();
+    }
+    
     IEnumerator Weather_Passive()
     {
         while (true)

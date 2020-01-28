@@ -72,6 +72,14 @@ public class InitNetManager : MonoBehaviour
     // 게임 시작
     public bool Get_Start = false;
 
+    // 임시 게임 방 아이디 저장
+    public int temp_room_id;
+
+    // 새로운 플레이어 여부
+    public bool new_player = false;
+    public int new_Min;
+    public int new_Sec;
+    
     // 클라이언트 연결 상태
     enum MyState
     {
@@ -260,10 +268,33 @@ public class InitNetManager : MonoBehaviour
         // 캐릭터 번호 업데이트
         m_Character = (MyCharacter)_character_num;
 
-        // 서버에 암호화된 메시지를 보냄
-        // 입력받은 캐릭터 정보를 보내서 방을 요청 함.
-        m_proxy.JoinGameRoom(HostID.HostID_Server,
-            RmiContext.SecureReliableSend, (int)m_Character);
+        // 서버에서 방을 검색한다.
+        m_proxy.Get_selete(HostID.HostID_Server, RmiContext.SecureReliableSend);
+    }
+
+    public void SetRoom(int _result)
+    {
+        // 0 : no, 1 : yes
+        // NO는 그냥 게임 방 생성
+        // YES는 진행 중인 게임에 입장
+
+        if (_result == 0)
+        {
+            // 캐릭터 선택 자식들은 처음 상태로 리셋한다.
+            GameObject.Find("UIManager").GetComponent<SceneChange>().C_SeleteToMain();
+
+            // 메인에서 로딩으로
+            GameObject.Find("UIManager").GetComponent<SceneChange>().C_MainToLoading();
+
+            m_proxy.JoinGameRoom(HostID.HostID_Server,
+                RmiContext.SecureReliableSend, (int)m_Character);
+        }
+
+        if (_result == 1)
+        {
+            m_proxy.JoinInGame(HostID.HostID_Server,
+                RmiContext.SecureReliableSend, (int)m_Character, temp_room_id);
+        }
     }
 
     public void LeaveRoom()
@@ -272,7 +303,6 @@ public class InitNetManager : MonoBehaviour
         // P2P 방 퇴장함.
         m_proxy.LeaveGameRoom(HostID.HostID_Server,
             RmiContext.SecureReliableSend);
-
     }
 
     public void GetChat(System.String _text)
@@ -364,6 +394,34 @@ public class InitNetManager : MonoBehaviour
 
             Debug.Log(reason);
             m_disconnectNow = true;
+            return true;
+        };
+
+        // 방 검색 결과
+        m_stub.Set_selete = (HostID remote, RmiContext rmiContext, int _result, int _Room_id, int _Min, int _Sec) =>
+        {
+            // 입장할 조건이 되는 방이 없는 경우
+            if (_result == 0)
+            {
+                // 서버에 암호화된 메시지를 보냄
+                // 입력받은 캐릭터 정보를 보내서 방을 요청 함.
+                m_proxy.JoinGameRoom(HostID.HostID_Server,
+                    RmiContext.SecureReliableSend, (int)m_Character);
+            }
+
+            // 5분 이상 남은 게임 방이 존재할 경우
+            if (_result == 1)
+            {
+                // 플레이어에게 선택권을 부여한다.
+
+                // 방 아이디 임시 저장
+                temp_room_id = _Room_id;
+
+                // 캐릭터 선택 창에서 방 선택 캔버스로 이동한다.
+                GameObject.Find("UIManager").GetComponent<SceneChange>().C_LoadingToSelete(_Min, _Sec);
+
+            }
+
             return true;
         };
 
@@ -479,6 +537,52 @@ public class InitNetManager : MonoBehaviour
                     }
                 }
             }
+            return true;
+        };
+
+        // 진행 중인 게임 입장
+        m_stub.Game_Appear = (HostID remote, RmiContext rmiContext, int value, int _team_num, int _min, int _sec) =>
+        {
+            // 본인이 입장하는 경우
+            if (value == 1)
+            {
+                // 팀 번호 저장
+                m_team_num = _team_num;
+
+                // 자신이 새로운 플레이어임을 알림.
+                new_player = true;
+
+                // 게임 시작
+                Get_Start = true;
+
+                // 시간 업데이트
+                new_Min = _min;
+                new_Sec = _sec;
+
+                // 캐릭터 선택 자식들은 처음 상태로 리셋한다.
+                GameObject.Find("UIManager").GetComponent<SceneChange>().C_SeleteToMain();
+
+                // 캐릭터 선택 창에서 게임 선택을 위해 카운트를 킨다.
+                GameObject.Find("UIManager").GetComponent<SceneChange>().OnCountcanvas();
+
+                // 자신이 새로 생성됨을 알림
+                var sendOption = new RmiContext();
+                sendOption.reliability = MessageReliability.MessageReliability_Reliable; // TCP 
+                sendOption.maxDirectP2PMulticastCount = 30; // 트래픽 카운트  
+                sendOption.enableLoopback = false;
+
+                m_proxy.Game_Appear(m_playerP2PGroup, sendOption, 0, _team_num, 0, 0);
+
+            }
+            // 다른 사람의 경우
+            else
+            {
+                // 플레이어 생성
+                GameObject.Find("GameManager").GetComponent<GameManager>().GetNewPlayer(_team_num);
+            }
+            
+
+
             return true;
         };
 
@@ -687,6 +791,44 @@ public class InitNetManager : MonoBehaviour
 
                 // 리스폰 처리
                 GameObject.Find("Team_num/" + m_team_num).GetComponent<ResponsePlayer>().AfterResponse();
+
+                // 플레이어 팀 점수 갱신
+                if (m_team_num % 2 == 0) // 루비
+                {
+                    // 루비팀이 죽었으므로 사파이어팀 점수 갱신
+                    int score = int.Parse(GameObject.Find("Sapphire_Score_text").GetComponent<Text>().text);
+
+                    score++;
+
+                    if (score < 10) // 점수가 10보다 작은 경우
+                    {
+                        GameObject.Find("Sapphire_Score_text").GetComponent<Text>().text = "0" + score.ToString();
+                    }
+                    else // 큰 경우
+                    {
+                        GameObject.Find("Sapphire_Score_text").GetComponent<Text>().text = score.ToString();
+                    }
+
+                }
+
+                if (m_team_num % 2 == 1) // 사파이어
+                {
+                    // 사파이어팀이 죽었으므로 루비팀 점수 갱신
+                    int score = int.Parse(GameObject.Find("Ruby_Score_text").GetComponent<Text>().text);
+
+                    score++;
+
+                    if (score < 10) // 점수가 10보다 작은 경우
+                    {
+                        GameObject.Find("Ruby_Score_text").GetComponent<Text>().text = "0" + score.ToString();
+                    }
+                    else // 큰 경우
+                    {
+                        GameObject.Find("Ruby_Score_text").GetComponent<Text>().text = score.ToString();
+                    }
+
+                }
+
             }
             // 다른 플레이어의 경우
             else
@@ -702,6 +844,43 @@ public class InitNetManager : MonoBehaviour
 
                 // 리스폰 처리
                 GameObject.Find("Team_num/" + _m_team_num).GetComponent<ResponseOtherPlayer>().AfterResponse(_m_team_num);
+
+                // 플레이어 팀 점수 갱신
+                if (_m_team_num % 2 == 0) // 루비
+                {
+                    // 루비팀이 죽었으므로 사파이어팀 점수 갱신
+                    int score = int.Parse(GameObject.Find("Sapphire_Score_text").GetComponent<Text>().text);
+
+                    score++;
+
+                    if (score < 10) // 점수가 10보다 작은 경우
+                    {
+                        GameObject.Find("Sapphire_Score_text").GetComponent<Text>().text = "0" + score.ToString();
+                    }
+                    else // 큰 경우
+                    {
+                        GameObject.Find("Sapphire_Score_text").GetComponent<Text>().text = score.ToString();
+                    }
+
+                }
+
+                if (_m_team_num % 2 == 1) // 사파이어
+                {
+                    // 사파이어팀이 죽었으므로 루비팀 점수 갱신
+                    int score = int.Parse(GameObject.Find("Ruby_Score_text").GetComponent<Text>().text);
+
+                    score++;
+
+                    if (score < 10) // 점수가 10보다 작은 경우
+                    {
+                        GameObject.Find("Ruby_Score_text").GetComponent<Text>().text = "0" + score.ToString();
+                    }
+                    else // 큰 경우
+                    {
+                        GameObject.Find("Ruby_Score_text").GetComponent<Text>().text = score.ToString();
+                    }
+
+                }
             }
 
             // 죽으면 무적하고 플레이어 컨트롤 막고 애니메이터를 바꿔서 죽음 표시하기, 서버에서 무적 만듬.
