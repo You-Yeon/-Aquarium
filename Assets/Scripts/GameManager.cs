@@ -282,7 +282,13 @@ public class GameManager : MonoBehaviour
         // 무적 9초 후 해제 (카운터 포함)
         GameObject.Find("Team_num/" + _num).GetComponent<ResponseOtherPlayer>().NewFirstResponse();
     }
-    
+
+    public void GetIntro()
+    {
+        // 게임 방을 떠날 때
+        GameObject.Find("NetManager").GetComponent<InitNetManager>().GetIntro(); // 네트워크 매니저
+    }
+
     IEnumerator Weather_Passive()
     {
         while (true)

@@ -35,8 +35,13 @@ public class timer : MonoBehaviour
                 Min--;
                 if (Min < 0)
                 {
-                    // 텍스트 갱신
+                    // 텍스트 갱신 
                     transform.GetComponent<Text>().text = 0 + " : " + 00;
+
+                    // 0초가 되면 게임이 끝났음을 서버에 알린다.
+
+                    GameObject.Find("NetManager").GetComponent<InitNetManager>().GetEnd();
+                    
                     break;
                 }
                 else

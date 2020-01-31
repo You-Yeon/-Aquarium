@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using Nettention.Proud;
+using UnityEngine.SceneManagement;
 
 public class InitNetManager : MonoBehaviour
 {
@@ -180,39 +181,39 @@ public class InitNetManager : MonoBehaviour
                 // 그리고 게임이 시작되었다면
                 if (Get_Start)
                 {
-                    //// 0.1 sec 간격으로 전송
-                    //if (m_lastSendTime < 0 || Time.time - m_lastSendTime > 0.1)
-                    //{
-
-                    // 채팅치고 있을 경우에는 return
-                    if (GameObject.Find("Team_num/" + m_team_num).GetComponent<PlayerController>().FocusChat)
+                    // 0.01 sec 간격으로 전송
+                    if (m_lastSendTime < 0 || Time.time - m_lastSendTime > 0.01)
                     {
-                        return;
+
+                        // 채팅치고 있을 경우에는 return
+                        if (GameObject.Find("Team_num/" + m_team_num).GetComponent<PlayerController>().FocusChat)
+                        {
+                            return;
+                        }
+
+                        var sendOption = new RmiContext();
+                        sendOption.reliability = MessageReliability.MessageReliability_Unreliable; // UDP 
+                        sendOption.maxDirectP2PMulticastCount = 30; // 트래픽 카운트
+                        sendOption.enableLoopback = false;
+
+                        var pc = GameObject.Find("Team_num/" + m_team_num);
+
+                        m_proxy.Player_Move(m_playerP2PGroup, sendOption,
+                            m_team_num,
+                            playerInput.move,
+                            playerInput.rotate,
+                            playerInput.reload,
+                            pc.transform.position.x,
+                            pc.transform.position.y,
+                            pc.transform.position.z,
+                            pc.transform.rotation.eulerAngles.x,
+                            pc.transform.rotation.eulerAngles.y,
+                            pc.transform.rotation.eulerAngles.z
+                            );
+
+                        m_lastSendTime = Time.time;
+
                     }
-
-                    var sendOption = new RmiContext();
-                    sendOption.reliability = MessageReliability.MessageReliability_Unreliable; // UDP 
-                    sendOption.maxDirectP2PMulticastCount = 30; // 트래픽 카운트
-                    sendOption.enableLoopback = false;
-
-                    var pc = GameObject.Find("Team_num/" + m_team_num);
-
-                    m_proxy.Player_Move(m_playerP2PGroup, sendOption,
-                        m_team_num,
-                        playerInput.move,
-                        playerInput.rotate,
-                        playerInput.reload,
-                        pc.transform.position.x,
-                        pc.transform.position.y,
-                        pc.transform.position.z,
-                        pc.transform.rotation.eulerAngles.x,
-                        pc.transform.rotation.eulerAngles.y,
-                        pc.transform.rotation.eulerAngles.z
-                        );
-
-                    //m_lastSendTime = Time.time;
-
-                    //}
                 }
             }
 
@@ -367,6 +368,23 @@ public class InitNetManager : MonoBehaviour
         m_proxy.Player_SetResponse(HostID.HostID_Server, RmiContext.SecureReliableSend, m_team_num, value);
     }
 
+    public void GetEnd()
+    {
+        // TCP로 시간이 종료되었음을 알린다.
+        m_proxy.Get_END(HostID.HostID_Server, RmiContext.SecureReliableSend);
+    }
+
+    public void GetIntro()
+    {
+        m_Client.Disconnect(); // 서버와의 연결 해제
+        m_state = MyState.Disconnected; // 연결 상태 변환
+        m_disconnectNow = false; // 리셋
+
+        SceneManager.LoadScene("Intro"); // 인트로씬으로 이동
+
+        Destroy(gameObject); // 본인 네트워크 삭제
+    }
+
     // 연결 해체를 위한 플래그
     bool m_disconnectNow = false;
 
@@ -393,7 +411,7 @@ public class InitNetManager : MonoBehaviour
             GameObject.Find("UIManager").GetComponent<SceneChange>().I_LoadingToLogin();
 
             Debug.Log(reason);
-            m_disconnectNow = true;
+            //m_disconnectnow = true;
             return true;
         };
 
@@ -893,6 +911,33 @@ public class InitNetManager : MonoBehaviour
             return true;
         };
 
+        // 게임 종료
+        m_stub.Set_END = (HostID remote, RmiContext rmiContext, string _Team) =>
+        {
+            Debug.Log("Set_END");
+
+            // 플레이어 컨트롤 잠금
+            GameObject.Find("Team_num/" + m_team_num).GetComponent<PlayerController>().Dead = true;
+
+            // 종료 캔버스를 활성화
+            GameObject.Find("UI_canvas").transform.Find("END_canvas").gameObject.SetActive(true);
+
+
+            if (_Team == "Sapphire") // 사파이어 승리
+            {
+                GameObject.Find("UI_canvas").transform.Find("END_canvas").transform.Find("Sapphire").gameObject.SetActive(true);
+            }
+            else if (_Team == "Ruby") // 루비 승리
+            {
+                GameObject.Find("UI_canvas").transform.Find("END_canvas").transform.Find("Ruby").gameObject.SetActive(true);
+            }
+            else if (_Team == "Draw") // 무승부
+            {
+                GameObject.Find("UI_canvas").transform.Find("END_canvas").transform.Find("Draw").gameObject.SetActive(true);
+            }
+
+            return true;
+        };
     }
 
 }
