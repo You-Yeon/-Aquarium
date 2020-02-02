@@ -80,7 +80,9 @@ public class InitNetManager : MonoBehaviour
     public bool new_player = false;
     public int new_Min;
     public int new_Sec;
-    
+    public int new_S_score;
+    public int new_R_score;
+
     // 클라이언트 연결 상태
     enum MyState
     {
@@ -559,7 +561,7 @@ public class InitNetManager : MonoBehaviour
         };
 
         // 진행 중인 게임 입장
-        m_stub.Game_Appear = (HostID remote, RmiContext rmiContext, int value, int _team_num, int _min, int _sec) =>
+        m_stub.Game_Appear = (HostID remote, RmiContext rmiContext, int value, int _team_num, int _min, int _sec, int _S_score, int _R_score) =>
         {
             // 본인이 입장하는 경우
             if (value == 1)
@@ -577,6 +579,10 @@ public class InitNetManager : MonoBehaviour
                 new_Min = _min;
                 new_Sec = _sec;
 
+                // 팀 점수 업데이트
+                new_S_score = _S_score;
+                new_R_score = _R_score;
+
                 // 캐릭터 선택 자식들은 처음 상태로 리셋한다.
                 GameObject.Find("UIManager").GetComponent<SceneChange>().C_SeleteToMain();
 
@@ -589,11 +595,10 @@ public class InitNetManager : MonoBehaviour
                 sendOption.maxDirectP2PMulticastCount = 30; // 트래픽 카운트  
                 sendOption.enableLoopback = false;
 
-                m_proxy.Game_Appear(m_playerP2PGroup, sendOption, 0, _team_num, 0, 0);
+                m_proxy.Game_Appear(m_playerP2PGroup, sendOption, 0, _team_num, 0, 0, 0, 0);
 
             }
-            // 다른 사람의 경우
-            else
+            else // 다른 사람의 경우
             {
                 // 플레이어 생성
                 GameObject.Find("GameManager").GetComponent<GameManager>().GetNewPlayer(_team_num);

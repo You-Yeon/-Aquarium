@@ -46,11 +46,6 @@ public BeforeRmiInvocationDelegate BeforeRmiInvocation = delegate(Nettention.Pro
 		{ 
 			return false;
 		};
-		public delegate bool LeaveInGameDelegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext);  
-		public LeaveInGameDelegate LeaveInGame = delegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext)
-		{ 
-			return false;
-		};
 		public delegate bool Room_AppearDelegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int hostID, System.String id, int character_num, System.String team_color, int team_num);  
 		public Room_AppearDelegate Room_Appear = delegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int hostID, System.String id, int character_num, System.String team_color, int team_num)
 		{ 
@@ -61,8 +56,8 @@ public BeforeRmiInvocationDelegate BeforeRmiInvocation = delegate(Nettention.Pro
 		{ 
 			return false;
 		};
-		public delegate bool Game_AppearDelegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int value, int team_num, int Min, int Sec);  
-		public Game_AppearDelegate Game_Appear = delegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int value, int team_num, int Min, int Sec)
+		public delegate bool Game_AppearDelegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int value, int team_num, int Min, int Sec, int S_score, int R_score);  
+		public Game_AppearDelegate Game_Appear = delegate(Nettention.Proud.HostID remote,Nettention.Proud.RmiContext rmiContext, int value, int team_num, int Min, int Sec, int S_score, int R_score)
 		{ 
 			return false;
 		};
@@ -189,9 +184,6 @@ public BeforeRmiInvocationDelegate BeforeRmiInvocation = delegate(Nettention.Pro
             break;
         case Common.LeaveGameRoom:
             ProcessReceivedMessage_LeaveGameRoom(__msg, pa, hostTag, remote);
-            break;
-        case Common.LeaveInGame:
-            ProcessReceivedMessage_LeaveInGame(__msg, pa, hostTag, remote);
             break;
         case Common.Room_Appear:
             ProcessReceivedMessage_Room_Appear(__msg, pa, hostTag, remote);
@@ -566,54 +558,6 @@ parameterString+=Room_id.ToString()+",";
         AfterRmiInvocation(summary);
         }
     }
-    void ProcessReceivedMessage_LeaveInGame(Nettention.Proud.Message __msg, Nettention.Proud.ReceivedMessage pa, Object hostTag, Nettention.Proud.HostID remote)
-    {
-        Nettention.Proud.RmiContext ctx = new Nettention.Proud.RmiContext();
-        ctx.sentFrom=pa.RemoteHostID;
-        ctx.relayed=pa.IsRelayed;
-        ctx.hostTag=hostTag;
-        ctx.encryptMode = pa.EncryptMode;
-        ctx.compressMode = pa.CompressMode;
-
-        core.PostCheckReadMessage(__msg, RmiName_LeaveInGame);
-        if(enableNotifyCallFromStub==true)
-        {
-        string parameterString = "";
-                NotifyCallFromStub(Common.LeaveInGame, RmiName_LeaveInGame,parameterString);
-        }
-
-        if(enableStubProfiling)
-        {
-        Nettention.Proud.BeforeRmiSummary summary = new Nettention.Proud.BeforeRmiSummary();
-        summary.rmiID = Common.LeaveInGame;
-        summary.rmiName = RmiName_LeaveInGame;
-        summary.hostID = remote;
-        summary.hostTag = hostTag;
-        BeforeRmiInvocation(summary);
-        }
-
-        long t0 = Nettention.Proud.PreciseCurrentTime.GetTimeMs();
-
-        // Call this method.
-        bool __ret =LeaveInGame (remote,ctx  );
-
-        if(__ret==false)
-        {
-        // Error: RMI function that a user did not create has been called. 
-        core.ShowNotImplementedRmiWarning(RmiName_LeaveInGame);
-        }
-
-        if(enableStubProfiling)
-        {
-        Nettention.Proud.AfterRmiSummary summary = new Nettention.Proud.AfterRmiSummary();
-        summary.rmiID = Common.LeaveInGame;
-        summary.rmiName = RmiName_LeaveInGame;
-        summary.hostID = remote;
-        summary.hostTag = hostTag;
-        summary.elapsedTime = Nettention.Proud.PreciseCurrentTime.GetTimeMs()-t0;
-        AfterRmiInvocation(summary);
-        }
-    }
     void ProcessReceivedMessage_Room_Appear(Nettention.Proud.Message __msg, Nettention.Proud.ReceivedMessage pa, Object hostTag, Nettention.Proud.HostID remote)
     {
         Nettention.Proud.RmiContext ctx = new Nettention.Proud.RmiContext();
@@ -735,6 +679,8 @@ core.PostCheckReadMessage(__msg, RmiName_Room_Disappear);
 int team_num; Nettention.Proud.Marshaler.Read(__msg,out team_num);	
 int Min; Nettention.Proud.Marshaler.Read(__msg,out Min);	
 int Sec; Nettention.Proud.Marshaler.Read(__msg,out Sec);	
+int S_score; Nettention.Proud.Marshaler.Read(__msg,out S_score);	
+int R_score; Nettention.Proud.Marshaler.Read(__msg,out R_score);	
 core.PostCheckReadMessage(__msg, RmiName_Game_Appear);
         if(enableNotifyCallFromStub==true)
         {
@@ -743,6 +689,8 @@ core.PostCheckReadMessage(__msg, RmiName_Game_Appear);
 parameterString+=team_num.ToString()+",";
 parameterString+=Min.ToString()+",";
 parameterString+=Sec.ToString()+",";
+parameterString+=S_score.ToString()+",";
+parameterString+=R_score.ToString()+",";
         NotifyCallFromStub(Common.Game_Appear, RmiName_Game_Appear,parameterString);
         }
 
@@ -759,7 +707,7 @@ parameterString+=Sec.ToString()+",";
         long t0 = Nettention.Proud.PreciseCurrentTime.GetTimeMs();
 
         // Call this method.
-        bool __ret =Game_Appear (remote,ctx , value, team_num, Min, Sec );
+        bool __ret =Game_Appear (remote,ctx , value, team_num, Min, Sec, S_score, R_score );
 
         if(__ret==false)
         {
@@ -1739,7 +1687,6 @@ public const string RmiName_NotifyLoginFailed="NotifyLoginFailed";
 public const string RmiName_JoinGameRoom="JoinGameRoom";
 public const string RmiName_JoinInGame="JoinInGame";
 public const string RmiName_LeaveGameRoom="LeaveGameRoom";
-public const string RmiName_LeaveInGame="LeaveInGame";
 public const string RmiName_Room_Appear="Room_Appear";
 public const string RmiName_Room_Disappear="Room_Disappear";
 public const string RmiName_Game_Appear="Game_Appear";
@@ -1772,7 +1719,6 @@ public const string RmiName_NotifyLoginFailed="";
 public const string RmiName_JoinGameRoom="";
 public const string RmiName_JoinInGame="";
 public const string RmiName_LeaveGameRoom="";
-public const string RmiName_LeaveInGame="";
 public const string RmiName_Room_Appear="";
 public const string RmiName_Room_Disappear="";
 public const string RmiName_Game_Appear="";

@@ -19,28 +19,27 @@ namespace S2C2S
 			public const Nettention.Proud.RmiID JoinGameRoom = (Nettention.Proud.RmiID)1000+4;
 			public const Nettention.Proud.RmiID JoinInGame = (Nettention.Proud.RmiID)1000+5;
 			public const Nettention.Proud.RmiID LeaveGameRoom = (Nettention.Proud.RmiID)1000+6;
-			public const Nettention.Proud.RmiID LeaveInGame = (Nettention.Proud.RmiID)1000+7;
-			public const Nettention.Proud.RmiID Room_Appear = (Nettention.Proud.RmiID)1000+8;
-			public const Nettention.Proud.RmiID Room_Disappear = (Nettention.Proud.RmiID)1000+9;
-			public const Nettention.Proud.RmiID Game_Appear = (Nettention.Proud.RmiID)1000+10;
-			public const Nettention.Proud.RmiID CountStart = (Nettention.Proud.RmiID)1000+11;
-			public const Nettention.Proud.RmiID GameStart = (Nettention.Proud.RmiID)1000+12;
-			public const Nettention.Proud.RmiID Player_SetReady = (Nettention.Proud.RmiID)1000+13;
-			public const Nettention.Proud.RmiID Player_SetResponse = (Nettention.Proud.RmiID)1000+14;
-			public const Nettention.Proud.RmiID PlayerInfo = (Nettention.Proud.RmiID)1000+15;
-			public const Nettention.Proud.RmiID Player_Move = (Nettention.Proud.RmiID)1000+16;
-			public const Nettention.Proud.RmiID Player_Chat = (Nettention.Proud.RmiID)1000+17;
-			public const Nettention.Proud.RmiID Player_Shoot = (Nettention.Proud.RmiID)1000+18;
-			public const Nettention.Proud.RmiID Player_GetHP = (Nettention.Proud.RmiID)1000+19;
-			public const Nettention.Proud.RmiID Player_SetHP = (Nettention.Proud.RmiID)1000+20;
-			public const Nettention.Proud.RmiID Show_Player_Color = (Nettention.Proud.RmiID)1000+21;
-			public const Nettention.Proud.RmiID Room_weather = (Nettention.Proud.RmiID)1000+22;
-			public const Nettention.Proud.RmiID Room_Item = (Nettention.Proud.RmiID)1000+23;
-			public const Nettention.Proud.RmiID Player_Kill = (Nettention.Proud.RmiID)1000+24;
-			public const Nettention.Proud.RmiID Get_selete = (Nettention.Proud.RmiID)1000+25;
-			public const Nettention.Proud.RmiID Set_selete = (Nettention.Proud.RmiID)1000+26;
-			public const Nettention.Proud.RmiID Get_END = (Nettention.Proud.RmiID)1000+27;
-			public const Nettention.Proud.RmiID Set_END = (Nettention.Proud.RmiID)1000+28;
+			public const Nettention.Proud.RmiID Room_Appear = (Nettention.Proud.RmiID)1000+7;
+			public const Nettention.Proud.RmiID Room_Disappear = (Nettention.Proud.RmiID)1000+8;
+			public const Nettention.Proud.RmiID Game_Appear = (Nettention.Proud.RmiID)1000+9;
+			public const Nettention.Proud.RmiID CountStart = (Nettention.Proud.RmiID)1000+10;
+			public const Nettention.Proud.RmiID GameStart = (Nettention.Proud.RmiID)1000+11;
+			public const Nettention.Proud.RmiID Player_SetReady = (Nettention.Proud.RmiID)1000+12;
+			public const Nettention.Proud.RmiID Player_SetResponse = (Nettention.Proud.RmiID)1000+13;
+			public const Nettention.Proud.RmiID PlayerInfo = (Nettention.Proud.RmiID)1000+14;
+			public const Nettention.Proud.RmiID Player_Move = (Nettention.Proud.RmiID)1000+15;
+			public const Nettention.Proud.RmiID Player_Chat = (Nettention.Proud.RmiID)1000+16;
+			public const Nettention.Proud.RmiID Player_Shoot = (Nettention.Proud.RmiID)1000+17;
+			public const Nettention.Proud.RmiID Player_GetHP = (Nettention.Proud.RmiID)1000+18;
+			public const Nettention.Proud.RmiID Player_SetHP = (Nettention.Proud.RmiID)1000+19;
+			public const Nettention.Proud.RmiID Show_Player_Color = (Nettention.Proud.RmiID)1000+20;
+			public const Nettention.Proud.RmiID Room_weather = (Nettention.Proud.RmiID)1000+21;
+			public const Nettention.Proud.RmiID Room_Item = (Nettention.Proud.RmiID)1000+22;
+			public const Nettention.Proud.RmiID Player_Kill = (Nettention.Proud.RmiID)1000+23;
+			public const Nettention.Proud.RmiID Get_selete = (Nettention.Proud.RmiID)1000+24;
+			public const Nettention.Proud.RmiID Set_selete = (Nettention.Proud.RmiID)1000+25;
+			public const Nettention.Proud.RmiID Get_END = (Nettention.Proud.RmiID)1000+26;
+			public const Nettention.Proud.RmiID Set_END = (Nettention.Proud.RmiID)1000+27;
 		// List that has RMI ID.
 		public static Nettention.Proud.RmiID[] RmiIDList = new Nettention.Proud.RmiID[] {
 			RequestLogin,
@@ -49,7 +48,6 @@ namespace S2C2S
 			JoinGameRoom,
 			JoinInGame,
 			LeaveGameRoom,
-			LeaveInGame,
 			Room_Appear,
 			Room_Disappear,
 			Game_Appear,

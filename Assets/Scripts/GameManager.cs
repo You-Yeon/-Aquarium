@@ -150,7 +150,7 @@ public class GameManager : MonoBehaviour
         // 날씨 영향 시작
         StartCoroutine(Weather_Passive());
 
-        if (m_Net.new_player)
+        if (m_Net.new_player) // 도중 입장 플레이어의 경우
         {
             // 임시 플레이어 컨트롤 잠금
             GameObject.Find("Team_num/" + m_Net.m_team_num).GetComponent<PlayerController>().Dead = true;
@@ -161,10 +161,39 @@ public class GameManager : MonoBehaviour
             // 무적 5초 후 해제
             GameObject.Find("Team_num/" + m_Net.m_team_num).GetComponent<ResponsePlayer>().FirstResponse();
 
-            // 타이머 시작
+            // 타이머 시작 및 업데이트
+            if (m_Net.new_Sec < 10)
+            {
+                GameObject.Find("Time_text").GetComponent<Text>().text = m_Net.new_Min + " : 0" + m_Net.new_Sec - 4; // 카운터 만큼 제거
+            }
+            else
+            {
+                GameObject.Find("Time_text").GetComponent<Text>().text = m_Net.new_Min + " : " + m_Net.new_Sec - 4; // 카운터 만큼 제거
+            }
+
             GameObject.Find("Time_text").GetComponent<timer>().GetTimerStart(m_Net.new_Min, m_Net.new_Sec);
+
+            // 팀 점수 업데이트
+            if (m_Net.new_S_score < 10)
+            {
+                GameObject.Find("Sapphire_Score_text").GetComponent<Text>().text = "0" + m_Net.new_S_score.ToString();
+            }
+            else
+            {
+                GameObject.Find("Sapphire_Score_text").GetComponent<Text>().text = m_Net.new_S_score.ToString();
+            }
+
+            if (m_Net.new_R_score < 10)
+            {
+                GameObject.Find("Ruby_Score_text").GetComponent<Text>().text = "0" + m_Net.new_R_score.ToString();
+            }
+            else
+            {
+                GameObject.Find("Ruby_Score_text").GetComponent<Text>().text = m_Net.new_R_score.ToString();
+            }
+
         }
-        else
+        else // 그 외 일반 플레이어
         {
             // 게임 시작 호출
             m_Net.GameStart();
