@@ -4,28 +4,28 @@ Aquarium
 
 📝 Introduction
 ------------
-개발 진행중입니다...
+Aquarium은 TPS 물총 게임으로, 팀 데스매치 게임입니다. ( 2:2 )
 
 :computer: Developerment skill
 ------------
-- 언어 : C#
+- 라이브러리 : ProudNet
+- 언어 : C#, C++
+- 데이터베이스 : MSSQL
 - 프로토콜 : WebSocket
 - 게임 엔진 : Unity v2019.1.10f1
+- IDE : Visual Studio 2019, Microsoft SQL Management Studio
 
 :gun: Description
 -----------
 
-* ### 현재까지 구현사항
-  + 인트로 화면
-  + 플레이어 모델 + 총 모델
-  + 플레이어가 물 맞을 경우에 물 흔적 남기기
-  + 맵 설계
-  + 맵 충돌 범위 설정
-  + 물총 발사 ( 물방이 조준선에 따라가기 )
-  + 장전
-  + 애니메이션 ( 이동, 발사, 장전 )
-  + 인 게임 UI
-  
-  *( 이미지를 클릭하면 유튜브로 넘어갑니다. )*
-      [![Aquarium_capture](https://user-images.githubusercontent.com/44610250/69265392-85abef80-0c0c-11ea-872c-47bd4f472d05.png)
-](https://www.youtube.com/watch?v=HaYR8O0xRYg&feature=youtu.be)
+* ### 물총 게임
+  - 캐릭터 선택
+    + Game Start를 누르면 다양한 캐릭터를 선택할 수 있습니다.
+      캐릭터를 선택하면 자동으로 게임 방과 팀이 매칭이 되어집니다.    
+    
+    ![Character](https://user-images.githubusercontent.com/44610250/73602381-a30b1b80-45b6-11ea-9fb6-64f13fe5f3d8.gif)
+    
+  - 캐릭터 선택
+    Game Start를 누르면 다양한 캐릭터를 선택할 수 있습니다.
+    캐릭터를 선택하면 자동으로 게임 방과 팀이 매칭이 되어집니다.    
+ 
