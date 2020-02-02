@@ -99,6 +99,7 @@ Aquarium은 도시에서 대결하는 TPS 물총 게임으로, 팀 데스매치 
        
   - 플레이어 무적  
     + 플레이어는 처음 게임 시작할 때, 죽고나서 다시 태어날 때 5초간 무적상태입니다.  
+      무적이 된 플레이어는 노란색을 띄게 됩니다.
     
       ![invincibility](https://user-images.githubusercontent.com/44610250/73603658-1f0e5f00-45c9-11ea-91a3-ea1d538fb5ae.gif)  
   
@@ -106,8 +107,9 @@ Aquarium은 도시에서 대결하는 TPS 물총 게임으로, 팀 데스매치 
     + 게임 도중 플레이어가 나가게 된다면, 그 자리를 채우기위해 다른 플레이어가 입장할 수 있습니다!  
       하지만 도중에 입장하는 것이 싫을 수 있으니 선택권이 주어지고, 5분 이상 시간이 남은 방만 알려줍니다.  
       Yes를 선택하면 게임을 입장하고, No를 선택하면 시작하지 않은 방으로 갑니다.  
+      입장하게 되면 해당 방의 플레이어들, 시간, 팀 점수를 얻습니다.  
         
-      ![Select](https://user-images.githubusercontent.com/44610250/73603856-888f6d00-45cb-11ea-8ffc-bc3ee6c036d9.gif)  
+      ![Select2](https://user-images.githubusercontent.com/44610250/73604163-90511080-45cf-11ea-926c-195a2953d2ce.gif)  
       
   - 승패  
     + 타이머가 끝나면 게임이 종료되고 점수를 통해 승패처리를 합니다.  
@@ -115,3 +117,11 @@ Aquarium은 도시에서 대결하는 TPS 물총 게임으로, 팀 데스매치 
       정말 만약에 습도량 조차도 같아버리면, 무승부 처리를 합니다.  
         
       ![END](https://user-images.githubusercontent.com/44610250/73603974-5979fb00-45cd-11ea-9595-c799935d653d.gif)  
+
+  - 로그인  
+    + 로그인 기능이 있습니다.   
+      해당 DB에 존재하지 않는 유저, 아이디와 비밀번호 불일치시 다시 로그인 화면으로 돌아갑니다.  
+     
+      ![Login](https://user-images.githubusercontent.com/44610250/73604220-43216e80-45d0-11ea-9848-87f9c9d8bb80.gif)  
+      
+    
