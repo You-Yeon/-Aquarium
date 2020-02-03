@@ -22,6 +22,10 @@ Aquarium은 도시에서 대결하는 TPS 물총 게임으로, 팀 데스매치 
 -----------
 
 * ### 물총 게임  
+  
+    *( 이미지를 클릭하면 유튜브로 넘어갑니다. )*
+      [![Aquarium_capture](https://user-images.githubusercontent.com/44610250/73630962-eccd3200-469a-11ea-9aff-7a180ccab8d0.PNG)](https://www.youtube.com/watch?v=4FRB0O0GLmA&feature=youtu.be)  
+      
   - 캐릭터 선택  
     + Game Start를 누르면 다양한 캐릭터를 선택할 수 있습니다.  
       캐릭터를 선택하면 자동으로 게임 방과 팀이 매칭이 되어집니다.      
