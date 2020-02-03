@@ -164,11 +164,11 @@ public class GameManager : MonoBehaviour
             // 타이머 시작 및 업데이트
             if (m_Net.new_Sec < 10)
             {
-                GameObject.Find("Time_text").GetComponent<Text>().text = m_Net.new_Min + " : 0" + m_Net.new_Sec - 4; // 카운터 만큼 제거
+                GameObject.Find("Time_text").GetComponent<Text>().text = m_Net.new_Min + " : 0" + ((int)m_Net.new_Sec - 4); // 카운터 만큼 제거
             }
             else
             {
-                GameObject.Find("Time_text").GetComponent<Text>().text = m_Net.new_Min + " : " + m_Net.new_Sec - 4; // 카운터 만큼 제거
+                GameObject.Find("Time_text").GetComponent<Text>().text = m_Net.new_Min + " : " + ((int)m_Net.new_Sec - 4); // 카운터 만큼 제거
             }
 
             GameObject.Find("Time_text").GetComponent<timer>().GetTimerStart(m_Net.new_Min, m_Net.new_Sec);
@@ -284,7 +284,7 @@ public class GameManager : MonoBehaviour
     public void OffFocusChat()
     {
         // 채팅 끝
-        GameObject.Find("Team_num/" + m_Net.m_team_num).GetComponent<PlayerController>().FocusChat = false ;
+        GameObject.Find("Team_num/" + m_Net.m_team_num).GetComponent<PlayerController>().FocusChat = false;
     }
 
     public void GetNewPlayer(int _num)
