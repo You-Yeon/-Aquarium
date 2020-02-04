@@ -12,6 +12,7 @@ Aquarium은 도시에서 대결하는 TPS 물총 게임으로, 팀 데스매치 
 :computer: Developerment skill
 ------------
 - 라이브러리 : ProudNet
+- 운영체제 : Windows
 - 언어 : C#, C++
 - 데이터베이스 : MSSQL
 - 프로토콜 : TCP/IP
