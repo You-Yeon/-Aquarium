@@ -205,7 +205,6 @@ public class GameManager : MonoBehaviour
         // ESC 키를 눌렀을 때
         if (GameObject.Find("Team_num/" + m_Net.m_team_num).GetComponent<PlayerInput>().mouseOut)
         {
-            Debug.Log("ESC");
 
             // 마우스가 숨겨져 있다면
             if (!mouseOut)
@@ -220,7 +219,6 @@ public class GameManager : MonoBehaviour
         // 마우스를 눌렀을 때
         if (GameObject.Find("Team_num/" + m_Net.m_team_num).GetComponent<PlayerInput>().mouseOn)
         {
-            Debug.Log("CLICK");
 
             // 채팅 UI를 클릭한 경우 return
             ped.position = Input.mousePosition;

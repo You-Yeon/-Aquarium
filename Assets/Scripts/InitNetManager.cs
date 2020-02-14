@@ -137,7 +137,6 @@ public class InitNetManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log(info.ToString());
                     m_state = MyState.Disconnected;
                 }
             };
@@ -145,7 +144,6 @@ public class InitNetManager : MonoBehaviour
         // 서버 접속 끊길 시 핸들러 
         m_Client.LeaveServerHandler = (ErrorInfo info) =>
         {
-            Debug.Log(info.ToString());
             m_state = MyState.Disconnected;
         };
 
@@ -161,7 +159,6 @@ public class InitNetManager : MonoBehaviour
             (HostID memberHostID, HostID groupHostID,
         int memberCount, ByteArray customField) =>
         {
-            Debug.Log("P2P Join");
             m_playerP2PGroup = groupHostID;
         };
     }
@@ -236,7 +233,6 @@ public class InitNetManager : MonoBehaviour
     // 로그인 시도
     public void GetLogin(string _id, string _password)
     {
-        Debug.Log("GetLogin");
 
         // 로그인 캔버스에서 로딩 캔버스로 전환
         GameObject.Find("UIManager").GetComponent<SceneChange>().I_LoginToLoading();
@@ -262,7 +258,7 @@ public class InitNetManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("서버 연결 오류");
+            //Debug.Log("서버 연결 오류");
         }
     }
 
@@ -395,7 +391,6 @@ public class InitNetManager : MonoBehaviour
         // "로그인 성공" 원격 함수 호출을 받으면, MyState.Connected로 전환하여 로그인 GUI를 감추자.
         m_stub.NotifyLoginSuccess = (HostID remote, RmiContext rmiContext) =>
         {
-            Debug.Log("로그인 성공");
 
             // 로딩 캔버스에서 인트로 메인 캔버스로
             GameObject.Find("UIManager").GetComponent<SceneChange>().I_LoadingToMain();
@@ -407,12 +402,10 @@ public class InitNetManager : MonoBehaviour
         // "로그인 실패"를 받으면, 실패 사유를 출력하고 연결 해제를 하자.
         m_stub.NotifyLoginFailed = (HostID remote, RmiContext rmiContext, System.String reason) =>
         {
-            Debug.Log("로그인 실패");
 
             // 로딩 캔버스에서 로그인 캔버스로
             GameObject.Find("UIManager").GetComponent<SceneChange>().I_LoadingToLogin();
 
-            Debug.Log(reason);
             //m_disconnectnow = true;
             return true;
         };
@@ -448,12 +441,6 @@ public class InitNetManager : MonoBehaviour
         // 게임 방 플레이어 입장
         m_stub.Room_Appear = (HostID remote, RmiContext rmiContext, int hostID, System.String user_id, int character_num, System.String team_color, int team_num) =>
         {
-            Debug.Log("방 입장");
-
-            Debug.Log(" user_id : " + user_id);
-            Debug.Log(" character_num : " + character_num);
-            Debug.Log(" team_color : " + team_color);
-            Debug.Log(" team_num : " + team_num);
 
 
             // 본인이 입장하는 경우
@@ -539,7 +526,6 @@ public class InitNetManager : MonoBehaviour
                 var ui = GameObject.Find("Team_num/" + _team_num.ToString());
                 if (ui != null)
                 {
-                    Debug.Log("삭제");
                     Destroy(ui);
                 }
 
@@ -624,7 +610,6 @@ public class InitNetManager : MonoBehaviour
         // 플레이어 리스폰 설정
         m_stub.PlayerInfo = (HostID remote, RmiContext rmiContext, int _player_num, int _chr_num, float _px, float _py, float _pz, float _rx, float _ry, float _rz) =>
         {
-            Debug.Log("리스폰 설정");
 
             // 플레이어의 정보 세팅
             r_chr_num[_player_num - 1] = _chr_num;
@@ -643,7 +628,6 @@ public class InitNetManager : MonoBehaviour
         // 게임 시작
         m_stub.GameStart = (HostID remote, RmiContext rmiContext) =>
         {
-            Debug.Log("Game_Start");
 
             // 타이머 시작
             GameObject.Find("Time_text").GetComponent<timer>().TimerStart();
@@ -686,7 +670,6 @@ public class InitNetManager : MonoBehaviour
         // 플레이어 채팅
         m_stub.Player_Chat = (HostID remote, RmiContext rmiContext, System.String _id, System.String _text) =>
         {
-            Debug.Log("Chat");
 
             string ChatText = GameObject.Find("ChatText").GetComponent<Text>().text;
 
@@ -743,7 +726,6 @@ public class InitNetManager : MonoBehaviour
         // 방 날씨 변경
         m_stub.Room_weather = (HostID remote, RmiContext rmiContext, System.String _weather) =>
         {
-            Debug.Log("Room_weather");
 
             // 날씨 가져오기
             m_weather = _weather;
@@ -754,8 +736,6 @@ public class InitNetManager : MonoBehaviour
         // 방 날씨 변경
         m_stub.Room_Item = (HostID remote, RmiContext rmiContext, int _idx, float _ix, float _iy, float _iz) =>
         {
-            Debug.Log("Room_Item");
-
             // 아이템 위치 세팅
             m_items_x[_idx] = _ix;
             m_items_y[_idx] = _iy;
@@ -767,8 +747,6 @@ public class InitNetManager : MonoBehaviour
         // 다른 플레이어의 처음 리스폰 상태 업데이트
         m_stub.Player_SetResponse = (HostID remote, RmiContext rmiContext, int _m_team_num, bool _value) =>
         {
-            Debug.Log("Player_SetResponse");
-
             if (_value)
             {
                 // 임시 플레이어 컨트롤 잠금
@@ -787,8 +765,6 @@ public class InitNetManager : MonoBehaviour
         // 플레이어 죽음..
         m_stub.Player_Kill = (HostID remote, RmiContext rmiContext, int _m_team_num) =>
         {
-            Debug.Log("Player kill");
-
             // 본인의 경우
             if (m_team_num == _m_team_num)
             {
@@ -919,7 +895,6 @@ public class InitNetManager : MonoBehaviour
         // 게임 종료
         m_stub.Set_END = (HostID remote, RmiContext rmiContext, string _Team) =>
         {
-            Debug.Log("Set_END");
 
             // 플레이어 컨트롤 잠금
             GameObject.Find("Team_num/" + m_team_num).GetComponent<PlayerController>().Dead = true;
